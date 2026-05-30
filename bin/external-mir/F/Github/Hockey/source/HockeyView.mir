@@ -1,0 +1,1362 @@
+[ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 27; @symbol_importdef<0> = [Toybox,27,7,13]; @symbol_importdef<1> = [Activity,27,14,22]; ]
+import Toybox.Activity;
+[ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 28; @symbol_importdef<0> = [Toybox,28,7,13]; @symbol_importdef<1> = [Graphics,28,14,22]; ]
+import Toybox.Graphics;
+[ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 29; @symbol_importdef<0> = [Toybox,29,7,13]; @symbol_importdef<1> = [WatchUi,29,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 30; @symbol_importdef<0> = [Toybox,30,7,13]; @symbol_importdef<1> = [Lang,30,14,18]; ]
+import Toybox.Lang;
+[ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 32; @symbol_classdef = [HockeyView,32,6,16]; @symbol_extends<0> = [WatchUi,32,25,32]; @symbol_extends<1> = [View,32,33,37]; ]
+class HockeyView extends WatchUi.View {
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 32; ]
+    <init> {
+[ "F:\Github\Hockey\source\HockeyView.mc" 37 18 ]
+        symbol [ Graphics %tmp.1 37 44 52 ];
+        %tmp.1 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.2 37 53 64 ];
+        %tmp.2 = getv %tmp.1 :COLOR_BLACK;
+        putv self :C_BG %tmp.2;
+[ "F:\Github\Hockey\source\HockeyView.mc" 41 18 ]
+        symbol [ Graphics %tmp.3 41 44 52 ];
+        %tmp.3 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.4 41 53 64 ];
+        %tmp.4 = getv %tmp.3 :COLOR_WHITE;
+        putv self :C_TEXT %tmp.4;
+    }
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 32; ]
+    static
+    <init> {
+    }
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 33; @position = 16; @symbol_vardef = [_data,33,16,21]; @symbol_type<0> = [ShiftData,33,29,38]; ]
+    private
+    var _data as ShiftData;
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 34; @position = 16; @symbol_vardef = [_detector,34,16,25]; @symbol_type<0> = [ShiftDetector,34,29,42]; ]
+    private
+    var _detector as ShiftDetector;
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 37; @position = 18; @symbol_constdef = [C_BG,37,18,22]; @symbol_type<0> = [Number,37,35,41]; ]
+    private
+    const C_BG as Number;
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 38; @position = 18; @symbol_constdef = [C_ICE,38,18,23]; @symbol_type<0> = [Number,38,35,41]; ]
+    private
+    const C_ICE as Number = 0x00AAFF;
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 39; @position = 18; @symbol_constdef = [C_BENCH,39,18,25]; @symbol_type<0> = [Number,39,35,41]; ]
+    private
+    const C_BENCH as Number = 0xFF6600;
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 40; @position = 18; @symbol_constdef = [C_TRANSITION,40,18,30]; @symbol_type<0> = [Number,40,35,41]; ]
+    private
+    const C_TRANSITION as Number = 0xFFDD00;
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 41; @position = 18; @symbol_constdef = [C_TEXT,41,18,24]; @symbol_type<0> = [Number,41,35,41]; ]
+    private
+    const C_TEXT as Number;
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 42; @position = 18; @symbol_constdef = [C_DIM,42,18,23]; @symbol_type<0> = [Number,42,35,41]; ]
+    private
+    const C_DIM as Number = 0x666666;
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 43; @position = 18; @symbol_constdef = [C_DIVIDER,43,18,27]; @symbol_type<0> = [Number,43,35,41]; ]
+    private
+    const C_DIVIDER as Number = 0x333333;
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 45; @symbol_functiondef = [initialize,45,13,23]; @symbol_param<0> = [data,45,24,28]; @symbol_param<0>_type<0> = [ShiftData,45,32,41]; @symbol_param<1> = [detector,45,43,51]; @symbol_param<1>_type<0> = [ShiftDetector,45,55,68]; ]
+    function initialize(data as ShiftData, detector as ShiftDetector) as Void {
+F__Github_Hockey_source_HockeyView_mc_45_70_49_4_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 46 8 ]
+        symbol [ View %tmp.2 46 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 46 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "F:\Github\Hockey\source\HockeyView.mc" 47 8 ]
+        %tmp.4 = lgetv %data;
+        symbol [ data %tmp.4 47 20 24 ];
+        symbol [ _data ? 47 8 13 ];
+        putv self :_data %tmp.4;
+[ "F:\Github\Hockey\source\HockeyView.mc" 48 8 ]
+        %tmp.5 = lgetv %detector;
+        symbol [ detector %tmp.5 48 20 28 ];
+        symbol [ _detector ? 48 8 17 ];
+        putv self :_detector %tmp.5;
+F__Github_Hockey_source_HockeyView_mc_45_70_49_4_stop:
+    }
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 51; @symbol_functiondef = [onLayout,51,13,21]; @symbol_param<0> = [dc,51,22,24]; @symbol_param<0>_type<0> = [Graphics,51,28,36]; @symbol_param<0>_type<1> = [Dc,51,37,39]; ]
+    function onLayout(dc as Graphics.Dc) as Void {
+    }
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 55; @symbol_functiondef = [onUpdate,55,13,21]; @symbol_param<0> = [dc,55,22,24]; @symbol_param<0>_type<0> = [Graphics,55,28,36]; @symbol_param<0>_type<1> = [Dc,55,37,39]; ]
+    function onUpdate(dc as Graphics.Dc) as Void {
+F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 56 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %w.1 = local;
+        symbol [ w %w.1 56 12 13 ];
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 56 17 19 ];
+        symbol [ getWidth %tmp.2 56 20 28 ];
+        %tmp.2 = getv function %tmp.1 :getWidth;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %w.1 %tmp.3;
+        symbol [ w %w.1 56 12 13 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 57 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %h.2 = local;
+        symbol [ h %h.2 57 12 13 ];
+        %tmp.4 = lgetv %dc;
+        symbol [ dc %tmp.4 57 17 19 ];
+        symbol [ getHeight %tmp.5 57 20 29 ];
+        %tmp.5 = getv function %tmp.4 :getHeight;
+        %tmp.6 = invoke %tmp.4 %tmp.5();
+        lputv %h.2 %tmp.6;
+        symbol [ h %h.2 57 12 13 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 58 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %cx.3 = local;
+        symbol [ cx %cx.3 58 12 14 ];
+        %tmp.7 = lgetv %w.1;
+        symbol [ w %tmp.7 58 17 18 ];
+        %tmp.8 = 2;
+        %tmp.9 = div %tmp.7 %tmp.8;
+        lputv %cx.3 %tmp.9;
+        symbol [ cx %cx.3 58 12 14 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 61 8 ]
+        %tmp.10 = lgetv %dc;
+        symbol [ dc %tmp.10 61 8 10 ];
+        symbol [ setColor %tmp.11 61 11 19 ];
+        %tmp.11 = getv function %tmp.10 :setColor;
+        symbol [ C_BG %tmp.13 61 20 24 ];
+        %tmp.13 = getv ? :C_BG;
+        symbol [ C_BG %tmp.15 61 26 30 ];
+        %tmp.15 = getv ? :C_BG;
+        invoke %tmp.10 %tmp.11(%tmp.13, %tmp.15);
+[ "F:\Github\Hockey\source\HockeyView.mc" 62 8 ]
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 62 8 10 ];
+        symbol [ fillRectangle %tmp.17 62 11 24 ];
+        %tmp.17 = getv function %tmp.16 :fillRectangle;
+        %tmp.18 = 0;
+        %tmp.19 = 0;
+        %tmp.20 = lgetv %w.1;
+        symbol [ w %tmp.20 62 31 32 ];
+        %tmp.21 = lgetv %h.2;
+        symbol [ h %tmp.21 62 34 35 ];
+        invoke %tmp.16 %tmp.17(%tmp.18, %tmp.19, %tmp.20, %tmp.21);
+[ "F:\Github\Hockey\source\HockeyView.mc" 64 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %J.4 = local;
+        symbol [ J %J.4 64 12 13 ];
+        symbol [ Graphics %tmp.22 64 16 24 ];
+        %tmp.22 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.23 64 25 44 ];
+        %tmp.23 = getv %tmp.22 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.24 64 47 55 ];
+        %tmp.24 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.25 64 56 76 ];
+        %tmp.25 = getv %tmp.24 :TEXT_JUSTIFY_VCENTER;
+        %tmp.26 = bitor %tmp.23 %tmp.25;
+        lputv %J.4 %tmp.26;
+        symbol [ J %J.4 64 12 13 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 67 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %state.5 = local;
+        symbol [ state %state.5 67 12 17 ];
+        symbol [ _detector %tmp.28 67 25 34 ];
+        %tmp.28 = getv ? :_detector;
+        symbol [ getState %tmp.29 67 35 43 ];
+        %tmp.29 = getv function %tmp.28 :getState;
+        %tmp.30 = invoke %tmp.28 %tmp.29();
+        lputv %state.5 %tmp.30;
+        symbol [ state %state.5 67 12 17 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 68 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %stateColor.6 = local;
+        symbol [ stateColor %stateColor.6 68 12 22 ];
+        %tmp.31 = self;
+        symbol [ _stateColor %tmp.32 68 25 36 ];
+        %tmp.32 = getv function %tmp.31 :_stateColor;
+        %tmp.33 = lgetv %state.5;
+        symbol [ state %tmp.33 68 37 42 ];
+        %tmp.34 = invoke %tmp.31 %tmp.32(%tmp.33);
+        lputv %stateColor.6 %tmp.34;
+        symbol [ stateColor %stateColor.6 68 12 22 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 69 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %stateLabel.7 = local;
+        symbol [ stateLabel %stateLabel.7 69 12 22 ];
+        %tmp.35 = self;
+        symbol [ _stateLabel %tmp.36 69 25 36 ];
+        %tmp.36 = getv function %tmp.35 :_stateLabel;
+        %tmp.37 = lgetv %state.5;
+        symbol [ state %tmp.37 69 37 42 ];
+        %tmp.38 = invoke %tmp.35 %tmp.36(%tmp.37);
+        lputv %stateLabel.7 %tmp.38;
+        symbol [ stateLabel %stateLabel.7 69 12 22 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 70 8 ]
+        %tmp.39 = lgetv %dc;
+        symbol [ dc %tmp.39 70 8 10 ];
+        symbol [ setColor %tmp.40 70 11 19 ];
+        %tmp.40 = getv function %tmp.39 :setColor;
+        %tmp.41 = lgetv %stateColor.6;
+        symbol [ stateColor %tmp.41 70 20 30 ];
+        symbol [ Graphics %tmp.42 70 32 40 ];
+        %tmp.42 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.43 70 41 58 ];
+        %tmp.43 = getv %tmp.42 :COLOR_TRANSPARENT;
+        invoke %tmp.39 %tmp.40(%tmp.41, %tmp.43);
+[ "F:\Github\Hockey\source\HockeyView.mc" 71 8 ]
+        %tmp.44 = lgetv %dc;
+        symbol [ dc %tmp.44 71 8 10 ];
+        symbol [ drawText %tmp.45 71 11 19 ];
+        %tmp.45 = getv function %tmp.44 :drawText;
+        %tmp.46 = lgetv %cx.3;
+        symbol [ cx %tmp.46 71 20 22 ];
+        %tmp.47 = lgetv %h.2;
+        symbol [ h %tmp.47 71 24 25 ];
+        %tmp.48 = 9;
+        %tmp.49 = mul %tmp.47 %tmp.48;
+        %tmp.50 = 100;
+        %tmp.51 = div %tmp.49 %tmp.50;
+        symbol [ Graphics %tmp.52 71 37 45 ];
+        %tmp.52 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.53 71 46 57 ];
+        %tmp.53 = getv %tmp.52 :FONT_MEDIUM;
+        %tmp.54 = lgetv %stateLabel.7;
+        symbol [ stateLabel %tmp.54 71 59 69 ];
+        %tmp.55 = lgetv %J.4;
+        symbol [ J %tmp.55 71 71 72 ];
+        invoke %tmp.44 %tmp.45(%tmp.46, %tmp.51, %tmp.53, %tmp.54, %tmp.55);
+[ "F:\Github\Hockey\source\HockeyView.mc" 74 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %actInfo.8 = local;
+        symbol [ actInfo %actInfo.8 74 12 19 ];
+        symbol [ Activity %tmp.56 74 22 30 ];
+        %tmp.56 = getm $.Toybox.Activity;
+        symbol [ getActivityInfo %tmp.57 74 31 46 ];
+        %tmp.57 = getv function %tmp.56 :getActivityInfo;
+        %tmp.58 = invoke %tmp.56 %tmp.57();
+        lputv %actInfo.8 %tmp.58;
+        symbol [ actInfo %actInfo.8 74 12 19 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 75 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %avgHR.9 = local;
+        symbol [ avgHR %avgHR.9 75 12 17 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 76 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %cals.10 = local;
+        symbol [ cals %cals.10 76 12 16 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 77 8 ]
+F__Github_Hockey_source_HockeyView_mc_77_8_87_8_if_stmt:
+        symbol [ _data %tmp.60 77 12 17 ];
+        %tmp.60 = getv ? :_data;
+        symbol [ isSimulation %tmp.61 77 18 30 ];
+        %tmp.61 = getv %tmp.60 :isSimulation;
+        bf %tmp.61 @F__Github_Hockey_source_HockeyView_mc_77_8_87_8_if_else_false;
+F__Github_Hockey_source_HockeyView_mc_77_8_87_8_if_true:
+F__Github_Hockey_source_HockeyView_mc_77_32_80_8_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 78 12 ]
+F__Github_Hockey_source_HockeyView_mc_78_20_78_71_begin:
+        symbol [ _data %tmp.63 78 21 26 ];
+        %tmp.63 = getv ? :_data;
+        symbol [ simAvgHR %tmp.64 78 27 35 ];
+        %tmp.64 = getv %tmp.63 :simAvgHR;
+        %tmp.65 = 0;
+        %tmp.66 = gt %tmp.64 %tmp.65;
+        bf %tmp.66 @F__Github_Hockey_source_HockeyView_mc_78_20_78_71_else_false;
+F__Github_Hockey_source_HockeyView_mc_78_20_78_71_true:
+        symbol [ _data %tmp.68 78 43 48 ];
+        %tmp.68 = getv ? :_data;
+        symbol [ simAvgHR %tmp.69 78 49 57 ];
+        %tmp.69 = getv %tmp.68 :simAvgHR;
+        symbol [ toString %tmp.70 78 58 66 ];
+        %tmp.70 = getv function %tmp.69 :toString;
+        %tmp.71 = invoke %tmp.69 %tmp.70();
+        push %tmp.71;
+        goto @F__Github_Hockey_source_HockeyView_mc_78_20_78_71_end;
+F__Github_Hockey_source_HockeyView_mc_78_20_78_71_else_false:
+        %tmp.72 = "--";
+        push %tmp.72;
+F__Github_Hockey_source_HockeyView_mc_78_20_78_71_end:
+        %tmp.73 = phi [%tmp.66 @F__Github_Hockey_source_HockeyView_mc_78_20_78_71_begin] [%tmp.71 @F__Github_Hockey_source_HockeyView_mc_78_20_78_71_true] [%tmp.72 @F__Github_Hockey_source_HockeyView_mc_78_20_78_71_else_false] [%tmp.73 @F__Github_Hockey_source_HockeyView_mc_78_20_78_71_end];
+        lputv %avgHR.9 %tmp.73;
+        symbol [ avgHR %avgHR.9 78 12 17 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 79 12 ]
+F__Github_Hockey_source_HockeyView_mc_79_20_79_71_begin:
+        symbol [ _data %tmp.75 79 21 26 ];
+        %tmp.75 = getv ? :_data;
+        symbol [ simCals %tmp.76 79 27 34 ];
+        %tmp.76 = getv %tmp.75 :simCals;
+        %tmp.77 = 0;
+        %tmp.78 = gt %tmp.76 %tmp.77;
+        bf %tmp.78 @F__Github_Hockey_source_HockeyView_mc_79_20_79_71_else_false;
+F__Github_Hockey_source_HockeyView_mc_79_20_79_71_true:
+        symbol [ _data %tmp.80 79 43 48 ];
+        %tmp.80 = getv ? :_data;
+        symbol [ simCals %tmp.81 79 49 56 ];
+        %tmp.81 = getv %tmp.80 :simCals;
+        symbol [ toString %tmp.82 79 57 65 ];
+        %tmp.82 = getv function %tmp.81 :toString;
+        %tmp.83 = invoke %tmp.81 %tmp.82();
+        push %tmp.83;
+        goto @F__Github_Hockey_source_HockeyView_mc_79_20_79_71_end;
+F__Github_Hockey_source_HockeyView_mc_79_20_79_71_else_false:
+        %tmp.84 = "--";
+        push %tmp.84;
+F__Github_Hockey_source_HockeyView_mc_79_20_79_71_end:
+        %tmp.85 = phi [%tmp.78 @F__Github_Hockey_source_HockeyView_mc_79_20_79_71_begin] [%tmp.83 @F__Github_Hockey_source_HockeyView_mc_79_20_79_71_true] [%tmp.84 @F__Github_Hockey_source_HockeyView_mc_79_20_79_71_else_false] [%tmp.85 @F__Github_Hockey_source_HockeyView_mc_79_20_79_71_end];
+        lputv %cals.10 %tmp.85;
+        symbol [ cals %cals.10 79 12 16 ];
+F__Github_Hockey_source_HockeyView_mc_77_32_80_8_stop:
+        goto @F__Github_Hockey_source_HockeyView_mc_77_8_87_8_if_end;
+F__Github_Hockey_source_HockeyView_mc_77_8_87_8_if_else_false:
+F__Github_Hockey_source_HockeyView_mc_80_15_87_8_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 81 12 ]
+F__Github_Hockey_source_HockeyView_mc_81_20_83_26_begin:
+F__Github_Hockey_source_HockeyView_mc_81_21_81_68_begin:
+        %tmp.86 = lgetv %actInfo.8;
+        symbol [ actInfo %tmp.86 81 21 28 ];
+        %tmp.87 = null;
+        %tmp.88 = ne %tmp.86 %tmp.87;
+        bf %tmp.88 @F__Github_Hockey_source_HockeyView_mc_81_20_83_26_else_false;
+F__Github_Hockey_source_HockeyView_mc_81_40_81_68_true:
+        %tmp.89 = lgetv %actInfo.8;
+        symbol [ actInfo %tmp.89 81 40 47 ];
+        %tmp.90 = as %tmp.89 { (!Null) };
+        symbol [ averageHeartRate %tmp.91 81 48 64 ];
+        %tmp.91 = getv %tmp.90 :averageHeartRate;
+        %tmp.92 = null;
+        %tmp.93 = ne %tmp.91 %tmp.92;
+        push %tmp.93;
+F__Github_Hockey_source_HockeyView_mc_81_40_81_68_end:
+        %tmp.94 = phi [%tmp.88 @F__Github_Hockey_source_HockeyView_mc_81_21_81_68_begin] [%tmp.93 @F__Github_Hockey_source_HockeyView_mc_81_40_81_68_true] [%tmp.94 @F__Github_Hockey_source_HockeyView_mc_81_40_81_68_end];
+        bf %tmp.94 @F__Github_Hockey_source_HockeyView_mc_81_20_83_26_else_false;
+F__Github_Hockey_source_HockeyView_mc_81_20_83_26_true:
+        %tmp.95 = lgetv %actInfo.8;
+        symbol [ actInfo %tmp.95 82 27 34 ];
+        %tmp.96 = as %tmp.95 { (!Null) };
+        symbol [ averageHeartRate %tmp.97 82 35 51 ];
+        %tmp.97 = getv %tmp.96 :averageHeartRate;
+        %tmp.98 = as %tmp.97 Number;
+        symbol [ Number %tmp.98 82 55 61 ];
+        symbol [ toString %tmp.99 82 63 71 ];
+        %tmp.99 = getv function %tmp.98 :toString;
+        %tmp.100 = invoke %tmp.98 %tmp.99();
+        push %tmp.100;
+        goto @F__Github_Hockey_source_HockeyView_mc_81_20_83_26_end;
+F__Github_Hockey_source_HockeyView_mc_81_20_83_26_else_false:
+        %tmp.101 = "--";
+        push %tmp.101;
+F__Github_Hockey_source_HockeyView_mc_81_20_83_26_end:
+        %tmp.102 = phi [%tmp.94 @F__Github_Hockey_source_HockeyView_mc_81_20_83_26_begin] [%tmp.100 @F__Github_Hockey_source_HockeyView_mc_81_20_83_26_true] [%tmp.101 @F__Github_Hockey_source_HockeyView_mc_81_20_83_26_else_false] [%tmp.102 @F__Github_Hockey_source_HockeyView_mc_81_20_83_26_end];
+        lputv %avgHR.9 %tmp.102;
+        symbol [ avgHR %avgHR.9 81 12 17 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 84 12 ]
+F__Github_Hockey_source_HockeyView_mc_84_20_86_26_begin:
+F__Github_Hockey_source_HockeyView_mc_84_21_84_60_begin:
+        %tmp.103 = lgetv %actInfo.8;
+        symbol [ actInfo %tmp.103 84 21 28 ];
+        %tmp.104 = null;
+        %tmp.105 = ne %tmp.103 %tmp.104;
+        bf %tmp.105 @F__Github_Hockey_source_HockeyView_mc_84_20_86_26_else_false;
+F__Github_Hockey_source_HockeyView_mc_84_40_84_60_true:
+        %tmp.106 = lgetv %actInfo.8;
+        symbol [ actInfo %tmp.106 84 40 47 ];
+        %tmp.107 = as %tmp.106 { (!Null) };
+        symbol [ calories %tmp.108 84 48 56 ];
+        %tmp.108 = getv %tmp.107 :calories;
+        %tmp.109 = null;
+        %tmp.110 = ne %tmp.108 %tmp.109;
+        push %tmp.110;
+F__Github_Hockey_source_HockeyView_mc_84_40_84_60_end:
+        %tmp.111 = phi [%tmp.105 @F__Github_Hockey_source_HockeyView_mc_84_21_84_60_begin] [%tmp.110 @F__Github_Hockey_source_HockeyView_mc_84_40_84_60_true] [%tmp.111 @F__Github_Hockey_source_HockeyView_mc_84_40_84_60_end];
+        bf %tmp.111 @F__Github_Hockey_source_HockeyView_mc_84_20_86_26_else_false;
+F__Github_Hockey_source_HockeyView_mc_84_20_86_26_true:
+        %tmp.112 = lgetv %actInfo.8;
+        symbol [ actInfo %tmp.112 85 27 34 ];
+        %tmp.113 = as %tmp.112 { (!Null) };
+        symbol [ calories %tmp.114 85 35 43 ];
+        %tmp.114 = getv %tmp.113 :calories;
+        %tmp.115 = as %tmp.114 Number;
+        symbol [ Number %tmp.115 85 47 53 ];
+        symbol [ toString %tmp.116 85 55 63 ];
+        %tmp.116 = getv function %tmp.115 :toString;
+        %tmp.117 = invoke %tmp.115 %tmp.116();
+        push %tmp.117;
+        goto @F__Github_Hockey_source_HockeyView_mc_84_20_86_26_end;
+F__Github_Hockey_source_HockeyView_mc_84_20_86_26_else_false:
+        %tmp.118 = "--";
+        push %tmp.118;
+F__Github_Hockey_source_HockeyView_mc_84_20_86_26_end:
+        %tmp.119 = phi [%tmp.111 @F__Github_Hockey_source_HockeyView_mc_84_20_86_26_begin] [%tmp.117 @F__Github_Hockey_source_HockeyView_mc_84_20_86_26_true] [%tmp.118 @F__Github_Hockey_source_HockeyView_mc_84_20_86_26_else_false] [%tmp.119 @F__Github_Hockey_source_HockeyView_mc_84_20_86_26_end];
+        lputv %cals.10 %tmp.119;
+        symbol [ cals %cals.10 84 12 16 ];
+F__Github_Hockey_source_HockeyView_mc_80_15_87_8_stop:
+F__Github_Hockey_source_HockeyView_mc_77_8_87_8_if_end:
+[ "F:\Github\Hockey\source\HockeyView.mc" 89 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %sideX1.11 = local;
+        symbol [ sideX1 %sideX1.11 89 12 18 ];
+        %tmp.120 = lgetv %w.1;
+        symbol [ w %tmp.120 89 21 22 ];
+        %tmp.121 = 18;
+        %tmp.122 = mul %tmp.120 %tmp.121;
+        %tmp.123 = 100;
+        %tmp.124 = div %tmp.122 %tmp.123;
+        lputv %sideX1.11 %tmp.124;
+        symbol [ sideX1 %sideX1.11 89 12 18 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 90 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %sideX2.12 = local;
+        symbol [ sideX2 %sideX2.12 90 12 18 ];
+        %tmp.125 = lgetv %w.1;
+        symbol [ w %tmp.125 90 21 22 ];
+        %tmp.126 = 82;
+        %tmp.127 = mul %tmp.125 %tmp.126;
+        %tmp.128 = 100;
+        %tmp.129 = div %tmp.127 %tmp.128;
+        lputv %sideX2.12 %tmp.129;
+        symbol [ sideX2 %sideX2.12 90 12 18 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 93 8 ]
+        %tmp.130 = lgetv %dc;
+        symbol [ dc %tmp.130 93 8 10 ];
+        symbol [ setColor %tmp.131 93 11 19 ];
+        %tmp.131 = getv function %tmp.130 :setColor;
+        symbol [ C_DIM %tmp.133 93 20 25 ];
+        %tmp.133 = getv ? :C_DIM;
+        symbol [ Graphics %tmp.134 93 27 35 ];
+        %tmp.134 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.135 93 36 53 ];
+        %tmp.135 = getv %tmp.134 :COLOR_TRANSPARENT;
+        invoke %tmp.130 %tmp.131(%tmp.133, %tmp.135);
+[ "F:\Github\Hockey\source\HockeyView.mc" 94 8 ]
+        %tmp.136 = lgetv %dc;
+        symbol [ dc %tmp.136 94 8 10 ];
+        symbol [ drawText %tmp.137 94 11 19 ];
+        %tmp.137 = getv function %tmp.136 :drawText;
+        %tmp.138 = lgetv %sideX1.11;
+        symbol [ sideX1 %tmp.138 94 20 26 ];
+        %tmp.139 = lgetv %h.2;
+        symbol [ h %tmp.139 94 28 29 ];
+        %tmp.140 = 20;
+        %tmp.141 = mul %tmp.139 %tmp.140;
+        %tmp.142 = 100;
+        %tmp.143 = div %tmp.141 %tmp.142;
+        symbol [ Graphics %tmp.144 94 42 50 ];
+        %tmp.144 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.145 94 51 61 ];
+        %tmp.145 = getv %tmp.144 :FONT_XTINY;
+        %tmp.146 = "AHR";
+        %tmp.147 = lgetv %J.4;
+        symbol [ J %tmp.147 94 70 71 ];
+        invoke %tmp.136 %tmp.137(%tmp.138, %tmp.143, %tmp.145, %tmp.146, %tmp.147);
+[ "F:\Github\Hockey\source\HockeyView.mc" 95 8 ]
+        %tmp.148 = lgetv %dc;
+        symbol [ dc %tmp.148 95 8 10 ];
+        symbol [ drawText %tmp.149 95 11 19 ];
+        %tmp.149 = getv function %tmp.148 :drawText;
+        %tmp.150 = lgetv %sideX2.12;
+        symbol [ sideX2 %tmp.150 95 20 26 ];
+        %tmp.151 = lgetv %h.2;
+        symbol [ h %tmp.151 95 28 29 ];
+        %tmp.152 = 20;
+        %tmp.153 = mul %tmp.151 %tmp.152;
+        %tmp.154 = 100;
+        %tmp.155 = div %tmp.153 %tmp.154;
+        symbol [ Graphics %tmp.156 95 42 50 ];
+        %tmp.156 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.157 95 51 61 ];
+        %tmp.157 = getv %tmp.156 :FONT_XTINY;
+        %tmp.158 = "CAL";
+        %tmp.159 = lgetv %J.4;
+        symbol [ J %tmp.159 95 70 71 ];
+        invoke %tmp.148 %tmp.149(%tmp.150, %tmp.155, %tmp.157, %tmp.158, %tmp.159);
+[ "F:\Github\Hockey\source\HockeyView.mc" 96 8 ]
+        %tmp.160 = lgetv %dc;
+        symbol [ dc %tmp.160 96 8 10 ];
+        symbol [ setColor %tmp.161 96 11 19 ];
+        %tmp.161 = getv function %tmp.160 :setColor;
+        symbol [ C_TEXT %tmp.163 96 20 26 ];
+        %tmp.163 = getv ? :C_TEXT;
+        symbol [ Graphics %tmp.164 96 28 36 ];
+        %tmp.164 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.165 96 37 54 ];
+        %tmp.165 = getv %tmp.164 :COLOR_TRANSPARENT;
+        invoke %tmp.160 %tmp.161(%tmp.163, %tmp.165);
+[ "F:\Github\Hockey\source\HockeyView.mc" 97 8 ]
+        %tmp.166 = lgetv %dc;
+        symbol [ dc %tmp.166 97 8 10 ];
+        symbol [ drawText %tmp.167 97 11 19 ];
+        %tmp.167 = getv function %tmp.166 :drawText;
+        %tmp.168 = lgetv %sideX1.11;
+        symbol [ sideX1 %tmp.168 97 20 26 ];
+        %tmp.169 = lgetv %h.2;
+        symbol [ h %tmp.169 97 28 29 ];
+        %tmp.170 = 30;
+        %tmp.171 = mul %tmp.169 %tmp.170;
+        %tmp.172 = 100;
+        %tmp.173 = div %tmp.171 %tmp.172;
+        symbol [ Graphics %tmp.174 97 42 50 ];
+        %tmp.174 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.175 97 51 60 ];
+        %tmp.175 = getv %tmp.174 :FONT_TINY;
+        %tmp.176 = lgetv %avgHR.9;
+        symbol [ avgHR %tmp.176 97 62 67 ];
+        %tmp.177 = lgetv %J.4;
+        symbol [ J %tmp.177 97 69 70 ];
+        invoke %tmp.166 %tmp.167(%tmp.168, %tmp.173, %tmp.175, %tmp.176, %tmp.177);
+[ "F:\Github\Hockey\source\HockeyView.mc" 98 8 ]
+        %tmp.178 = lgetv %dc;
+        symbol [ dc %tmp.178 98 8 10 ];
+        symbol [ drawText %tmp.179 98 11 19 ];
+        %tmp.179 = getv function %tmp.178 :drawText;
+        %tmp.180 = lgetv %sideX2.12;
+        symbol [ sideX2 %tmp.180 98 20 26 ];
+        %tmp.181 = lgetv %h.2;
+        symbol [ h %tmp.181 98 28 29 ];
+        %tmp.182 = 30;
+        %tmp.183 = mul %tmp.181 %tmp.182;
+        %tmp.184 = 100;
+        %tmp.185 = div %tmp.183 %tmp.184;
+        symbol [ Graphics %tmp.186 98 42 50 ];
+        %tmp.186 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.187 98 51 60 ];
+        %tmp.187 = getv %tmp.186 :FONT_TINY;
+        %tmp.188 = lgetv %cals.10;
+        symbol [ cals %tmp.188 98 62 66 ];
+        %tmp.189 = lgetv %J.4;
+        symbol [ J %tmp.189 98 69 70 ];
+        invoke %tmp.178 %tmp.179(%tmp.180, %tmp.185, %tmp.187, %tmp.188, %tmp.189);
+[ "F:\Github\Hockey\source\HockeyView.mc" 100 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %timerStr.13 = local;
+        symbol [ timerStr %timerStr.13 100 12 20 ];
+        symbol [ _data %tmp.191 100 23 28 ];
+        %tmp.191 = getv ? :_data;
+        symbol [ msToStr %tmp.192 100 29 36 ];
+        %tmp.192 = getv function %tmp.191 :msToStr;
+        symbol [ _detector %tmp.194 100 37 46 ];
+        %tmp.194 = getv ? :_detector;
+        symbol [ getCurrentDurationMs %tmp.195 100 47 67 ];
+        %tmp.195 = getv function %tmp.194 :getCurrentDurationMs;
+        %tmp.196 = invoke %tmp.194 %tmp.195();
+        %tmp.197 = invoke %tmp.191 %tmp.192(%tmp.196);
+        lputv %timerStr.13 %tmp.197;
+        symbol [ timerStr %timerStr.13 100 12 20 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 101 8 ]
+        %tmp.198 = lgetv %dc;
+        symbol [ dc %tmp.198 101 8 10 ];
+        symbol [ drawText %tmp.199 101 11 19 ];
+        %tmp.199 = getv function %tmp.198 :drawText;
+        %tmp.200 = lgetv %cx.3;
+        symbol [ cx %tmp.200 101 20 22 ];
+        %tmp.201 = lgetv %h.2;
+        symbol [ h %tmp.201 101 24 25 ];
+        %tmp.202 = 23;
+        %tmp.203 = mul %tmp.201 %tmp.202;
+        %tmp.204 = 100;
+        %tmp.205 = div %tmp.203 %tmp.204;
+        symbol [ Graphics %tmp.206 101 38 46 ];
+        %tmp.206 = getm $.Toybox.Graphics;
+        symbol [ FONT_NUMBER_MILD %tmp.207 101 47 63 ];
+        %tmp.207 = getv %tmp.206 :FONT_NUMBER_MILD;
+        %tmp.208 = lgetv %timerStr.13;
+        symbol [ timerStr %tmp.208 101 65 73 ];
+        %tmp.209 = lgetv %J.4;
+        symbol [ J %tmp.209 101 75 76 ];
+        invoke %tmp.198 %tmp.199(%tmp.200, %tmp.205, %tmp.207, %tmp.208, %tmp.209);
+[ "F:\Github\Hockey\source\HockeyView.mc" 104 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %hrVal.14 = local;
+        symbol [ hrVal %hrVal.14 104 12 17 ];
+        symbol [ _data %tmp.211 104 20 25 ];
+        %tmp.211 = getv ? :_data;
+        symbol [ currentHR %tmp.212 104 26 35 ];
+        %tmp.212 = getv %tmp.211 :currentHR;
+        lputv %hrVal.14 %tmp.212;
+        symbol [ hrVal %hrVal.14 104 12 17 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 105 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %hrStr.15 = local;
+        symbol [ hrStr %hrStr.15 105 12 17 ];
+F__Github_Hockey_source_HockeyView_mc_105_20_105_53_begin:
+        %tmp.213 = lgetv %hrVal.14;
+        symbol [ hrVal %tmp.213 105 21 26 ];
+        %tmp.214 = 0;
+        %tmp.215 = gt %tmp.213 %tmp.214;
+        bf %tmp.215 @F__Github_Hockey_source_HockeyView_mc_105_20_105_53_else_false;
+F__Github_Hockey_source_HockeyView_mc_105_20_105_53_true:
+        %tmp.216 = lgetv %hrVal.14;
+        symbol [ hrVal %tmp.216 105 34 39 ];
+        symbol [ toString %tmp.217 105 40 48 ];
+        %tmp.217 = getv function %tmp.216 :toString;
+        %tmp.218 = invoke %tmp.216 %tmp.217();
+        push %tmp.218;
+        goto @F__Github_Hockey_source_HockeyView_mc_105_20_105_53_end;
+F__Github_Hockey_source_HockeyView_mc_105_20_105_53_else_false:
+        %tmp.219 = "--";
+        push %tmp.219;
+F__Github_Hockey_source_HockeyView_mc_105_20_105_53_end:
+        %tmp.220 = phi [%tmp.215 @F__Github_Hockey_source_HockeyView_mc_105_20_105_53_begin] [%tmp.218 @F__Github_Hockey_source_HockeyView_mc_105_20_105_53_true] [%tmp.219 @F__Github_Hockey_source_HockeyView_mc_105_20_105_53_else_false] [%tmp.220 @F__Github_Hockey_source_HockeyView_mc_105_20_105_53_end];
+        lputv %hrStr.15 %tmp.220;
+        symbol [ hrStr %hrStr.15 105 12 17 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 106 8 ]
+        %tmp.221 = lgetv %dc;
+        symbol [ dc %tmp.221 106 8 10 ];
+        symbol [ setColor %tmp.222 106 11 19 ];
+        %tmp.222 = getv function %tmp.221 :setColor;
+        symbol [ C_DIM %tmp.224 106 20 25 ];
+        %tmp.224 = getv ? :C_DIM;
+        symbol [ Graphics %tmp.225 106 27 35 ];
+        %tmp.225 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.226 106 36 53 ];
+        %tmp.226 = getv %tmp.225 :COLOR_TRANSPARENT;
+        invoke %tmp.221 %tmp.222(%tmp.224, %tmp.226);
+[ "F:\Github\Hockey\source\HockeyView.mc" 107 8 ]
+        %tmp.227 = lgetv %dc;
+        symbol [ dc %tmp.227 107 8 10 ];
+        symbol [ drawText %tmp.228 107 11 19 ];
+        %tmp.228 = getv function %tmp.227 :drawText;
+        %tmp.229 = lgetv %sideX1.11;
+        symbol [ sideX1 %tmp.229 107 20 26 ];
+        %tmp.230 = lgetv %h.2;
+        symbol [ h %tmp.230 107 28 29 ];
+        %tmp.231 = 38;
+        %tmp.232 = mul %tmp.230 %tmp.231;
+        %tmp.233 = 100;
+        %tmp.234 = div %tmp.232 %tmp.233;
+        symbol [ Graphics %tmp.235 107 42 50 ];
+        %tmp.235 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.236 107 51 61 ];
+        %tmp.236 = getv %tmp.235 :FONT_XTINY;
+        %tmp.237 = "G";
+        %tmp.238 = lgetv %J.4;
+        symbol [ J %tmp.238 107 68 69 ];
+        invoke %tmp.227 %tmp.228(%tmp.229, %tmp.234, %tmp.236, %tmp.237, %tmp.238);
+[ "F:\Github\Hockey\source\HockeyView.mc" 108 8 ]
+        %tmp.239 = lgetv %dc;
+        symbol [ dc %tmp.239 108 8 10 ];
+        symbol [ drawText %tmp.240 108 11 19 ];
+        %tmp.240 = getv function %tmp.239 :drawText;
+        %tmp.241 = lgetv %sideX2.12;
+        symbol [ sideX2 %tmp.241 108 20 26 ];
+        %tmp.242 = lgetv %h.2;
+        symbol [ h %tmp.242 108 28 29 ];
+        %tmp.243 = 38;
+        %tmp.244 = mul %tmp.242 %tmp.243;
+        %tmp.245 = 100;
+        %tmp.246 = div %tmp.244 %tmp.245;
+        symbol [ Graphics %tmp.247 108 42 50 ];
+        %tmp.247 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.248 108 51 61 ];
+        %tmp.248 = getv %tmp.247 :FONT_XTINY;
+        %tmp.249 = "A";
+        %tmp.250 = lgetv %J.4;
+        symbol [ J %tmp.250 108 68 69 ];
+        invoke %tmp.239 %tmp.240(%tmp.241, %tmp.246, %tmp.248, %tmp.249, %tmp.250);
+[ "F:\Github\Hockey\source\HockeyView.mc" 109 8 ]
+        %tmp.251 = lgetv %dc;
+        symbol [ dc %tmp.251 109 8 10 ];
+        symbol [ setColor %tmp.252 109 11 19 ];
+        %tmp.252 = getv function %tmp.251 :setColor;
+        %tmp.253 = self;
+        symbol [ _hrColor %tmp.254 109 20 28 ];
+        %tmp.254 = getv function %tmp.253 :_hrColor;
+        %tmp.255 = lgetv %hrVal.14;
+        symbol [ hrVal %tmp.255 109 29 34 ];
+        %tmp.256 = invoke %tmp.253 %tmp.254(%tmp.255);
+        symbol [ Graphics %tmp.257 109 37 45 ];
+        %tmp.257 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.258 109 46 63 ];
+        %tmp.258 = getv %tmp.257 :COLOR_TRANSPARENT;
+        invoke %tmp.251 %tmp.252(%tmp.256, %tmp.258);
+[ "F:\Github\Hockey\source\HockeyView.mc" 110 8 ]
+        %tmp.259 = lgetv %dc;
+        symbol [ dc %tmp.259 110 8 10 ];
+        symbol [ drawText %tmp.260 110 11 19 ];
+        %tmp.260 = getv function %tmp.259 :drawText;
+        %tmp.261 = lgetv %cx.3;
+        symbol [ cx %tmp.261 110 20 22 ];
+        %tmp.262 = lgetv %h.2;
+        symbol [ h %tmp.262 110 24 25 ];
+        %tmp.263 = 43;
+        %tmp.264 = mul %tmp.262 %tmp.263;
+        %tmp.265 = 100;
+        %tmp.266 = div %tmp.264 %tmp.265;
+        symbol [ Graphics %tmp.267 110 38 46 ];
+        %tmp.267 = getm $.Toybox.Graphics;
+        symbol [ FONT_NUMBER_MILD %tmp.268 110 47 63 ];
+        %tmp.268 = getv %tmp.267 :FONT_NUMBER_MILD;
+        %tmp.269 = lgetv %hrStr.15;
+        symbol [ hrStr %tmp.269 110 65 70 ];
+        %tmp.270 = lgetv %J.4;
+        symbol [ J %tmp.270 110 72 73 ];
+        invoke %tmp.259 %tmp.260(%tmp.261, %tmp.266, %tmp.268, %tmp.269, %tmp.270);
+[ "F:\Github\Hockey\source\HockeyView.mc" 111 8 ]
+        %tmp.271 = lgetv %dc;
+        symbol [ dc %tmp.271 111 8 10 ];
+        symbol [ setColor %tmp.272 111 11 19 ];
+        %tmp.272 = getv function %tmp.271 :setColor;
+        symbol [ C_TEXT %tmp.274 111 20 26 ];
+        %tmp.274 = getv ? :C_TEXT;
+        symbol [ Graphics %tmp.275 111 28 36 ];
+        %tmp.275 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.276 111 37 54 ];
+        %tmp.276 = getv %tmp.275 :COLOR_TRANSPARENT;
+        invoke %tmp.271 %tmp.272(%tmp.274, %tmp.276);
+[ "F:\Github\Hockey\source\HockeyView.mc" 112 8 ]
+        %tmp.277 = lgetv %dc;
+        symbol [ dc %tmp.277 112 8 10 ];
+        symbol [ drawText %tmp.278 112 11 19 ];
+        %tmp.278 = getv function %tmp.277 :drawText;
+        %tmp.279 = lgetv %sideX1.11;
+        symbol [ sideX1 %tmp.279 112 20 26 ];
+        %tmp.280 = lgetv %h.2;
+        symbol [ h %tmp.280 112 28 29 ];
+        %tmp.281 = 47;
+        %tmp.282 = mul %tmp.280 %tmp.281;
+        %tmp.283 = 100;
+        %tmp.284 = div %tmp.282 %tmp.283;
+        symbol [ Graphics %tmp.285 112 42 50 ];
+        %tmp.285 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.286 112 51 62 ];
+        %tmp.286 = getv %tmp.285 :FONT_MEDIUM;
+        symbol [ _data %tmp.288 112 64 69 ];
+        %tmp.288 = getv ? :_data;
+        symbol [ goals %tmp.289 112 70 75 ];
+        %tmp.289 = getv %tmp.288 :goals;
+        symbol [ toString %tmp.290 112 76 84 ];
+        %tmp.290 = getv function %tmp.289 :toString;
+        %tmp.291 = invoke %tmp.289 %tmp.290();
+        %tmp.292 = lgetv %J.4;
+        symbol [ J %tmp.292 112 90 91 ];
+        invoke %tmp.277 %tmp.278(%tmp.279, %tmp.284, %tmp.286, %tmp.291, %tmp.292);
+[ "F:\Github\Hockey\source\HockeyView.mc" 113 8 ]
+        %tmp.293 = lgetv %dc;
+        symbol [ dc %tmp.293 113 8 10 ];
+        symbol [ drawText %tmp.294 113 11 19 ];
+        %tmp.294 = getv function %tmp.293 :drawText;
+        %tmp.295 = lgetv %sideX2.12;
+        symbol [ sideX2 %tmp.295 113 20 26 ];
+        %tmp.296 = lgetv %h.2;
+        symbol [ h %tmp.296 113 28 29 ];
+        %tmp.297 = 47;
+        %tmp.298 = mul %tmp.296 %tmp.297;
+        %tmp.299 = 100;
+        %tmp.300 = div %tmp.298 %tmp.299;
+        symbol [ Graphics %tmp.301 113 42 50 ];
+        %tmp.301 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.302 113 51 62 ];
+        %tmp.302 = getv %tmp.301 :FONT_MEDIUM;
+        symbol [ _data %tmp.304 113 64 69 ];
+        %tmp.304 = getv ? :_data;
+        symbol [ assists %tmp.305 113 70 77 ];
+        %tmp.305 = getv %tmp.304 :assists;
+        symbol [ toString %tmp.306 113 78 86 ];
+        %tmp.306 = getv function %tmp.305 :toString;
+        %tmp.307 = invoke %tmp.305 %tmp.306();
+        %tmp.308 = lgetv %J.4;
+        symbol [ J %tmp.308 113 90 91 ];
+        invoke %tmp.293 %tmp.294(%tmp.295, %tmp.300, %tmp.302, %tmp.307, %tmp.308);
+[ "F:\Github\Hockey\source\HockeyView.mc" 114 8 ]
+        %tmp.309 = lgetv %dc;
+        symbol [ dc %tmp.309 114 8 10 ];
+        symbol [ setColor %tmp.310 114 11 19 ];
+        %tmp.310 = getv function %tmp.309 :setColor;
+        symbol [ C_DIM %tmp.312 114 20 25 ];
+        %tmp.312 = getv ? :C_DIM;
+        symbol [ Graphics %tmp.313 114 27 35 ];
+        %tmp.313 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.314 114 36 53 ];
+        %tmp.314 = getv %tmp.313 :COLOR_TRANSPARENT;
+        invoke %tmp.309 %tmp.310(%tmp.312, %tmp.314);
+[ "F:\Github\Hockey\source\HockeyView.mc" 115 8 ]
+        %tmp.315 = lgetv %dc;
+        symbol [ dc %tmp.315 115 8 10 ];
+        symbol [ drawText %tmp.316 115 11 19 ];
+        %tmp.316 = getv function %tmp.315 :drawText;
+        %tmp.317 = lgetv %cx.3;
+        symbol [ cx %tmp.317 115 20 22 ];
+        %tmp.318 = lgetv %h.2;
+        symbol [ h %tmp.318 115 24 25 ];
+        %tmp.319 = 53;
+        %tmp.320 = mul %tmp.318 %tmp.319;
+        %tmp.321 = 100;
+        %tmp.322 = div %tmp.320 %tmp.321;
+        symbol [ Graphics %tmp.323 115 38 46 ];
+        %tmp.323 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.324 115 47 57 ];
+        %tmp.324 = getv %tmp.323 :FONT_XTINY;
+        %tmp.325 = "bpm";
+        %tmp.326 = lgetv %J.4;
+        symbol [ J %tmp.326 115 66 67 ];
+        invoke %tmp.315 %tmp.316(%tmp.317, %tmp.322, %tmp.324, %tmp.325, %tmp.326);
+[ "F:\Github\Hockey\source\HockeyView.mc" 118 8 ]
+        %tmp.327 = lgetv %dc;
+        symbol [ dc %tmp.327 118 8 10 ];
+        symbol [ setColor %tmp.328 118 11 19 ];
+        %tmp.328 = getv function %tmp.327 :setColor;
+        symbol [ C_DIVIDER %tmp.330 118 20 29 ];
+        %tmp.330 = getv ? :C_DIVIDER;
+        symbol [ Graphics %tmp.331 118 31 39 ];
+        %tmp.331 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.332 118 40 57 ];
+        %tmp.332 = getv %tmp.331 :COLOR_TRANSPARENT;
+        invoke %tmp.327 %tmp.328(%tmp.330, %tmp.332);
+[ "F:\Github\Hockey\source\HockeyView.mc" 119 8 ]
+        %tmp.333 = lgetv %dc;
+        symbol [ dc %tmp.333 119 8 10 ];
+        symbol [ drawLine %tmp.334 119 11 19 ];
+        %tmp.334 = getv function %tmp.333 :drawLine;
+        %tmp.335 = lgetv %w.1;
+        symbol [ w %tmp.335 119 20 21 ];
+        %tmp.336 = 15;
+        %tmp.337 = mul %tmp.335 %tmp.336;
+        %tmp.338 = 100;
+        %tmp.339 = div %tmp.337 %tmp.338;
+        %tmp.340 = lgetv %h.2;
+        symbol [ h %tmp.340 119 34 35 ];
+        %tmp.341 = 58;
+        %tmp.342 = mul %tmp.340 %tmp.341;
+        %tmp.343 = 100;
+        %tmp.344 = div %tmp.342 %tmp.343;
+        %tmp.345 = lgetv %w.1;
+        symbol [ w %tmp.345 119 48 49 ];
+        %tmp.346 = 85;
+        %tmp.347 = mul %tmp.345 %tmp.346;
+        %tmp.348 = 100;
+        %tmp.349 = div %tmp.347 %tmp.348;
+        %tmp.350 = lgetv %h.2;
+        symbol [ h %tmp.350 119 62 63 ];
+        %tmp.351 = 58;
+        %tmp.352 = mul %tmp.350 %tmp.351;
+        %tmp.353 = 100;
+        %tmp.354 = div %tmp.352 %tmp.353;
+        invoke %tmp.333 %tmp.334(%tmp.339, %tmp.344, %tmp.349, %tmp.354);
+[ "F:\Github\Hockey\source\HockeyView.mc" 122 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %col1.16 = local;
+        symbol [ col1 %col1.16 122 12 16 ];
+        %tmp.355 = lgetv %w.1;
+        symbol [ w %tmp.355 122 19 20 ];
+        %tmp.356 = 32;
+        %tmp.357 = mul %tmp.355 %tmp.356;
+        %tmp.358 = 100;
+        %tmp.359 = div %tmp.357 %tmp.358;
+        lputv %col1.16 %tmp.359;
+        symbol [ col1 %col1.16 122 12 16 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 123 8 ]
+        [ "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_start" "F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop" ]
+        %col2.17 = local;
+        symbol [ col2 %col2.17 123 12 16 ];
+        %tmp.360 = lgetv %w.1;
+        symbol [ w %tmp.360 123 19 20 ];
+        %tmp.361 = 68;
+        %tmp.362 = mul %tmp.360 %tmp.361;
+        %tmp.363 = 100;
+        %tmp.364 = div %tmp.362 %tmp.363;
+        lputv %col2.17 %tmp.364;
+        symbol [ col2 %col2.17 123 12 16 ];
+[ "F:\Github\Hockey\source\HockeyView.mc" 125 8 ]
+        %tmp.365 = lgetv %dc;
+        symbol [ dc %tmp.365 125 8 10 ];
+        symbol [ setColor %tmp.366 125 11 19 ];
+        %tmp.366 = getv function %tmp.365 :setColor;
+        symbol [ C_DIM %tmp.368 125 20 25 ];
+        %tmp.368 = getv ? :C_DIM;
+        symbol [ Graphics %tmp.369 125 27 35 ];
+        %tmp.369 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.370 125 36 53 ];
+        %tmp.370 = getv %tmp.369 :COLOR_TRANSPARENT;
+        invoke %tmp.365 %tmp.366(%tmp.368, %tmp.370);
+[ "F:\Github\Hockey\source\HockeyView.mc" 126 8 ]
+        %tmp.371 = lgetv %dc;
+        symbol [ dc %tmp.371 126 8 10 ];
+        symbol [ drawText %tmp.372 126 11 19 ];
+        %tmp.372 = getv function %tmp.371 :drawText;
+        %tmp.373 = lgetv %col1.16;
+        symbol [ col1 %tmp.373 126 20 24 ];
+        %tmp.374 = lgetv %h.2;
+        symbol [ h %tmp.374 126 26 27 ];
+        %tmp.375 = 63;
+        %tmp.376 = mul %tmp.374 %tmp.375;
+        %tmp.377 = 100;
+        %tmp.378 = div %tmp.376 %tmp.377;
+        symbol [ Graphics %tmp.379 126 40 48 ];
+        %tmp.379 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.380 126 49 58 ];
+        %tmp.380 = getv %tmp.379 :FONT_TINY;
+        %tmp.381 = "SHIFTS";
+        %tmp.382 = lgetv %J.4;
+        symbol [ J %tmp.382 126 70 71 ];
+        invoke %tmp.371 %tmp.372(%tmp.373, %tmp.378, %tmp.380, %tmp.381, %tmp.382);
+[ "F:\Github\Hockey\source\HockeyView.mc" 127 8 ]
+        %tmp.383 = lgetv %dc;
+        symbol [ dc %tmp.383 127 8 10 ];
+        symbol [ drawText %tmp.384 127 11 19 ];
+        %tmp.384 = getv function %tmp.383 :drawText;
+        %tmp.385 = lgetv %col2.17;
+        symbol [ col2 %tmp.385 127 20 24 ];
+        %tmp.386 = lgetv %h.2;
+        symbol [ h %tmp.386 127 26 27 ];
+        %tmp.387 = 63;
+        %tmp.388 = mul %tmp.386 %tmp.387;
+        %tmp.389 = 100;
+        %tmp.390 = div %tmp.388 %tmp.389;
+        symbol [ Graphics %tmp.391 127 40 48 ];
+        %tmp.391 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.392 127 49 58 ];
+        %tmp.392 = getv %tmp.391 :FONT_TINY;
+        %tmp.393 = "TOI";
+        %tmp.394 = lgetv %J.4;
+        symbol [ J %tmp.394 127 70 71 ];
+        invoke %tmp.383 %tmp.384(%tmp.385, %tmp.390, %tmp.392, %tmp.393, %tmp.394);
+[ "F:\Github\Hockey\source\HockeyView.mc" 128 8 ]
+        %tmp.395 = lgetv %dc;
+        symbol [ dc %tmp.395 128 8 10 ];
+        symbol [ setColor %tmp.396 128 11 19 ];
+        %tmp.396 = getv function %tmp.395 :setColor;
+        symbol [ C_TEXT %tmp.398 128 20 26 ];
+        %tmp.398 = getv ? :C_TEXT;
+        symbol [ Graphics %tmp.399 128 28 36 ];
+        %tmp.399 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.400 128 37 54 ];
+        %tmp.400 = getv %tmp.399 :COLOR_TRANSPARENT;
+        invoke %tmp.395 %tmp.396(%tmp.398, %tmp.400);
+[ "F:\Github\Hockey\source\HockeyView.mc" 129 8 ]
+        %tmp.401 = lgetv %dc;
+        symbol [ dc %tmp.401 129 8 10 ];
+        symbol [ drawText %tmp.402 129 11 19 ];
+        %tmp.402 = getv function %tmp.401 :drawText;
+        %tmp.403 = lgetv %col1.16;
+        symbol [ col1 %tmp.403 129 20 24 ];
+        %tmp.404 = lgetv %h.2;
+        symbol [ h %tmp.404 129 26 27 ];
+        %tmp.405 = 71;
+        %tmp.406 = mul %tmp.404 %tmp.405;
+        %tmp.407 = 100;
+        %tmp.408 = div %tmp.406 %tmp.407;
+        symbol [ Graphics %tmp.409 129 40 48 ];
+        %tmp.409 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.410 129 49 59 ];
+        %tmp.410 = getv %tmp.409 :FONT_SMALL;
+        symbol [ _data %tmp.412 129 61 66 ];
+        %tmp.412 = getv ? :_data;
+        symbol [ getShiftCount %tmp.413 129 67 80 ];
+        %tmp.413 = getv function %tmp.412 :getShiftCount;
+        %tmp.414 = invoke %tmp.412 %tmp.413();
+        symbol [ toString %tmp.415 129 83 91 ];
+        %tmp.415 = getv function %tmp.414 :toString;
+        %tmp.416 = invoke %tmp.414 %tmp.415();
+        %tmp.417 = lgetv %J.4;
+        symbol [ J %tmp.417 129 95 96 ];
+        invoke %tmp.401 %tmp.402(%tmp.403, %tmp.408, %tmp.410, %tmp.416, %tmp.417);
+[ "F:\Github\Hockey\source\HockeyView.mc" 130 8 ]
+        %tmp.418 = lgetv %dc;
+        symbol [ dc %tmp.418 130 8 10 ];
+        symbol [ drawText %tmp.419 130 11 19 ];
+        %tmp.419 = getv function %tmp.418 :drawText;
+        %tmp.420 = lgetv %col2.17;
+        symbol [ col2 %tmp.420 130 20 24 ];
+        %tmp.421 = lgetv %h.2;
+        symbol [ h %tmp.421 130 26 27 ];
+        %tmp.422 = 71;
+        %tmp.423 = mul %tmp.421 %tmp.422;
+        %tmp.424 = 100;
+        %tmp.425 = div %tmp.423 %tmp.424;
+        symbol [ Graphics %tmp.426 130 40 48 ];
+        %tmp.426 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.427 130 49 59 ];
+        %tmp.427 = getv %tmp.426 :FONT_SMALL;
+        symbol [ _data %tmp.429 130 61 66 ];
+        %tmp.429 = getv ? :_data;
+        symbol [ msToStr %tmp.430 130 67 74 ];
+        %tmp.430 = getv function %tmp.429 :msToStr;
+        symbol [ _data %tmp.432 130 75 80 ];
+        %tmp.432 = getv ? :_data;
+        symbol [ totalToiMs %tmp.433 130 81 91 ];
+        %tmp.433 = getv %tmp.432 :totalToiMs;
+        %tmp.434 = invoke %tmp.429 %tmp.430(%tmp.433);
+        %tmp.435 = lgetv %J.4;
+        symbol [ J %tmp.435 130 95 96 ];
+        invoke %tmp.418 %tmp.419(%tmp.420, %tmp.425, %tmp.427, %tmp.434, %tmp.435);
+[ "F:\Github\Hockey\source\HockeyView.mc" 132 8 ]
+        %tmp.436 = lgetv %dc;
+        symbol [ dc %tmp.436 132 8 10 ];
+        symbol [ setColor %tmp.437 132 11 19 ];
+        %tmp.437 = getv function %tmp.436 :setColor;
+        symbol [ C_DIM %tmp.439 132 20 25 ];
+        %tmp.439 = getv ? :C_DIM;
+        symbol [ Graphics %tmp.440 132 27 35 ];
+        %tmp.440 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.441 132 36 53 ];
+        %tmp.441 = getv %tmp.440 :COLOR_TRANSPARENT;
+        invoke %tmp.436 %tmp.437(%tmp.439, %tmp.441);
+[ "F:\Github\Hockey\source\HockeyView.mc" 133 8 ]
+        %tmp.442 = lgetv %dc;
+        symbol [ dc %tmp.442 133 8 10 ];
+        symbol [ drawText %tmp.443 133 11 19 ];
+        %tmp.443 = getv function %tmp.442 :drawText;
+        %tmp.444 = lgetv %col1.16;
+        symbol [ col1 %tmp.444 133 20 24 ];
+        %tmp.445 = lgetv %h.2;
+        symbol [ h %tmp.445 133 26 27 ];
+        %tmp.446 = 75;
+        %tmp.447 = mul %tmp.445 %tmp.446;
+        %tmp.448 = 100;
+        %tmp.449 = div %tmp.447 %tmp.448;
+        symbol [ Graphics %tmp.450 133 40 48 ];
+        %tmp.450 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.451 133 49 58 ];
+        %tmp.451 = getv %tmp.450 :FONT_TINY;
+        %tmp.452 = "AVG";
+        %tmp.453 = lgetv %J.4;
+        symbol [ J %tmp.453 133 68 69 ];
+        invoke %tmp.442 %tmp.443(%tmp.444, %tmp.449, %tmp.451, %tmp.452, %tmp.453);
+[ "F:\Github\Hockey\source\HockeyView.mc" 134 8 ]
+        %tmp.454 = lgetv %dc;
+        symbol [ dc %tmp.454 134 8 10 ];
+        symbol [ drawText %tmp.455 134 11 19 ];
+        %tmp.455 = getv function %tmp.454 :drawText;
+        %tmp.456 = lgetv %col2.17;
+        symbol [ col2 %tmp.456 134 20 24 ];
+        %tmp.457 = lgetv %h.2;
+        symbol [ h %tmp.457 134 26 27 ];
+        %tmp.458 = 75;
+        %tmp.459 = mul %tmp.457 %tmp.458;
+        %tmp.460 = 100;
+        %tmp.461 = div %tmp.459 %tmp.460;
+        symbol [ Graphics %tmp.462 134 40 48 ];
+        %tmp.462 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.463 134 49 58 ];
+        %tmp.463 = getv %tmp.462 :FONT_TINY;
+        %tmp.464 = "LAST";
+        %tmp.465 = lgetv %J.4;
+        symbol [ J %tmp.465 134 68 69 ];
+        invoke %tmp.454 %tmp.455(%tmp.456, %tmp.461, %tmp.463, %tmp.464, %tmp.465);
+[ "F:\Github\Hockey\source\HockeyView.mc" 135 8 ]
+        %tmp.466 = lgetv %dc;
+        symbol [ dc %tmp.466 135 8 10 ];
+        symbol [ setColor %tmp.467 135 11 19 ];
+        %tmp.467 = getv function %tmp.466 :setColor;
+        symbol [ C_TEXT %tmp.469 135 20 26 ];
+        %tmp.469 = getv ? :C_TEXT;
+        symbol [ Graphics %tmp.470 135 28 36 ];
+        %tmp.470 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.471 135 37 54 ];
+        %tmp.471 = getv %tmp.470 :COLOR_TRANSPARENT;
+        invoke %tmp.466 %tmp.467(%tmp.469, %tmp.471);
+[ "F:\Github\Hockey\source\HockeyView.mc" 136 8 ]
+        %tmp.472 = lgetv %dc;
+        symbol [ dc %tmp.472 136 8 10 ];
+        symbol [ drawText %tmp.473 136 11 19 ];
+        %tmp.473 = getv function %tmp.472 :drawText;
+        %tmp.474 = lgetv %col1.16;
+        symbol [ col1 %tmp.474 136 20 24 ];
+        %tmp.475 = lgetv %h.2;
+        symbol [ h %tmp.475 136 26 27 ];
+        %tmp.476 = 83;
+        %tmp.477 = mul %tmp.475 %tmp.476;
+        %tmp.478 = 100;
+        %tmp.479 = div %tmp.477 %tmp.478;
+        symbol [ Graphics %tmp.480 136 40 48 ];
+        %tmp.480 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.481 136 49 59 ];
+        %tmp.481 = getv %tmp.480 :FONT_SMALL;
+        symbol [ _data %tmp.483 136 61 66 ];
+        %tmp.483 = getv ? :_data;
+        symbol [ msToStr %tmp.484 136 67 74 ];
+        %tmp.484 = getv function %tmp.483 :msToStr;
+        symbol [ _data %tmp.486 136 75 80 ];
+        %tmp.486 = getv ? :_data;
+        symbol [ getAvgShiftMs %tmp.487 136 81 94 ];
+        %tmp.487 = getv function %tmp.486 :getAvgShiftMs;
+        %tmp.488 = invoke %tmp.486 %tmp.487();
+        %tmp.489 = invoke %tmp.483 %tmp.484(%tmp.488);
+        %tmp.490 = lgetv %J.4;
+        symbol [ J %tmp.490 136 99 100 ];
+        invoke %tmp.472 %tmp.473(%tmp.474, %tmp.479, %tmp.481, %tmp.489, %tmp.490);
+[ "F:\Github\Hockey\source\HockeyView.mc" 137 8 ]
+F__Github_Hockey_source_HockeyView_mc_137_8_139_8_if_stmt:
+        symbol [ _data %tmp.492 137 12 17 ];
+        %tmp.492 = getv ? :_data;
+        symbol [ getShiftCount %tmp.493 137 18 31 ];
+        %tmp.493 = getv function %tmp.492 :getShiftCount;
+        %tmp.494 = invoke %tmp.492 %tmp.493();
+        %tmp.495 = 0;
+        %tmp.496 = gt %tmp.494 %tmp.495;
+        bf %tmp.496 @F__Github_Hockey_source_HockeyView_mc_137_8_139_8_if_end;
+F__Github_Hockey_source_HockeyView_mc_137_8_139_8_if_true:
+F__Github_Hockey_source_HockeyView_mc_137_39_139_8_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 138 12 ]
+        %tmp.497 = lgetv %dc;
+        symbol [ dc %tmp.497 138 12 14 ];
+        symbol [ drawText %tmp.498 138 15 23 ];
+        %tmp.498 = getv function %tmp.497 :drawText;
+        %tmp.499 = lgetv %col2.17;
+        symbol [ col2 %tmp.499 138 24 28 ];
+        %tmp.500 = lgetv %h.2;
+        symbol [ h %tmp.500 138 30 31 ];
+        %tmp.501 = 83;
+        %tmp.502 = mul %tmp.500 %tmp.501;
+        %tmp.503 = 100;
+        %tmp.504 = div %tmp.502 %tmp.503;
+        symbol [ Graphics %tmp.505 138 44 52 ];
+        %tmp.505 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.506 138 53 63 ];
+        %tmp.506 = getv %tmp.505 :FONT_SMALL;
+        symbol [ _data %tmp.508 138 65 70 ];
+        %tmp.508 = getv ? :_data;
+        symbol [ msToStr %tmp.509 138 71 78 ];
+        %tmp.509 = getv function %tmp.508 :msToStr;
+        symbol [ _data %tmp.511 138 79 84 ];
+        %tmp.511 = getv ? :_data;
+        symbol [ getLastShiftMs %tmp.512 138 85 99 ];
+        %tmp.512 = getv function %tmp.511 :getLastShiftMs;
+        %tmp.513 = invoke %tmp.511 %tmp.512();
+        %tmp.514 = invoke %tmp.508 %tmp.509(%tmp.513);
+        %tmp.515 = lgetv %J.4;
+        symbol [ J %tmp.515 138 104 105 ];
+        invoke %tmp.497 %tmp.498(%tmp.499, %tmp.504, %tmp.506, %tmp.514, %tmp.515);
+F__Github_Hockey_source_HockeyView_mc_137_39_139_8_stop:
+        goto @F__Github_Hockey_source_HockeyView_mc_137_8_139_8_if_end;
+F__Github_Hockey_source_HockeyView_mc_137_8_139_8_if_end:
+[ "F:\Github\Hockey\source\HockeyView.mc" 142 8 ]
+F__Github_Hockey_source_HockeyView_mc_142_8_145_8_if_stmt:
+        symbol [ _data %tmp.517 142 12 17 ];
+        %tmp.517 = getv ? :_data;
+        symbol [ isSimulation %tmp.518 142 18 30 ];
+        %tmp.518 = getv %tmp.517 :isSimulation;
+        bf %tmp.518 @F__Github_Hockey_source_HockeyView_mc_142_8_145_8_if_end;
+F__Github_Hockey_source_HockeyView_mc_142_8_145_8_if_true:
+F__Github_Hockey_source_HockeyView_mc_142_32_145_8_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 143 12 ]
+        %tmp.519 = lgetv %dc;
+        symbol [ dc %tmp.519 143 12 14 ];
+        symbol [ setColor %tmp.520 143 15 23 ];
+        %tmp.520 = getv function %tmp.519 :setColor;
+        symbol [ C_TRANSITION %tmp.522 143 24 36 ];
+        %tmp.522 = getv ? :C_TRANSITION;
+        symbol [ Graphics %tmp.523 143 38 46 ];
+        %tmp.523 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.524 143 47 64 ];
+        %tmp.524 = getv %tmp.523 :COLOR_TRANSPARENT;
+        invoke %tmp.519 %tmp.520(%tmp.522, %tmp.524);
+[ "F:\Github\Hockey\source\HockeyView.mc" 144 12 ]
+        %tmp.525 = lgetv %dc;
+        symbol [ dc %tmp.525 144 12 14 ];
+        symbol [ drawText %tmp.526 144 15 23 ];
+        %tmp.526 = getv function %tmp.525 :drawText;
+        %tmp.527 = lgetv %w.1;
+        symbol [ w %tmp.527 144 24 25 ];
+        %tmp.528 = 88;
+        %tmp.529 = mul %tmp.527 %tmp.528;
+        %tmp.530 = 100;
+        %tmp.531 = div %tmp.529 %tmp.530;
+        %tmp.532 = lgetv %h.2;
+        symbol [ h %tmp.532 144 38 39 ];
+        %tmp.533 = 5;
+        %tmp.534 = mul %tmp.532 %tmp.533;
+        %tmp.535 = 100;
+        %tmp.536 = div %tmp.534 %tmp.535;
+        symbol [ Graphics %tmp.537 144 51 59 ];
+        %tmp.537 = getm $.Toybox.Graphics;
+        symbol [ FONT_XTINY %tmp.538 144 60 70 ];
+        %tmp.538 = getv %tmp.537 :FONT_XTINY;
+        %tmp.539 = "SIM";
+        %tmp.540 = lgetv %J.4;
+        symbol [ J %tmp.540 144 79 80 ];
+        invoke %tmp.525 %tmp.526(%tmp.531, %tmp.536, %tmp.538, %tmp.539, %tmp.540);
+F__Github_Hockey_source_HockeyView_mc_142_32_145_8_stop:
+        goto @F__Github_Hockey_source_HockeyView_mc_142_8_145_8_if_end;
+F__Github_Hockey_source_HockeyView_mc_142_8_145_8_if_end:
+F__Github_Hockey_source_HockeyView_mc_55_49_146_4_stop:
+    }
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 156; @symbol_functiondef = [_hrColor,156,21,29]; @symbol_param<0> = [hr,156,30,32]; @symbol_param<0>_type<0> = [Number,156,36,42]; @symbol_return<0> = [Number,156,47,53]; ]
+    private
+    function _hrColor(hr as Number) as Number {
+F__Github_Hockey_source_HockeyView_mc_156_54_162_4_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 157 8 ]
+F__Github_Hockey_source_HockeyView_mc_157_8_157_46_if_stmt:
+        %tmp.1 = lgetv %hr;
+        symbol [ hr %tmp.1 157 12 14 ];
+        %tmp.2 = 0;
+        %tmp.3 = lte %tmp.1 %tmp.2;
+        bf %tmp.3 @F__Github_Hockey_source_HockeyView_mc_157_8_157_46_if_end;
+F__Github_Hockey_source_HockeyView_mc_157_8_157_46_if_true:
+F__Github_Hockey_source_HockeyView_mc_157_23_157_46_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 157 25 ]
+        symbol [ C_DIM %tmp.5 157 32 37 ];
+        %tmp.5 = getv ? :C_DIM;
+        ret %tmp.5;
+F__Github_Hockey_source_HockeyView_mc_157_23_157_46_stop:
+        goto @F__Github_Hockey_source_HockeyView_mc_157_8_157_46_if_end;
+F__Github_Hockey_source_HockeyView_mc_157_8_157_46_if_end:
+[ "F:\Github\Hockey\source\HockeyView.mc" 158 8 ]
+F__Github_Hockey_source_HockeyView_mc_158_8_158_47_if_stmt:
+        %tmp.6 = lgetv %hr;
+        symbol [ hr %tmp.6 158 12 14 ];
+        %tmp.7 = 100;
+        %tmp.8 = lt %tmp.6 %tmp.7;
+        bf %tmp.8 @F__Github_Hockey_source_HockeyView_mc_158_8_158_47_if_end;
+F__Github_Hockey_source_HockeyView_mc_158_8_158_47_if_true:
+F__Github_Hockey_source_HockeyView_mc_158_23_158_47_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 158 25 ]
+        symbol [ C_TEXT %tmp.10 158 32 38 ];
+        %tmp.10 = getv ? :C_TEXT;
+        ret %tmp.10;
+F__Github_Hockey_source_HockeyView_mc_158_23_158_47_stop:
+        goto @F__Github_Hockey_source_HockeyView_mc_158_8_158_47_if_end;
+F__Github_Hockey_source_HockeyView_mc_158_8_158_47_if_end:
+[ "F:\Github\Hockey\source\HockeyView.mc" 159 8 ]
+F__Github_Hockey_source_HockeyView_mc_159_8_159_47_if_stmt:
+        %tmp.11 = lgetv %hr;
+        symbol [ hr %tmp.11 159 12 14 ];
+        %tmp.12 = 120;
+        %tmp.13 = lt %tmp.11 %tmp.12;
+        bf %tmp.13 @F__Github_Hockey_source_HockeyView_mc_159_8_159_47_if_end;
+F__Github_Hockey_source_HockeyView_mc_159_8_159_47_if_true:
+F__Github_Hockey_source_HockeyView_mc_159_23_159_47_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 159 25 ]
+        symbol [ C_BENCH %tmp.15 159 32 39 ];
+        %tmp.15 = getv ? :C_BENCH;
+        ret %tmp.15;
+F__Github_Hockey_source_HockeyView_mc_159_23_159_47_stop:
+        goto @F__Github_Hockey_source_HockeyView_mc_159_8_159_47_if_end;
+F__Github_Hockey_source_HockeyView_mc_159_8_159_47_if_end:
+[ "F:\Github\Hockey\source\HockeyView.mc" 160 8 ]
+F__Github_Hockey_source_HockeyView_mc_160_8_160_47_if_stmt:
+        %tmp.16 = lgetv %hr;
+        symbol [ hr %tmp.16 160 12 14 ];
+        %tmp.17 = 145;
+        %tmp.18 = lt %tmp.16 %tmp.17;
+        bf %tmp.18 @F__Github_Hockey_source_HockeyView_mc_160_8_160_47_if_end;
+F__Github_Hockey_source_HockeyView_mc_160_8_160_47_if_true:
+F__Github_Hockey_source_HockeyView_mc_160_23_160_47_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 160 25 ]
+        symbol [ C_TRANSITION %tmp.20 160 32 44 ];
+        %tmp.20 = getv ? :C_TRANSITION;
+        ret %tmp.20;
+F__Github_Hockey_source_HockeyView_mc_160_23_160_47_stop:
+        goto @F__Github_Hockey_source_HockeyView_mc_160_8_160_47_if_end;
+F__Github_Hockey_source_HockeyView_mc_160_8_160_47_if_end:
+[ "F:\Github\Hockey\source\HockeyView.mc" 161 8 ]
+        symbol [ C_ICE %tmp.22 161 15 20 ];
+        %tmp.22 = getv ? :C_ICE;
+        ret %tmp.22;
+F__Github_Hockey_source_HockeyView_mc_156_54_162_4_stop:
+    }
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 164; @symbol_functiondef = [_stateColor,164,21,32]; @symbol_param<0> = [state,164,33,38]; @symbol_param<0>_type<0> = [Number,164,42,48]; @symbol_return<0> = [Number,164,53,59]; ]
+    private
+    function _stateColor(state as Number) as Number {
+F__Github_Hockey_source_HockeyView_mc_164_60_169_4_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 165 8 ]
+F__Github_Hockey_source_HockeyView_mc_165_8_165_65_if_stmt:
+        %tmp.1 = lgetv %state;
+        symbol [ state %tmp.1 165 12 17 ];
+        symbol [ STATE_ON_ICE %tmp.3 165 21 33 ];
+        %tmp.3 = getv ? :STATE_ON_ICE;
+        %tmp.4 = eq %tmp.1 %tmp.3;
+        bf %tmp.4 @F__Github_Hockey_source_HockeyView_mc_165_8_165_65_if_end;
+F__Github_Hockey_source_HockeyView_mc_165_8_165_65_if_true:
+F__Github_Hockey_source_HockeyView_mc_165_42_165_65_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 165 44 ]
+        symbol [ C_ICE %tmp.6 165 51 56 ];
+        %tmp.6 = getv ? :C_ICE;
+        ret %tmp.6;
+F__Github_Hockey_source_HockeyView_mc_165_42_165_65_stop:
+        goto @F__Github_Hockey_source_HockeyView_mc_165_8_165_65_if_end;
+F__Github_Hockey_source_HockeyView_mc_165_8_165_65_if_end:
+[ "F:\Github\Hockey\source\HockeyView.mc" 166 8 ]
+F__Github_Hockey_source_HockeyView_mc_166_8_166_66_if_stmt:
+        %tmp.7 = lgetv %state;
+        symbol [ state %tmp.7 166 12 17 ];
+        symbol [ STATE_GOING_ON_ICE %tmp.9 166 21 39 ];
+        %tmp.9 = getv ? :STATE_GOING_ON_ICE;
+        %tmp.10 = eq %tmp.7 %tmp.9;
+        bf %tmp.10 @F__Github_Hockey_source_HockeyView_mc_166_8_166_66_if_end;
+F__Github_Hockey_source_HockeyView_mc_166_8_166_66_if_true:
+F__Github_Hockey_source_HockeyView_mc_166_42_166_66_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 166 44 ]
+        symbol [ C_TRANSITION %tmp.12 166 51 63 ];
+        %tmp.12 = getv ? :C_TRANSITION;
+        ret %tmp.12;
+F__Github_Hockey_source_HockeyView_mc_166_42_166_66_stop:
+        goto @F__Github_Hockey_source_HockeyView_mc_166_8_166_66_if_end;
+F__Github_Hockey_source_HockeyView_mc_166_8_166_66_if_end:
+[ "F:\Github\Hockey\source\HockeyView.mc" 167 8 ]
+F__Github_Hockey_source_HockeyView_mc_167_8_167_66_if_stmt:
+        %tmp.13 = lgetv %state;
+        symbol [ state %tmp.13 167 12 17 ];
+        symbol [ STATE_GOING_TO_BENCH %tmp.15 167 21 41 ];
+        %tmp.15 = getv ? :STATE_GOING_TO_BENCH;
+        %tmp.16 = eq %tmp.13 %tmp.15;
+        bf %tmp.16 @F__Github_Hockey_source_HockeyView_mc_167_8_167_66_if_end;
+F__Github_Hockey_source_HockeyView_mc_167_8_167_66_if_true:
+F__Github_Hockey_source_HockeyView_mc_167_42_167_66_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 167 44 ]
+        symbol [ C_TRANSITION %tmp.18 167 51 63 ];
+        %tmp.18 = getv ? :C_TRANSITION;
+        ret %tmp.18;
+F__Github_Hockey_source_HockeyView_mc_167_42_167_66_stop:
+        goto @F__Github_Hockey_source_HockeyView_mc_167_8_167_66_if_end;
+F__Github_Hockey_source_HockeyView_mc_167_8_167_66_if_end:
+[ "F:\Github\Hockey\source\HockeyView.mc" 168 8 ]
+        symbol [ C_BENCH %tmp.20 168 15 22 ];
+        %tmp.20 = getv ? :C_BENCH;
+        ret %tmp.20;
+F__Github_Hockey_source_HockeyView_mc_164_60_169_4_stop:
+    }
+    [ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 171; @symbol_functiondef = [_stateLabel,171,21,32]; @symbol_param<0> = [state,171,33,38]; @symbol_param<0>_type<0> = [Number,171,42,48]; @symbol_return<0> = [String,171,53,59]; ]
+    private
+    function _stateLabel(state as Number) as String {
+F__Github_Hockey_source_HockeyView_mc_171_60_176_4_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 172 8 ]
+F__Github_Hockey_source_HockeyView_mc_172_8_172_65_if_stmt:
+        %tmp.1 = lgetv %state;
+        symbol [ state %tmp.1 172 12 17 ];
+        symbol [ STATE_ON_ICE %tmp.3 172 21 33 ];
+        %tmp.3 = getv ? :STATE_ON_ICE;
+        %tmp.4 = eq %tmp.1 %tmp.3;
+        bf %tmp.4 @F__Github_Hockey_source_HockeyView_mc_172_8_172_65_if_end;
+F__Github_Hockey_source_HockeyView_mc_172_8_172_65_if_true:
+F__Github_Hockey_source_HockeyView_mc_172_43_172_65_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 172 45 ]
+        %tmp.5 = "ON ICE";
+        ret %tmp.5;
+F__Github_Hockey_source_HockeyView_mc_172_43_172_65_stop:
+        goto @F__Github_Hockey_source_HockeyView_mc_172_8_172_65_if_end;
+F__Github_Hockey_source_HockeyView_mc_172_8_172_65_if_end:
+[ "F:\Github\Hockey\source\HockeyView.mc" 173 8 ]
+F__Github_Hockey_source_HockeyView_mc_173_8_173_65_if_stmt:
+        %tmp.6 = lgetv %state;
+        symbol [ state %tmp.6 173 12 17 ];
+        symbol [ STATE_GOING_ON_ICE %tmp.8 173 21 39 ];
+        %tmp.8 = getv ? :STATE_GOING_ON_ICE;
+        %tmp.9 = eq %tmp.6 %tmp.8;
+        bf %tmp.9 @F__Github_Hockey_source_HockeyView_mc_173_8_173_65_if_end;
+F__Github_Hockey_source_HockeyView_mc_173_8_173_65_if_true:
+F__Github_Hockey_source_HockeyView_mc_173_43_173_65_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 173 45 ]
+        %tmp.10 = ">>> ICE";
+        ret %tmp.10;
+F__Github_Hockey_source_HockeyView_mc_173_43_173_65_stop:
+        goto @F__Github_Hockey_source_HockeyView_mc_173_8_173_65_if_end;
+F__Github_Hockey_source_HockeyView_mc_173_8_173_65_if_end:
+[ "F:\Github\Hockey\source\HockeyView.mc" 174 8 ]
+F__Github_Hockey_source_HockeyView_mc_174_8_174_65_if_stmt:
+        %tmp.11 = lgetv %state;
+        symbol [ state %tmp.11 174 12 17 ];
+        symbol [ STATE_GOING_TO_BENCH %tmp.13 174 21 41 ];
+        %tmp.13 = getv ? :STATE_GOING_TO_BENCH;
+        %tmp.14 = eq %tmp.11 %tmp.13;
+        bf %tmp.14 @F__Github_Hockey_source_HockeyView_mc_174_8_174_65_if_end;
+F__Github_Hockey_source_HockeyView_mc_174_8_174_65_if_true:
+F__Github_Hockey_source_HockeyView_mc_174_43_174_65_start:
+[ "F:\Github\Hockey\source\HockeyView.mc" 174 45 ]
+        %tmp.15 = ">>> BENCH";
+        ret %tmp.15;
+F__Github_Hockey_source_HockeyView_mc_174_43_174_65_stop:
+        goto @F__Github_Hockey_source_HockeyView_mc_174_8_174_65_if_end;
+F__Github_Hockey_source_HockeyView_mc_174_8_174_65_if_end:
+[ "F:\Github\Hockey\source\HockeyView.mc" 175 8 ]
+        %tmp.16 = "BENCH";
+        ret %tmp.16;
+F__Github_Hockey_source_HockeyView_mc_171_60_176_4_stop:
+    }
+}
+[ @file = "F:\Github\Hockey\source\HockeyView.mc"; @line = 27; ]
+<init> {
+}

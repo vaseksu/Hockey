@@ -1,0 +1,1217 @@
+[ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 35; @symbol_importdef<0> = [Toybox,35,7,13]; @symbol_importdef<1> = [Activity,35,14,22]; ]
+import Toybox.Activity;
+[ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 36; @symbol_importdef<0> = [Toybox,36,7,13]; @symbol_importdef<1> = [Lang,36,14,18]; ]
+import Toybox.Lang;
+[ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 37; @symbol_importdef<0> = [Toybox,37,7,13]; @symbol_importdef<1> = [System,37,14,20]; ]
+import Toybox.System;
+[ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 38; @symbol_importdef<0> = [Toybox,38,7,13]; @symbol_importdef<1> = [Sensor,38,14,20]; ]
+import Toybox.Sensor;
+[ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 39; @symbol_importdef<0> = [Toybox,39,7,13]; @symbol_importdef<1> = [Math,39,14,18]; ]
+import Toybox.Math;
+[ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 41; @position = 6; @symbol_constdef = [STATE_BENCH,41,6,17]; @symbol_type<0> = [Number,41,30,36]; ]
+const STATE_BENCH as Number = 0;
+[ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 42; @position = 6; @symbol_constdef = [STATE_GOING_ON_ICE,42,6,24]; @symbol_type<0> = [Number,42,30,36]; ]
+const STATE_GOING_ON_ICE as Number = 1;
+[ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 43; @position = 6; @symbol_constdef = [STATE_ON_ICE,43,6,18]; @symbol_type<0> = [Number,43,30,36]; ]
+const STATE_ON_ICE as Number = 2;
+[ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 44; @position = 6; @symbol_constdef = [STATE_GOING_TO_BENCH,44,6,26]; @symbol_type<0> = [Number,44,30,36]; ]
+const STATE_GOING_TO_BENCH as Number = 3;
+[ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 46; @symbol_classdef = [ShiftDetector,46,6,19]; ]
+class ShiftDetector {
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 46; ]
+    <init> {
+    }
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 46; ]
+    static
+    <init> {
+    }
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 47; @position = 16; @symbol_vardef = [_data,47,16,21]; @symbol_type<0> = [ShiftData,47,39,48]; ]
+    private
+    var _data as ShiftData;
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 48; @position = 16; @symbol_vardef = [_state,48,16,22]; @symbol_type<0> = [Number,48,39,45]; ]
+    private
+    var _state as Number;
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 49; @position = 16; @symbol_vardef = [_stateEnteredMs,49,16,31]; @symbol_type<0> = [Number,49,39,45]; ]
+    private
+    var _stateEnteredMs as Number;
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 50; @position = 16; @symbol_vardef = [_shiftStartMs,50,16,29]; @symbol_type<0> = [Number,50,39,45]; ]
+    private
+    var _shiftStartMs as Number;
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 51; @position = 16; @symbol_vardef = [_benchStartMs,51,16,29]; @symbol_type<0> = [Number,51,39,45]; ]
+    private
+    var _benchStartMs as Number;
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 52; @position = 16; @symbol_vardef = [_transitionStartMs,52,16,34]; @symbol_type<0> = [Number,52,39,45]; ]
+    private
+    var _transitionStartMs as Number;
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 55; @position = 16; @symbol_vardef = [_hrBuf,55,16,22]; @symbol_type<0> = [RingBuffer,55,29,39]; ]
+    private
+    var _hrBuf as RingBuffer;
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 56; @position = 16; @symbol_vardef = [_accelBuf,56,16,25]; @symbol_type<0> = [RingBuffer,56,29,39]; ]
+    private
+    var _accelBuf as RingBuffer;
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 59; @position = 16; @symbol_vardef = [_prevHR,59,16,23]; @symbol_type<0> = [Number,59,33,39]; ]
+    private
+    var _prevHR as Number;
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 60; @position = 16; @symbol_vardef = [_hrDeltaBuf,60,16,27]; @symbol_type<0> = [RingBuffer,60,33,43]; ]
+    private
+    var _hrDeltaBuf as RingBuffer;
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 62; @symbol_functiondef = [initialize,62,13,23]; @symbol_param<0> = [data,62,24,28]; @symbol_param<0>_type<0> = [ShiftData,62,32,41]; ]
+    function initialize(data as ShiftData) as Void {
+F__Github_Hockey_source_ShiftDetector_mc_62_43_76_4_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 63 8 ]
+        %tmp.1 = lgetv %data;
+        symbol [ data %tmp.1 63 16 20 ];
+        symbol [ _data ? 63 8 13 ];
+        putv self :_data %tmp.1;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 65 8 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_62_43_76_4_start" "F__Github_Hockey_source_ShiftDetector_mc_62_43_76_4_stop" ]
+        %now.1 = local;
+        symbol [ now %now.1 65 12 15 ];
+        symbol [ System %tmp.2 65 29 35 ];
+        %tmp.2 = getm $.Toybox.System;
+        symbol [ getTimer %tmp.3 65 36 44 ];
+        %tmp.3 = getv function %tmp.2 :getTimer;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %now.1 %tmp.4;
+        symbol [ now %now.1 65 12 15 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 66 8 ]
+        symbol [ STATE_BENCH %tmp.6 66 29 40 ];
+        %tmp.6 = getv ? :STATE_BENCH;
+        symbol [ _state ? 66 8 14 ];
+        putv self :_state %tmp.6;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 67 8 ]
+        %tmp.7 = lgetv %now.1;
+        symbol [ now %tmp.7 67 29 32 ];
+        symbol [ _stateEnteredMs ? 67 8 23 ];
+        putv self :_stateEnteredMs %tmp.7;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 68 8 ]
+        %tmp.8 = lgetv %now.1;
+        symbol [ now %tmp.8 68 29 32 ];
+        symbol [ _shiftStartMs ? 68 8 21 ];
+        putv self :_shiftStartMs %tmp.8;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 69 8 ]
+        %tmp.9 = lgetv %now.1;
+        symbol [ now %tmp.9 69 29 32 ];
+        symbol [ _benchStartMs ? 69 8 21 ];
+        putv self :_benchStartMs %tmp.9;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 70 8 ]
+        %tmp.10 = lgetv %now.1;
+        symbol [ now %tmp.10 70 29 32 ];
+        symbol [ _transitionStartMs ? 70 8 26 ];
+        putv self :_transitionStartMs %tmp.10;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 72 8 ]
+        symbol [ RingBuffer %tmp.14 72 26 36 ];
+        %tmp.14 = getv ? :RingBuffer;
+        %tmp.15 = 10;
+        %tmp.11 = newc %tmp.14 (%tmp.15);
+        symbol [ _hrBuf ? 72 8 14 ];
+        putv self :_hrBuf %tmp.11;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 73 8 ]
+        symbol [ RingBuffer %tmp.19 73 26 36 ];
+        %tmp.19 = getv ? :RingBuffer;
+        %tmp.20 = 25;
+        %tmp.16 = newc %tmp.19 (%tmp.20);
+        symbol [ _accelBuf ? 73 8 17 ];
+        putv self :_accelBuf %tmp.16;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 74 8 ]
+        symbol [ RingBuffer %tmp.24 74 26 36 ];
+        %tmp.24 = getv ? :RingBuffer;
+        %tmp.25 = 3;
+        %tmp.21 = newc %tmp.24 (%tmp.25);
+        symbol [ _hrDeltaBuf ? 74 8 19 ];
+        putv self :_hrDeltaBuf %tmp.21;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 75 8 ]
+        %tmp.26 = 0;
+        symbol [ _prevHR ? 75 8 15 ];
+        putv self :_prevHR %tmp.26;
+F__Github_Hockey_source_ShiftDetector_mc_62_43_76_4_stop:
+    }
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 80; @symbol_functiondef = [getState,80,13,21]; @symbol_return<0> = [Number,80,27,33]; ]
+    function getState() as Number {
+F__Github_Hockey_source_ShiftDetector_mc_80_34_80_51_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 80 36 ]
+        symbol [ _state %tmp.2 80 43 49 ];
+        %tmp.2 = getv ? :_state;
+        ret %tmp.2;
+F__Github_Hockey_source_ShiftDetector_mc_80_34_80_51_stop:
+    }
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 83; @symbol_functiondef = [getCurrentDurationMs,83,13,33]; @symbol_return<0> = [Number,83,39,45]; ]
+    function getCurrentDurationMs() as Number {
+F__Github_Hockey_source_ShiftDetector_mc_83_46_85_4_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 84 8 ]
+        symbol [ System %tmp.1 84 15 21 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getTimer %tmp.2 84 22 30 ];
+        %tmp.2 = getv function %tmp.1 :getTimer;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        symbol [ _stateEnteredMs %tmp.5 84 35 50 ];
+        %tmp.5 = getv ? :_stateEnteredMs;
+        %tmp.6 = sub %tmp.3 %tmp.5;
+        ret %tmp.6;
+F__Github_Hockey_source_ShiftDetector_mc_83_46_85_4_stop:
+    }
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 89; @symbol_functiondef = [onTick,89,13,19]; ]
+    function onTick() as Void {
+F__Github_Hockey_source_ShiftDetector_mc_89_30_164_4_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 90 8 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_89_30_164_4_start" "F__Github_Hockey_source_ShiftDetector_mc_89_30_164_4_stop" ]
+        %now.1 = local;
+        symbol [ now %now.1 90 12 15 ];
+        symbol [ System %tmp.1 90 20 26 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getTimer %tmp.2 90 27 35 ];
+        %tmp.2 = getv function %tmp.1 :getTimer;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %now.1 %tmp.3;
+        symbol [ now %now.1 90 12 15 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 91 8 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_89_30_164_4_start" "F__Github_Hockey_source_ShiftDetector_mc_89_30_164_4_stop" ]
+        %accel.2 = local;
+        symbol [ accel %accel.2 91 12 17 ];
+        symbol [ _accelBuf %tmp.5 91 20 29 ];
+        %tmp.5 = getv ? :_accelBuf;
+        symbol [ average %tmp.6 91 30 37 ];
+        %tmp.6 = getv function %tmp.5 :average;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        lputv %accel.2 %tmp.7;
+        symbol [ accel %accel.2 91 12 17 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 96 8 ]
+F__Github_Hockey_source_ShiftDetector_mc_96_8_113_8_if_stmt:
+        symbol [ _data %tmp.9 96 13 18 ];
+        %tmp.9 = getv ? :_data;
+        symbol [ isSimulation %tmp.10 96 19 31 ];
+        %tmp.10 = getv %tmp.9 :isSimulation;
+        %tmp.11 = not %tmp.10;
+        bf %tmp.11 @F__Github_Hockey_source_ShiftDetector_mc_96_8_113_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_96_8_113_8_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_96_33_113_8_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 97 12 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_96_33_113_8_start" "F__Github_Hockey_source_ShiftDetector_mc_96_33_113_8_stop" ]
+        %gotHR.3 = local;
+        symbol [ gotHR %gotHR.3 97 16 21 ];
+        %tmp.12 = false;
+        lputv %gotHR.3 %tmp.12;
+        symbol [ gotHR %gotHR.3 97 16 21 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 98 12 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_96_33_113_8_start" "F__Github_Hockey_source_ShiftDetector_mc_96_33_113_8_stop" ]
+        %actInfo.4 = local;
+        symbol [ actInfo %actInfo.4 98 16 23 ];
+        symbol [ Activity %tmp.13 98 26 34 ];
+        %tmp.13 = getm $.Toybox.Activity;
+        symbol [ getActivityInfo %tmp.14 98 35 50 ];
+        %tmp.14 = getv function %tmp.13 :getActivityInfo;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        lputv %actInfo.4 %tmp.15;
+        symbol [ actInfo %actInfo.4 98 16 23 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 99 12 ]
+F__Github_Hockey_source_ShiftDetector_mc_99_12_104_12_if_stmt:
+F__Github_Hockey_source_ShiftDetector_mc_99_16_99_63_begin:
+        %tmp.16 = lgetv %actInfo.4;
+        symbol [ actInfo %tmp.16 99 16 23 ];
+        %tmp.17 = null;
+        %tmp.18 = ne %tmp.16 %tmp.17;
+        bf %tmp.18 @F__Github_Hockey_source_ShiftDetector_mc_99_12_104_12_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_99_35_99_63_true:
+        %tmp.19 = lgetv %actInfo.4;
+        symbol [ actInfo %tmp.19 99 35 42 ];
+        %tmp.20 = as %tmp.19 { (!Null) };
+        symbol [ currentHeartRate %tmp.21 99 43 59 ];
+        %tmp.21 = getv %tmp.20 :currentHeartRate;
+        %tmp.22 = null;
+        %tmp.23 = ne %tmp.21 %tmp.22;
+        push %tmp.23;
+F__Github_Hockey_source_ShiftDetector_mc_99_35_99_63_end:
+        %tmp.24 = phi [%tmp.18 @F__Github_Hockey_source_ShiftDetector_mc_99_16_99_63_begin] [%tmp.23 @F__Github_Hockey_source_ShiftDetector_mc_99_35_99_63_true] [%tmp.24 @F__Github_Hockey_source_ShiftDetector_mc_99_35_99_63_end];
+        bf %tmp.24 @F__Github_Hockey_source_ShiftDetector_mc_99_12_104_12_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_99_12_104_12_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_99_69_104_12_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 100 16 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_99_69_104_12_start" "F__Github_Hockey_source_ShiftDetector_mc_99_69_104_12_stop" ]
+        %hr.5 = local;
+        symbol [ hr %hr.5 100 20 22 ];
+        %tmp.25 = lgetv %actInfo.4;
+        symbol [ actInfo %tmp.25 100 25 32 ];
+        %tmp.26 = as %tmp.25 { (!Null) };
+        symbol [ currentHeartRate %tmp.27 100 33 49 ];
+        %tmp.27 = getv %tmp.26 :currentHeartRate;
+        %tmp.28 = as %tmp.27 Number;
+        symbol [ Number %tmp.28 100 53 59 ];
+        lputv %hr.5 %tmp.28;
+        symbol [ hr %hr.5 100 20 22 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 101 16 ]
+        symbol [ _hrBuf %tmp.30 101 16 22 ];
+        %tmp.30 = getv ? :_hrBuf;
+        symbol [ push %tmp.31 101 23 27 ];
+        %tmp.31 = getv function %tmp.30 :push;
+        %tmp.32 = lgetv %hr.5;
+        symbol [ hr %tmp.32 101 28 30 ];
+        invoke %tmp.30 %tmp.31(%tmp.32);
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 102 16 ]
+        symbol [ _data %tmp.33 102 16 21 ];
+        %tmp.33 = getv self :_data;
+        %tmp.34 = lgetv %hr.5;
+        symbol [ hr %tmp.34 102 34 36 ];
+        symbol [ currentHR ? 102 22 31 ];
+        putv %tmp.33 :currentHR %tmp.34;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 103 16 ]
+        %tmp.35 = true;
+        lputv %gotHR.3 %tmp.35;
+        symbol [ gotHR %gotHR.3 103 16 21 ];
+F__Github_Hockey_source_ShiftDetector_mc_99_69_104_12_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_99_12_104_12_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_99_12_104_12_if_end:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 105 12 ]
+F__Github_Hockey_source_ShiftDetector_mc_105_12_112_12_if_stmt:
+        %tmp.36 = lgetv %gotHR.3;
+        symbol [ gotHR %tmp.36 105 17 22 ];
+        %tmp.37 = not %tmp.36;
+        bf %tmp.37 @F__Github_Hockey_source_ShiftDetector_mc_105_12_112_12_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_105_12_112_12_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_105_24_112_12_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 106 16 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_105_24_112_12_start" "F__Github_Hockey_source_ShiftDetector_mc_105_24_112_12_stop" ]
+        %sInfo.6 = local;
+        symbol [ sInfo %sInfo.6 106 20 25 ];
+        symbol [ Sensor %tmp.38 106 28 34 ];
+        %tmp.38 = getm $.Toybox.Sensor;
+        symbol [ getInfo %tmp.39 106 35 42 ];
+        %tmp.39 = getv function %tmp.38 :getInfo;
+        %tmp.40 = invoke %tmp.38 %tmp.39();
+        lputv %sInfo.6 %tmp.40;
+        symbol [ sInfo %sInfo.6 106 20 25 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 107 16 ]
+F__Github_Hockey_source_ShiftDetector_mc_107_16_111_16_if_stmt:
+F__Github_Hockey_source_ShiftDetector_mc_107_20_107_56_begin:
+        %tmp.41 = lgetv %sInfo.6;
+        symbol [ sInfo %tmp.41 107 20 25 ];
+        %tmp.42 = null;
+        %tmp.43 = ne %tmp.41 %tmp.42;
+        bf %tmp.43 @F__Github_Hockey_source_ShiftDetector_mc_107_16_111_16_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_107_37_107_56_true:
+        %tmp.44 = lgetv %sInfo.6;
+        symbol [ sInfo %tmp.44 107 37 42 ];
+        %tmp.45 = as %tmp.44 { (!Null) };
+        symbol [ heartRate %tmp.46 107 43 52 ];
+        %tmp.46 = getv %tmp.45 :heartRate;
+        %tmp.47 = null;
+        %tmp.48 = ne %tmp.46 %tmp.47;
+        push %tmp.48;
+F__Github_Hockey_source_ShiftDetector_mc_107_37_107_56_end:
+        %tmp.49 = phi [%tmp.43 @F__Github_Hockey_source_ShiftDetector_mc_107_20_107_56_begin] [%tmp.48 @F__Github_Hockey_source_ShiftDetector_mc_107_37_107_56_true] [%tmp.49 @F__Github_Hockey_source_ShiftDetector_mc_107_37_107_56_end];
+        bf %tmp.49 @F__Github_Hockey_source_ShiftDetector_mc_107_16_111_16_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_107_16_111_16_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_107_62_111_16_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 108 20 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_107_62_111_16_start" "F__Github_Hockey_source_ShiftDetector_mc_107_62_111_16_stop" ]
+        %hr.7 = local;
+        symbol [ hr %hr.7 108 24 26 ];
+        %tmp.50 = lgetv %sInfo.6;
+        symbol [ sInfo %tmp.50 108 29 34 ];
+        %tmp.51 = as %tmp.50 { (!Null) };
+        symbol [ heartRate %tmp.52 108 35 44 ];
+        %tmp.52 = getv %tmp.51 :heartRate;
+        %tmp.53 = as %tmp.52 Number;
+        symbol [ Number %tmp.53 108 48 54 ];
+        lputv %hr.7 %tmp.53;
+        symbol [ hr %hr.7 108 24 26 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 109 20 ]
+        symbol [ _hrBuf %tmp.55 109 20 26 ];
+        %tmp.55 = getv ? :_hrBuf;
+        symbol [ push %tmp.56 109 27 31 ];
+        %tmp.56 = getv function %tmp.55 :push;
+        %tmp.57 = lgetv %hr.7;
+        symbol [ hr %tmp.57 109 32 34 ];
+        invoke %tmp.55 %tmp.56(%tmp.57);
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 110 20 ]
+        symbol [ _data %tmp.58 110 20 25 ];
+        %tmp.58 = getv self :_data;
+        %tmp.59 = lgetv %hr.7;
+        symbol [ hr %tmp.59 110 38 40 ];
+        symbol [ currentHR ? 110 26 35 ];
+        putv %tmp.58 :currentHR %tmp.59;
+F__Github_Hockey_source_ShiftDetector_mc_107_62_111_16_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_107_16_111_16_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_107_16_111_16_if_end:
+F__Github_Hockey_source_ShiftDetector_mc_105_24_112_12_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_105_12_112_12_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_105_12_112_12_if_end:
+F__Github_Hockey_source_ShiftDetector_mc_96_33_113_8_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_96_8_113_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_96_8_113_8_if_end:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 116 8 ]
+F__Github_Hockey_source_ShiftDetector_mc_116_8_119_8_if_stmt:
+F__Github_Hockey_source_ShiftDetector_mc_116_12_116_45_begin:
+        symbol [ _prevHR %tmp.61 116 12 19 ];
+        %tmp.61 = getv ? :_prevHR;
+        %tmp.62 = 0;
+        %tmp.63 = gt %tmp.61 %tmp.62;
+        bf %tmp.63 @F__Github_Hockey_source_ShiftDetector_mc_116_8_119_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_116_27_116_45_true:
+        symbol [ _data %tmp.65 116 27 32 ];
+        %tmp.65 = getv ? :_data;
+        symbol [ currentHR %tmp.66 116 33 42 ];
+        %tmp.66 = getv %tmp.65 :currentHR;
+        %tmp.67 = 0;
+        %tmp.68 = gt %tmp.66 %tmp.67;
+        push %tmp.68;
+F__Github_Hockey_source_ShiftDetector_mc_116_27_116_45_end:
+        %tmp.69 = phi [%tmp.63 @F__Github_Hockey_source_ShiftDetector_mc_116_12_116_45_begin] [%tmp.68 @F__Github_Hockey_source_ShiftDetector_mc_116_27_116_45_true] [%tmp.69 @F__Github_Hockey_source_ShiftDetector_mc_116_27_116_45_end];
+        bf %tmp.69 @F__Github_Hockey_source_ShiftDetector_mc_116_8_119_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_116_8_119_8_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_116_48_119_8_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 117 12 ]
+        symbol [ _hrDeltaBuf %tmp.71 117 12 23 ];
+        %tmp.71 = getv ? :_hrDeltaBuf;
+        symbol [ push %tmp.72 117 24 28 ];
+        %tmp.72 = getv function %tmp.71 :push;
+        symbol [ _data %tmp.74 117 29 34 ];
+        %tmp.74 = getv ? :_data;
+        symbol [ currentHR %tmp.75 117 35 44 ];
+        %tmp.75 = getv %tmp.74 :currentHR;
+        symbol [ _prevHR %tmp.77 117 47 54 ];
+        %tmp.77 = getv ? :_prevHR;
+        %tmp.78 = sub %tmp.75 %tmp.77;
+        invoke %tmp.71 %tmp.72(%tmp.78);
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 118 12 ]
+        symbol [ _data %tmp.79 118 12 17 ];
+        %tmp.79 = getv self :_data;
+        symbol [ _hrDeltaBuf %tmp.81 118 28 39 ];
+        %tmp.81 = getv ? :_hrDeltaBuf;
+        symbol [ average %tmp.82 118 40 47 ];
+        %tmp.82 = getv function %tmp.81 :average;
+        %tmp.83 = invoke %tmp.81 %tmp.82();
+        symbol [ hrDelta ? 118 18 25 ];
+        putv %tmp.79 :hrDelta %tmp.83;
+F__Github_Hockey_source_ShiftDetector_mc_116_48_119_8_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_116_8_119_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_116_8_119_8_if_end:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 120 8 ]
+        symbol [ _data %tmp.85 120 18 23 ];
+        %tmp.85 = getv ? :_data;
+        symbol [ currentHR %tmp.86 120 24 33 ];
+        %tmp.86 = getv %tmp.85 :currentHR;
+        symbol [ _prevHR ? 120 8 15 ];
+        putv self :_prevHR %tmp.86;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 122 8 ]
+F__Github_Hockey_source_ShiftDetector_mc_122_8_163_8_if_stmt:
+        symbol [ _state %tmp.88 122 12 18 ];
+        %tmp.88 = getv ? :_state;
+        symbol [ STATE_BENCH %tmp.90 122 22 33 ];
+        %tmp.90 = getv ? :STATE_BENCH;
+        %tmp.91 = eq %tmp.88 %tmp.90;
+        bf %tmp.91 @F__Github_Hockey_source_ShiftDetector_mc_122_8_163_8_if_false;
+F__Github_Hockey_source_ShiftDetector_mc_122_8_163_8_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_122_35_128_8_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 123 12 ]
+F__Github_Hockey_source_ShiftDetector_mc_123_12_126_12_if_stmt:
+        %tmp.92 = lgetv %accel.2;
+        symbol [ accel %tmp.92 123 16 21 ];
+        symbol [ ACCEL_ICE_THRESHOLD %tmp.94 123 25 44 ];
+        %tmp.94 = getv ? :ACCEL_ICE_THRESHOLD;
+        %tmp.95 = gte %tmp.92 %tmp.94;
+        bf %tmp.95 @F__Github_Hockey_source_ShiftDetector_mc_123_12_126_12_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_123_12_126_12_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_123_46_126_12_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 124 16 ]
+        %tmp.96 = lgetv %now.1;
+        symbol [ now %tmp.96 124 37 40 ];
+        symbol [ _transitionStartMs ? 124 16 34 ];
+        putv self :_transitionStartMs %tmp.96;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 125 16 ]
+        %tmp.97 = self;
+        symbol [ _enterState %tmp.98 125 16 27 ];
+        %tmp.98 = getv function %tmp.97 :_enterState;
+        symbol [ STATE_GOING_ON_ICE %tmp.100 125 28 46 ];
+        %tmp.100 = getv ? :STATE_GOING_ON_ICE;
+        %tmp.101 = lgetv %now.1;
+        symbol [ now %tmp.101 125 48 51 ];
+        invoke %tmp.97 %tmp.98(%tmp.100, %tmp.101);
+F__Github_Hockey_source_ShiftDetector_mc_123_46_126_12_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_123_12_126_12_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_123_12_126_12_if_end:
+F__Github_Hockey_source_ShiftDetector_mc_122_35_128_8_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_122_8_163_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_122_8_163_8_if_false:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 128 15 ]
+F__Github_Hockey_source_ShiftDetector_mc_128_15_163_8_if_stmt:
+        symbol [ _state %tmp.103 128 19 25 ];
+        %tmp.103 = getv ? :_state;
+        symbol [ STATE_GOING_ON_ICE %tmp.105 128 29 47 ];
+        %tmp.105 = getv ? :STATE_GOING_ON_ICE;
+        %tmp.106 = eq %tmp.103 %tmp.105;
+        bf %tmp.106 @F__Github_Hockey_source_ShiftDetector_mc_128_15_163_8_if_false;
+F__Github_Hockey_source_ShiftDetector_mc_128_15_163_8_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_128_49_145_8_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 129 12 ]
+F__Github_Hockey_source_ShiftDetector_mc_129_12_143_12_if_stmt:
+        %tmp.107 = lgetv %accel.2;
+        symbol [ accel %tmp.107 129 16 21 ];
+        symbol [ ACCEL_ICE_THRESHOLD %tmp.109 129 25 44 ];
+        %tmp.109 = getv ? :ACCEL_ICE_THRESHOLD;
+        %tmp.110 = gte %tmp.107 %tmp.109;
+        bf %tmp.110 @F__Github_Hockey_source_ShiftDetector_mc_129_12_143_12_if_else_false;
+F__Github_Hockey_source_ShiftDetector_mc_129_12_143_12_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_129_46_140_12_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 132 16 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_129_46_140_12_start" "F__Github_Hockey_source_ShiftDetector_mc_129_46_140_12_stop" ]
+        %hrRising.8 = local;
+        symbol [ hrRising %hrRising.8 132 20 28 ];
+        symbol [ _data %tmp.112 132 36 41 ];
+        %tmp.112 = getv ? :_data;
+        symbol [ hrDelta %tmp.113 132 42 49 ];
+        %tmp.113 = getv %tmp.112 :hrDelta;
+        symbol [ HR_DELTA_FAST_BPM %tmp.115 132 53 70 ];
+        %tmp.115 = getv ? :HR_DELTA_FAST_BPM;
+        %tmp.116 = gte %tmp.113 %tmp.115;
+        lputv %hrRising.8 %tmp.116;
+        symbol [ hrRising %hrRising.8 132 20 28 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 133 16 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_129_46_140_12_start" "F__Github_Hockey_source_ShiftDetector_mc_129_46_140_12_stop" ]
+        %requiredMs.9 = local;
+        symbol [ requiredMs %requiredMs.9 133 20 30 ];
+F__Github_Hockey_source_ShiftDetector_mc_133_36_133_69_begin:
+        %tmp.117 = lgetv %hrRising.8;
+        symbol [ hrRising %tmp.117 133 36 44 ];
+        bf %tmp.117 @F__Github_Hockey_source_ShiftDetector_mc_133_36_133_69_else_false;
+F__Github_Hockey_source_ShiftDetector_mc_133_36_133_69_true:
+        symbol [ CONFIRM_ICE_FAST_MS %tmp.119 133 47 66 ];
+        %tmp.119 = getv ? :CONFIRM_ICE_FAST_MS;
+        push %tmp.119;
+        goto @F__Github_Hockey_source_ShiftDetector_mc_133_36_133_69_end;
+F__Github_Hockey_source_ShiftDetector_mc_133_36_133_69_else_false:
+        symbol [ CONFIRM_ICE_MS %tmp.121 133 69 83 ];
+        %tmp.121 = getv ? :CONFIRM_ICE_MS;
+        push %tmp.121;
+F__Github_Hockey_source_ShiftDetector_mc_133_36_133_69_end:
+        %tmp.122 = phi [%tmp.117 @F__Github_Hockey_source_ShiftDetector_mc_133_36_133_69_begin] [%tmp.119 @F__Github_Hockey_source_ShiftDetector_mc_133_36_133_69_true] [%tmp.121 @F__Github_Hockey_source_ShiftDetector_mc_133_36_133_69_else_false] [%tmp.122 @F__Github_Hockey_source_ShiftDetector_mc_133_36_133_69_end];
+        lputv %requiredMs.9 %tmp.122;
+        symbol [ requiredMs %requiredMs.9 133 20 30 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 134 16 ]
+F__Github_Hockey_source_ShiftDetector_mc_134_16_139_16_if_stmt:
+        %tmp.123 = lgetv %now.1;
+        symbol [ now %tmp.123 134 20 23 ];
+        symbol [ _transitionStartMs %tmp.125 134 26 44 ];
+        %tmp.125 = getv ? :_transitionStartMs;
+        %tmp.126 = sub %tmp.123 %tmp.125;
+        %tmp.127 = lgetv %requiredMs.9;
+        symbol [ requiredMs %tmp.127 134 48 58 ];
+        %tmp.128 = gte %tmp.126 %tmp.127;
+        bf %tmp.128 @F__Github_Hockey_source_ShiftDetector_mc_134_16_139_16_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_134_16_139_16_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_134_60_139_16_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 136 20 ]
+        symbol [ _data %tmp.130 136 20 25 ];
+        %tmp.130 = getv ? :_data;
+        symbol [ addBreak %tmp.131 136 26 34 ];
+        %tmp.131 = getv function %tmp.130 :addBreak;
+        %tmp.132 = lgetv %now.1;
+        symbol [ now %tmp.132 136 35 38 ];
+        symbol [ _benchStartMs %tmp.134 136 41 54 ];
+        %tmp.134 = getv ? :_benchStartMs;
+        %tmp.135 = sub %tmp.132 %tmp.134;
+        invoke %tmp.130 %tmp.131(%tmp.135);
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 137 20 ]
+        %tmp.136 = lgetv %now.1;
+        symbol [ now %tmp.136 137 36 39 ];
+        symbol [ _shiftStartMs ? 137 20 33 ];
+        putv self :_shiftStartMs %tmp.136;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 138 20 ]
+        %tmp.137 = self;
+        symbol [ _enterState %tmp.138 138 20 31 ];
+        %tmp.138 = getv function %tmp.137 :_enterState;
+        symbol [ STATE_ON_ICE %tmp.140 138 32 44 ];
+        %tmp.140 = getv ? :STATE_ON_ICE;
+        %tmp.141 = lgetv %now.1;
+        symbol [ now %tmp.141 138 46 49 ];
+        invoke %tmp.137 %tmp.138(%tmp.140, %tmp.141);
+F__Github_Hockey_source_ShiftDetector_mc_134_60_139_16_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_134_16_139_16_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_134_16_139_16_if_end:
+F__Github_Hockey_source_ShiftDetector_mc_129_46_140_12_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_129_12_143_12_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_129_12_143_12_if_else_false:
+F__Github_Hockey_source_ShiftDetector_mc_140_19_143_12_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 142 16 ]
+        %tmp.142 = self;
+        symbol [ _enterState %tmp.143 142 16 27 ];
+        %tmp.143 = getv function %tmp.142 :_enterState;
+        symbol [ STATE_BENCH %tmp.145 142 28 39 ];
+        %tmp.145 = getv ? :STATE_BENCH;
+        %tmp.146 = lgetv %now.1;
+        symbol [ now %tmp.146 142 41 44 ];
+        invoke %tmp.142 %tmp.143(%tmp.145, %tmp.146);
+F__Github_Hockey_source_ShiftDetector_mc_140_19_143_12_stop:
+F__Github_Hockey_source_ShiftDetector_mc_129_12_143_12_if_end:
+F__Github_Hockey_source_ShiftDetector_mc_128_49_145_8_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_128_15_163_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_128_15_163_8_if_false:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 145 15 ]
+F__Github_Hockey_source_ShiftDetector_mc_145_15_163_8_if_stmt:
+        symbol [ _state %tmp.148 145 19 25 ];
+        %tmp.148 = getv ? :_state;
+        symbol [ STATE_ON_ICE %tmp.150 145 29 41 ];
+        %tmp.150 = getv ? :STATE_ON_ICE;
+        %tmp.151 = eq %tmp.148 %tmp.150;
+        bf %tmp.151 @F__Github_Hockey_source_ShiftDetector_mc_145_15_163_8_if_false;
+F__Github_Hockey_source_ShiftDetector_mc_145_15_163_8_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_145_43_151_8_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 146 12 ]
+F__Github_Hockey_source_ShiftDetector_mc_146_12_149_12_if_stmt:
+        %tmp.152 = lgetv %accel.2;
+        symbol [ accel %tmp.152 146 16 21 ];
+        symbol [ ACCEL_BENCH_THRESHOLD %tmp.154 146 24 45 ];
+        %tmp.154 = getv ? :ACCEL_BENCH_THRESHOLD;
+        %tmp.155 = lt %tmp.152 %tmp.154;
+        bf %tmp.155 @F__Github_Hockey_source_ShiftDetector_mc_146_12_149_12_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_146_12_149_12_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_146_47_149_12_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 147 16 ]
+        %tmp.156 = lgetv %now.1;
+        symbol [ now %tmp.156 147 37 40 ];
+        symbol [ _transitionStartMs ? 147 16 34 ];
+        putv self :_transitionStartMs %tmp.156;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 148 16 ]
+        %tmp.157 = self;
+        symbol [ _enterState %tmp.158 148 16 27 ];
+        %tmp.158 = getv function %tmp.157 :_enterState;
+        symbol [ STATE_GOING_TO_BENCH %tmp.160 148 28 48 ];
+        %tmp.160 = getv ? :STATE_GOING_TO_BENCH;
+        %tmp.161 = lgetv %now.1;
+        symbol [ now %tmp.161 148 50 53 ];
+        invoke %tmp.157 %tmp.158(%tmp.160, %tmp.161);
+F__Github_Hockey_source_ShiftDetector_mc_146_47_149_12_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_146_12_149_12_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_146_12_149_12_if_end:
+F__Github_Hockey_source_ShiftDetector_mc_145_43_151_8_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_145_15_163_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_145_15_163_8_if_false:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 151 15 ]
+F__Github_Hockey_source_ShiftDetector_mc_151_15_163_8_if_stmt:
+        symbol [ _state %tmp.163 151 19 25 ];
+        %tmp.163 = getv ? :_state;
+        symbol [ STATE_GOING_TO_BENCH %tmp.165 151 29 49 ];
+        %tmp.165 = getv ? :STATE_GOING_TO_BENCH;
+        %tmp.166 = eq %tmp.163 %tmp.165;
+        bf %tmp.166 @F__Github_Hockey_source_ShiftDetector_mc_151_15_163_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_151_15_163_8_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_151_51_163_8_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 152 12 ]
+F__Github_Hockey_source_ShiftDetector_mc_152_12_162_12_if_stmt:
+        %tmp.167 = lgetv %accel.2;
+        symbol [ accel %tmp.167 152 16 21 ];
+        symbol [ ACCEL_BENCH_THRESHOLD %tmp.169 152 24 45 ];
+        %tmp.169 = getv ? :ACCEL_BENCH_THRESHOLD;
+        %tmp.170 = lt %tmp.167 %tmp.169;
+        bf %tmp.170 @F__Github_Hockey_source_ShiftDetector_mc_152_12_162_12_if_else_false;
+F__Github_Hockey_source_ShiftDetector_mc_152_12_162_12_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_152_47_159_12_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 153 16 ]
+F__Github_Hockey_source_ShiftDetector_mc_153_16_158_16_if_stmt:
+        %tmp.171 = lgetv %now.1;
+        symbol [ now %tmp.171 153 20 23 ];
+        symbol [ _transitionStartMs %tmp.173 153 26 44 ];
+        %tmp.173 = getv ? :_transitionStartMs;
+        %tmp.174 = sub %tmp.171 %tmp.173;
+        symbol [ CONFIRM_BENCH_MS %tmp.176 153 48 64 ];
+        %tmp.176 = getv ? :CONFIRM_BENCH_MS;
+        %tmp.177 = gte %tmp.174 %tmp.176;
+        bf %tmp.177 @F__Github_Hockey_source_ShiftDetector_mc_153_16_158_16_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_153_16_158_16_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_153_66_158_16_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 155 20 ]
+        symbol [ _data %tmp.179 155 20 25 ];
+        %tmp.179 = getv ? :_data;
+        symbol [ addShift %tmp.180 155 26 34 ];
+        %tmp.180 = getv function %tmp.179 :addShift;
+        symbol [ _shiftStartMs %tmp.182 155 35 48 ];
+        %tmp.182 = getv ? :_shiftStartMs;
+        %tmp.183 = lgetv %now.1;
+        symbol [ now %tmp.183 155 50 53 ];
+        symbol [ _shiftStartMs %tmp.185 155 56 69 ];
+        %tmp.185 = getv ? :_shiftStartMs;
+        %tmp.186 = sub %tmp.183 %tmp.185;
+        invoke %tmp.179 %tmp.180(%tmp.182, %tmp.186);
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 156 20 ]
+        %tmp.187 = lgetv %now.1;
+        symbol [ now %tmp.187 156 36 39 ];
+        symbol [ _benchStartMs ? 156 20 33 ];
+        putv self :_benchStartMs %tmp.187;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 157 20 ]
+        %tmp.188 = self;
+        symbol [ _enterState %tmp.189 157 20 31 ];
+        %tmp.189 = getv function %tmp.188 :_enterState;
+        symbol [ STATE_BENCH %tmp.191 157 32 43 ];
+        %tmp.191 = getv ? :STATE_BENCH;
+        %tmp.192 = lgetv %now.1;
+        symbol [ now %tmp.192 157 45 48 ];
+        invoke %tmp.188 %tmp.189(%tmp.191, %tmp.192);
+F__Github_Hockey_source_ShiftDetector_mc_153_66_158_16_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_153_16_158_16_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_153_16_158_16_if_end:
+F__Github_Hockey_source_ShiftDetector_mc_152_47_159_12_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_152_12_162_12_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_152_12_162_12_if_else_false:
+F__Github_Hockey_source_ShiftDetector_mc_159_19_162_12_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 161 16 ]
+        %tmp.193 = self;
+        symbol [ _enterState %tmp.194 161 16 27 ];
+        %tmp.194 = getv function %tmp.193 :_enterState;
+        symbol [ STATE_ON_ICE %tmp.196 161 28 40 ];
+        %tmp.196 = getv ? :STATE_ON_ICE;
+        %tmp.197 = lgetv %now.1;
+        symbol [ now %tmp.197 161 42 45 ];
+        invoke %tmp.193 %tmp.194(%tmp.196, %tmp.197);
+F__Github_Hockey_source_ShiftDetector_mc_159_19_162_12_stop:
+F__Github_Hockey_source_ShiftDetector_mc_152_12_162_12_if_end:
+F__Github_Hockey_source_ShiftDetector_mc_151_51_163_8_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_151_15_163_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_151_15_163_8_if_end:
+F__Github_Hockey_source_ShiftDetector_mc_145_15_163_8_if_end:
+F__Github_Hockey_source_ShiftDetector_mc_128_15_163_8_if_end:
+F__Github_Hockey_source_ShiftDetector_mc_122_8_163_8_if_end:
+F__Github_Hockey_source_ShiftDetector_mc_89_30_164_4_stop:
+    }
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 168; @symbol_functiondef = [processSensorData,168,13,30]; @symbol_param<0> = [sensorData,168,31,41]; @symbol_param<0>_type<0> = [Sensor,168,45,51]; @symbol_param<0>_type<1> = [SensorData,168,52,62]; ]
+    function processSensorData(sensorData as Sensor.SensorData) as Void {
+F__Github_Hockey_source_ShiftDetector_mc_168_72_190_4_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 171 8 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_168_72_190_4_start" "F__Github_Hockey_source_ShiftDetector_mc_168_72_190_4_stop" ]
+        %actInfo.1 = local;
+        symbol [ actInfo %actInfo.1 171 12 19 ];
+        symbol [ Activity %tmp.1 171 22 30 ];
+        %tmp.1 = getm $.Toybox.Activity;
+        symbol [ getActivityInfo %tmp.2 171 31 46 ];
+        %tmp.2 = getv function %tmp.1 :getActivityInfo;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %actInfo.1 %tmp.3;
+        symbol [ actInfo %actInfo.1 171 12 19 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 172 8 ]
+F__Github_Hockey_source_ShiftDetector_mc_172_8_176_8_if_stmt:
+F__Github_Hockey_source_ShiftDetector_mc_172_12_172_59_begin:
+        %tmp.4 = lgetv %actInfo.1;
+        symbol [ actInfo %tmp.4 172 12 19 ];
+        %tmp.5 = null;
+        %tmp.6 = ne %tmp.4 %tmp.5;
+        bf %tmp.6 @F__Github_Hockey_source_ShiftDetector_mc_172_8_176_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_172_31_172_59_true:
+        %tmp.7 = lgetv %actInfo.1;
+        symbol [ actInfo %tmp.7 172 31 38 ];
+        %tmp.8 = as %tmp.7 { (!Null) };
+        symbol [ currentHeartRate %tmp.9 172 39 55 ];
+        %tmp.9 = getv %tmp.8 :currentHeartRate;
+        %tmp.10 = null;
+        %tmp.11 = ne %tmp.9 %tmp.10;
+        push %tmp.11;
+F__Github_Hockey_source_ShiftDetector_mc_172_31_172_59_end:
+        %tmp.12 = phi [%tmp.6 @F__Github_Hockey_source_ShiftDetector_mc_172_12_172_59_begin] [%tmp.11 @F__Github_Hockey_source_ShiftDetector_mc_172_31_172_59_true] [%tmp.12 @F__Github_Hockey_source_ShiftDetector_mc_172_31_172_59_end];
+        bf %tmp.12 @F__Github_Hockey_source_ShiftDetector_mc_172_8_176_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_172_8_176_8_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_172_65_176_8_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 173 12 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_172_65_176_8_start" "F__Github_Hockey_source_ShiftDetector_mc_172_65_176_8_stop" ]
+        %hr.2 = local;
+        symbol [ hr %hr.2 173 16 18 ];
+        %tmp.13 = lgetv %actInfo.1;
+        symbol [ actInfo %tmp.13 173 21 28 ];
+        %tmp.14 = as %tmp.13 { (!Null) };
+        symbol [ currentHeartRate %tmp.15 173 29 45 ];
+        %tmp.15 = getv %tmp.14 :currentHeartRate;
+        %tmp.16 = as %tmp.15 Number;
+        symbol [ Number %tmp.16 173 49 55 ];
+        lputv %hr.2 %tmp.16;
+        symbol [ hr %hr.2 173 16 18 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 174 12 ]
+        symbol [ _hrBuf %tmp.18 174 12 18 ];
+        %tmp.18 = getv ? :_hrBuf;
+        symbol [ push %tmp.19 174 19 23 ];
+        %tmp.19 = getv function %tmp.18 :push;
+        %tmp.20 = lgetv %hr.2;
+        symbol [ hr %tmp.20 174 24 26 ];
+        invoke %tmp.18 %tmp.19(%tmp.20);
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 175 12 ]
+        symbol [ _data %tmp.21 175 12 17 ];
+        %tmp.21 = getv self :_data;
+        %tmp.22 = lgetv %hr.2;
+        symbol [ hr %tmp.22 175 30 32 ];
+        symbol [ currentHR ? 175 18 27 ];
+        putv %tmp.21 :currentHR %tmp.22;
+F__Github_Hockey_source_ShiftDetector_mc_172_65_176_8_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_172_8_176_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_172_8_176_8_if_end:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 179 8 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_168_72_190_4_start" "F__Github_Hockey_source_ShiftDetector_mc_168_72_190_4_stop" ]
+        %ad.3 = local;
+        symbol [ ad %ad.3 179 12 14 ];
+        %tmp.23 = lgetv %sensorData;
+        symbol [ sensorData %tmp.23 179 17 27 ];
+        symbol [ accelerometerData %tmp.24 179 28 45 ];
+        %tmp.24 = getv %tmp.23 :accelerometerData;
+        lputv %ad.3 %tmp.24;
+        symbol [ ad %ad.3 179 12 14 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 180 8 ]
+F__Github_Hockey_source_ShiftDetector_mc_180_8_189_8_if_stmt:
+        %tmp.25 = lgetv %ad.3;
+        symbol [ ad %tmp.25 180 12 14 ];
+        %tmp.26 = null;
+        %tmp.27 = ne %tmp.25 %tmp.26;
+        bf %tmp.27 @F__Github_Hockey_source_ShiftDetector_mc_180_8_189_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_180_8_189_8_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_180_24_189_8_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 181 12 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_180_24_189_8_start" "F__Github_Hockey_source_ShiftDetector_mc_180_24_189_8_stop" ]
+        %xs.4 = local;
+        symbol [ xs %xs.4 181 16 18 ];
+        %tmp.28 = lgetv %ad.3;
+        symbol [ ad %tmp.28 181 21 23 ];
+        %tmp.29 = as %tmp.28 { (!Null) };
+        symbol [ x %tmp.30 181 24 25 ];
+        %tmp.30 = getv %tmp.29 :x;
+        lputv %xs.4 %tmp.30;
+        symbol [ xs %xs.4 181 16 18 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 182 12 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_180_24_189_8_start" "F__Github_Hockey_source_ShiftDetector_mc_180_24_189_8_stop" ]
+        %ys.5 = local;
+        symbol [ ys %ys.5 182 16 18 ];
+        %tmp.31 = lgetv %ad.3;
+        symbol [ ad %tmp.31 182 21 23 ];
+        %tmp.32 = as %tmp.31 { (!Null) };
+        symbol [ y %tmp.33 182 24 25 ];
+        %tmp.33 = getv %tmp.32 :y;
+        lputv %ys.5 %tmp.33;
+        symbol [ ys %ys.5 182 16 18 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 183 12 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_180_24_189_8_start" "F__Github_Hockey_source_ShiftDetector_mc_180_24_189_8_stop" ]
+        %zs.6 = local;
+        symbol [ zs %zs.6 183 16 18 ];
+        %tmp.34 = lgetv %ad.3;
+        symbol [ ad %tmp.34 183 21 23 ];
+        %tmp.35 = as %tmp.34 { (!Null) };
+        symbol [ z %tmp.36 183 24 25 ];
+        %tmp.36 = getv %tmp.35 :z;
+        lputv %zs.6 %tmp.36;
+        symbol [ zs %zs.6 183 16 18 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 184 12 ]
+F__Github_Hockey_source_ShiftDetector_mc_184_12_188_12_if_stmt:
+F__Github_Hockey_source_ShiftDetector_mc_184_16_184_42_begin:
+        %tmp.37 = lgetv %xs.4;
+        symbol [ xs %tmp.37 184 16 18 ];
+        %tmp.38 = null;
+        %tmp.39 = ne %tmp.37 %tmp.38;
+        bf %tmp.39 @F__Github_Hockey_source_ShiftDetector_mc_184_12_188_12_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_184_30_184_42_true:
+        %tmp.40 = lgetv %xs.4;
+        symbol [ xs %tmp.40 184 30 32 ];
+        %tmp.41 = as %tmp.40 { (!Null) };
+        symbol [ size %tmp.42 184 33 37 ];
+        %tmp.42 = getv function %tmp.41 :size;
+        %tmp.43 = invoke %tmp.41 %tmp.42();
+        %tmp.44 = 0;
+        %tmp.45 = gt %tmp.43 %tmp.44;
+        push %tmp.45;
+F__Github_Hockey_source_ShiftDetector_mc_184_30_184_42_end:
+        %tmp.46 = phi [%tmp.39 @F__Github_Hockey_source_ShiftDetector_mc_184_16_184_42_begin] [%tmp.45 @F__Github_Hockey_source_ShiftDetector_mc_184_30_184_42_true] [%tmp.46 @F__Github_Hockey_source_ShiftDetector_mc_184_30_184_42_end];
+        bf %tmp.46 @F__Github_Hockey_source_ShiftDetector_mc_184_12_188_12_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_184_12_188_12_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_184_45_188_12_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 185 16 ]
+        %tmp.47 = self;
+        symbol [ _computeAccelActivity %tmp.48 185 16 37 ];
+        %tmp.48 = getv function %tmp.47 :_computeAccelActivity;
+        %tmp.49 = lgetv %xs.4;
+        symbol [ xs %tmp.49 185 38 40 ];
+        %tmp.50 = as %tmp.49 { (!Null) };
+        %tmp.51 = as %tmp.50 Array<Number>;
+        symbol [ Array %tmp.51 185 44 49 ];
+        symbol [ Number %tmp.51 185 50 56 ];
+        %tmp.52 = lgetv %ys.5;
+        symbol [ ys %tmp.52 186 38 40 ];
+        %tmp.53 = as %tmp.52 Array<Number>;
+        symbol [ Array %tmp.53 186 44 49 ];
+        symbol [ Number %tmp.53 186 50 56 ];
+        %tmp.54 = lgetv %zs.6;
+        symbol [ zs %tmp.54 187 38 40 ];
+        %tmp.55 = as %tmp.54 Array<Number>;
+        symbol [ Array %tmp.55 187 44 49 ];
+        symbol [ Number %tmp.55 187 50 56 ];
+        invoke %tmp.47 %tmp.48(%tmp.51, %tmp.53, %tmp.55);
+F__Github_Hockey_source_ShiftDetector_mc_184_45_188_12_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_184_12_188_12_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_184_12_188_12_if_end:
+F__Github_Hockey_source_ShiftDetector_mc_180_24_189_8_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_180_8_189_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_180_8_189_8_if_end:
+F__Github_Hockey_source_ShiftDetector_mc_168_72_190_4_stop:
+    }
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 194; @symbol_functiondef = [processLegacySensor,194,13,32]; @symbol_param<0> = [info,194,33,37]; @symbol_param<0>_type<0> = [Sensor,194,41,47]; @symbol_param<0>_type<1> = [Info,194,48,52]; ]
+    function processLegacySensor(info as Sensor.Info) as Void {
+F__Github_Hockey_source_ShiftDetector_mc_194_62_203_4_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 195 8 ]
+F__Github_Hockey_source_ShiftDetector_mc_195_8_199_8_if_stmt:
+        %tmp.1 = lgetv %info;
+        symbol [ info %tmp.1 195 12 16 ];
+        symbol [ heartRate %tmp.2 195 17 26 ];
+        %tmp.2 = getv %tmp.1 :heartRate;
+        %tmp.3 = null;
+        %tmp.4 = ne %tmp.2 %tmp.3;
+        bf %tmp.4 @F__Github_Hockey_source_ShiftDetector_mc_195_8_199_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_195_8_199_8_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_195_36_199_8_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 196 12 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_195_36_199_8_start" "F__Github_Hockey_source_ShiftDetector_mc_195_36_199_8_stop" ]
+        %hr.1 = local;
+        symbol [ hr %hr.1 196 16 18 ];
+        %tmp.5 = lgetv %info;
+        symbol [ info %tmp.5 196 21 25 ];
+        symbol [ heartRate %tmp.6 196 26 35 ];
+        %tmp.6 = getv %tmp.5 :heartRate;
+        %tmp.7 = as %tmp.6 Number;
+        symbol [ Number %tmp.7 196 39 45 ];
+        lputv %hr.1 %tmp.7;
+        symbol [ hr %hr.1 196 16 18 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 197 12 ]
+        symbol [ _hrBuf %tmp.9 197 12 18 ];
+        %tmp.9 = getv ? :_hrBuf;
+        symbol [ push %tmp.10 197 19 23 ];
+        %tmp.10 = getv function %tmp.9 :push;
+        %tmp.11 = lgetv %hr.1;
+        symbol [ hr %tmp.11 197 24 26 ];
+        invoke %tmp.9 %tmp.10(%tmp.11);
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 198 12 ]
+        symbol [ _data %tmp.12 198 12 17 ];
+        %tmp.12 = getv self :_data;
+        %tmp.13 = lgetv %hr.1;
+        symbol [ hr %tmp.13 198 30 32 ];
+        symbol [ currentHR ? 198 18 27 ];
+        putv %tmp.12 :currentHR %tmp.13;
+F__Github_Hockey_source_ShiftDetector_mc_195_36_199_8_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_195_8_199_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_195_8_199_8_if_end:
+F__Github_Hockey_source_ShiftDetector_mc_194_62_203_4_stop:
+    }
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 208; @symbol_functiondef = [manualToggle,208,13,25]; ]
+    function manualToggle() as Void {
+F__Github_Hockey_source_ShiftDetector_mc_208_36_221_4_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 209 8 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_208_36_221_4_start" "F__Github_Hockey_source_ShiftDetector_mc_208_36_221_4_stop" ]
+        %now.1 = local;
+        symbol [ now %now.1 209 12 15 ];
+        symbol [ System %tmp.1 209 18 24 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ getTimer %tmp.2 209 25 33 ];
+        %tmp.2 = getv function %tmp.1 :getTimer;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %now.1 %tmp.3;
+        symbol [ now %now.1 209 12 15 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 210 8 ]
+F__Github_Hockey_source_ShiftDetector_mc_210_8_220_8_if_stmt:
+F__Github_Hockey_source_ShiftDetector_mc_210_12_210_48_begin:
+        symbol [ _state %tmp.5 210 12 18 ];
+        %tmp.5 = getv ? :_state;
+        symbol [ STATE_ON_ICE %tmp.7 210 22 34 ];
+        %tmp.7 = getv ? :STATE_ON_ICE;
+        %tmp.8 = eq %tmp.5 %tmp.7;
+        bt %tmp.8 @F__Github_Hockey_source_ShiftDetector_mc_210_8_220_8_if_true;
+F__Github_Hockey_source_ShiftDetector_mc_210_38_210_48_false:
+        symbol [ _state %tmp.10 210 38 44 ];
+        %tmp.10 = getv ? :_state;
+        symbol [ STATE_GOING_ON_ICE %tmp.12 210 48 66 ];
+        %tmp.12 = getv ? :STATE_GOING_ON_ICE;
+        %tmp.13 = eq %tmp.10 %tmp.12;
+        push %tmp.13;
+F__Github_Hockey_source_ShiftDetector_mc_210_38_210_48_end:
+        %tmp.14 = phi [%tmp.8 @F__Github_Hockey_source_ShiftDetector_mc_210_12_210_48_begin] [%tmp.13 @F__Github_Hockey_source_ShiftDetector_mc_210_38_210_48_false] [%tmp.14 @F__Github_Hockey_source_ShiftDetector_mc_210_38_210_48_end];
+        bf %tmp.14 @F__Github_Hockey_source_ShiftDetector_mc_210_8_220_8_if_else_false;
+F__Github_Hockey_source_ShiftDetector_mc_210_8_220_8_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_210_68_216_8_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 211 12 ]
+F__Github_Hockey_source_ShiftDetector_mc_211_12_213_12_if_stmt:
+        symbol [ _state %tmp.16 211 16 22 ];
+        %tmp.16 = getv ? :_state;
+        symbol [ STATE_ON_ICE %tmp.18 211 26 38 ];
+        %tmp.18 = getv ? :STATE_ON_ICE;
+        %tmp.19 = eq %tmp.16 %tmp.18;
+        bf %tmp.19 @F__Github_Hockey_source_ShiftDetector_mc_211_12_213_12_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_211_12_213_12_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_211_40_213_12_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 212 16 ]
+        symbol [ _data %tmp.21 212 16 21 ];
+        %tmp.21 = getv ? :_data;
+        symbol [ addShift %tmp.22 212 22 30 ];
+        %tmp.22 = getv function %tmp.21 :addShift;
+        symbol [ _shiftStartMs %tmp.24 212 31 44 ];
+        %tmp.24 = getv ? :_shiftStartMs;
+        %tmp.25 = lgetv %now.1;
+        symbol [ now %tmp.25 212 46 49 ];
+        symbol [ _shiftStartMs %tmp.27 212 52 65 ];
+        %tmp.27 = getv ? :_shiftStartMs;
+        %tmp.28 = sub %tmp.25 %tmp.27;
+        invoke %tmp.21 %tmp.22(%tmp.24, %tmp.28);
+F__Github_Hockey_source_ShiftDetector_mc_211_40_213_12_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_211_12_213_12_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_211_12_213_12_if_end:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 214 12 ]
+        %tmp.29 = lgetv %now.1;
+        symbol [ now %tmp.29 214 28 31 ];
+        symbol [ _benchStartMs ? 214 12 25 ];
+        putv self :_benchStartMs %tmp.29;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 215 12 ]
+        %tmp.30 = self;
+        symbol [ _enterState %tmp.31 215 12 23 ];
+        %tmp.31 = getv function %tmp.30 :_enterState;
+        symbol [ STATE_BENCH %tmp.33 215 24 35 ];
+        %tmp.33 = getv ? :STATE_BENCH;
+        %tmp.34 = lgetv %now.1;
+        symbol [ now %tmp.34 215 37 40 ];
+        invoke %tmp.30 %tmp.31(%tmp.33, %tmp.34);
+F__Github_Hockey_source_ShiftDetector_mc_210_68_216_8_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_210_8_220_8_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_210_8_220_8_if_else_false:
+F__Github_Hockey_source_ShiftDetector_mc_216_15_220_8_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 217 12 ]
+        symbol [ _data %tmp.36 217 12 17 ];
+        %tmp.36 = getv ? :_data;
+        symbol [ addBreak %tmp.37 217 18 26 ];
+        %tmp.37 = getv function %tmp.36 :addBreak;
+        %tmp.38 = lgetv %now.1;
+        symbol [ now %tmp.38 217 27 30 ];
+        symbol [ _benchStartMs %tmp.40 217 33 46 ];
+        %tmp.40 = getv ? :_benchStartMs;
+        %tmp.41 = sub %tmp.38 %tmp.40;
+        invoke %tmp.36 %tmp.37(%tmp.41);
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 218 12 ]
+        %tmp.42 = lgetv %now.1;
+        symbol [ now %tmp.42 218 28 31 ];
+        symbol [ _shiftStartMs ? 218 12 25 ];
+        putv self :_shiftStartMs %tmp.42;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 219 12 ]
+        %tmp.43 = self;
+        symbol [ _enterState %tmp.44 219 12 23 ];
+        %tmp.44 = getv function %tmp.43 :_enterState;
+        symbol [ STATE_ON_ICE %tmp.46 219 24 36 ];
+        %tmp.46 = getv ? :STATE_ON_ICE;
+        %tmp.47 = lgetv %now.1;
+        symbol [ now %tmp.47 219 38 41 ];
+        invoke %tmp.43 %tmp.44(%tmp.46, %tmp.47);
+F__Github_Hockey_source_ShiftDetector_mc_216_15_220_8_stop:
+F__Github_Hockey_source_ShiftDetector_mc_210_8_220_8_if_end:
+F__Github_Hockey_source_ShiftDetector_mc_208_36_221_4_stop:
+    }
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 226; @symbol_functiondef = [injectData,226,13,23]; @symbol_param<0> = [hr,226,24,26]; @symbol_param<0>_type<0> = [Number,226,30,36]; @symbol_param<1> = [accel,226,38,43]; @symbol_param<1>_type<0> = [Number,226,47,53]; ]
+    function injectData(hr as Number, accel as Number) as Void {
+F__Github_Hockey_source_ShiftDetector_mc_226_63_232_4_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 227 8 ]
+        symbol [ _hrBuf %tmp.2 227 8 14 ];
+        %tmp.2 = getv ? :_hrBuf;
+        symbol [ push %tmp.3 227 15 19 ];
+        %tmp.3 = getv function %tmp.2 :push;
+        %tmp.4 = lgetv %hr;
+        symbol [ hr %tmp.4 227 20 22 ];
+        invoke %tmp.2 %tmp.3(%tmp.4);
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 228 8 ]
+        symbol [ _accelBuf %tmp.6 228 8 17 ];
+        %tmp.6 = getv ? :_accelBuf;
+        symbol [ push %tmp.7 228 18 22 ];
+        %tmp.7 = getv function %tmp.6 :push;
+        %tmp.8 = lgetv %accel;
+        symbol [ accel %tmp.8 228 23 28 ];
+        invoke %tmp.6 %tmp.7(%tmp.8);
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 229 8 ]
+        symbol [ _data %tmp.9 229 8 13 ];
+        %tmp.9 = getv self :_data;
+        %tmp.10 = lgetv %hr;
+        symbol [ hr %tmp.10 229 29 31 ];
+        symbol [ currentHR ? 229 14 23 ];
+        putv %tmp.9 :currentHR %tmp.10;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 230 8 ]
+        symbol [ _data %tmp.11 230 8 13 ];
+        %tmp.11 = getv self :_data;
+        %tmp.12 = lgetv %accel;
+        symbol [ accel %tmp.12 230 29 34 ];
+        symbol [ currentAccel ? 230 14 26 ];
+        putv %tmp.11 :currentAccel %tmp.12;
+F__Github_Hockey_source_ShiftDetector_mc_226_63_232_4_stop:
+    }
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 236; @symbol_functiondef = [_enterState,236,21,32]; @symbol_param<0> = [newState,236,33,41]; @symbol_param<0>_type<0> = [Number,236,45,51]; @symbol_param<1> = [now,236,53,56]; @symbol_param<1>_type<0> = [Number,236,60,66]; ]
+    private
+    function _enterState(newState as Number, now as Number) as Void {
+F__Github_Hockey_source_ShiftDetector_mc_236_76_239_4_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 237 8 ]
+        %tmp.1 = lgetv %newState;
+        symbol [ newState %tmp.1 237 26 34 ];
+        symbol [ _state ? 237 8 14 ];
+        putv self :_state %tmp.1;
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 238 8 ]
+        %tmp.2 = lgetv %now;
+        symbol [ now %tmp.2 238 26 29 ];
+        symbol [ _stateEnteredMs ? 238 8 23 ];
+        putv self :_stateEnteredMs %tmp.2;
+F__Github_Hockey_source_ShiftDetector_mc_236_76_239_4_stop:
+    }
+    [ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 241; @symbol_functiondef = [_computeAccelActivity,241,21,42]; @symbol_param<0> = [xs,241,43,45]; @symbol_param<0>_type<0> = [Array,241,49,54]; @symbol_param<0>_type<1> = [Number,241,55,61]; @symbol_param<1> = [ys,242,44,46]; @symbol_param<1>_type<0> = [Array,242,50,55]; @symbol_param<1>_type<1> = [Number,242,56,62]; @symbol_param<2> = [zs,243,44,46]; @symbol_param<2>_type<0> = [Array,243,50,55]; @symbol_param<2>_type<1> = [Number,243,56,62]; ]
+    private
+    function _computeAccelActivity(xs as Array<Number>, ys as Array<Number>, zs as Array<Number>) as Void {
+F__Github_Hockey_source_ShiftDetector_mc_243_73_258_4_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 244 8 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_243_73_258_4_start" "F__Github_Hockey_source_ShiftDetector_mc_243_73_258_4_stop" ]
+        %n.1 = local;
+        symbol [ n %n.1 244 12 13 ];
+        %tmp.1 = lgetv %xs;
+        symbol [ xs %tmp.1 244 16 18 ];
+        symbol [ size %tmp.2 244 19 23 ];
+        %tmp.2 = getv function %tmp.1 :size;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %n.1 %tmp.3;
+        symbol [ n %n.1 244 12 13 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 245 8 ]
+        for @F__Github_Hockey_source_ShiftDetector_mc_245_8_256_8_for_test @F__Github_Hockey_source_ShiftDetector_mc_245_8_256_8_for_incr @F__Github_Hockey_source_ShiftDetector_mc_245_8_256_8_for_end;
+F__Github_Hockey_source_ShiftDetector_mc_245_8_256_8_for_init:
+        [ "F__Github_Hockey_source_ShiftDetector_mc_245_8_256_8_for_begin" "F__Github_Hockey_source_ShiftDetector_mc_245_8_256_8_for_end" ]
+        %i.2 = local;
+        symbol [ i %i.2 245 17 18 ];
+        %tmp.4 = 0;
+        lputv %i.2 %tmp.4;
+        symbol [ i %i.2 245 17 18 ];
+F__Github_Hockey_source_ShiftDetector_mc_245_8_256_8_for_test:
+        %tmp.5 = lgetv %i.2;
+        symbol [ i %tmp.5 245 24 25 ];
+        %tmp.6 = lgetv %n.1;
+        symbol [ n %tmp.6 245 28 29 ];
+        %tmp.7 = lt %tmp.5 %tmp.6;
+        bf %tmp.7 @F__Github_Hockey_source_ShiftDetector_mc_245_8_256_8_for_end;
+F__Github_Hockey_source_ShiftDetector_mc_245_8_256_8_for_begin:
+F__Github_Hockey_source_ShiftDetector_mc_245_36_256_8_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 246 12 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_245_36_256_8_start" "F__Github_Hockey_source_ShiftDetector_mc_245_36_256_8_stop" ]
+        %xf.3 = local;
+        symbol [ xf %xf.3 246 16 18 ];
+        %tmp.8 = lgetv %xs;
+        symbol [ xs %tmp.8 246 22 24 ];
+        %tmp.9 = lgetv %i.2;
+        symbol [ i %tmp.9 246 25 26 ];
+        %tmp.10 = agetv %tmp.8 %tmp.9;
+        symbol [ toFloat %tmp.11 246 28 35 ];
+        %tmp.11 = getv function %tmp.10 :toFloat;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        lputv %xf.3 %tmp.12;
+        symbol [ xf %xf.3 246 16 18 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 247 12 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_245_36_256_8_start" "F__Github_Hockey_source_ShiftDetector_mc_245_36_256_8_stop" ]
+        %yf.4 = local;
+        symbol [ yf %yf.4 247 16 18 ];
+        %tmp.13 = lgetv %ys;
+        symbol [ ys %tmp.13 247 22 24 ];
+        %tmp.14 = lgetv %i.2;
+        symbol [ i %tmp.14 247 25 26 ];
+        %tmp.15 = agetv %tmp.13 %tmp.14;
+        symbol [ toFloat %tmp.16 247 28 35 ];
+        %tmp.16 = getv function %tmp.15 :toFloat;
+        %tmp.17 = invoke %tmp.15 %tmp.16();
+        lputv %yf.4 %tmp.17;
+        symbol [ yf %yf.4 247 16 18 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 248 12 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_245_36_256_8_start" "F__Github_Hockey_source_ShiftDetector_mc_245_36_256_8_stop" ]
+        %zf.5 = local;
+        symbol [ zf %zf.5 248 16 18 ];
+        %tmp.18 = lgetv %zs;
+        symbol [ zs %tmp.18 248 22 24 ];
+        %tmp.19 = lgetv %i.2;
+        symbol [ i %tmp.19 248 25 26 ];
+        %tmp.20 = agetv %tmp.18 %tmp.19;
+        symbol [ toFloat %tmp.21 248 28 35 ];
+        %tmp.21 = getv function %tmp.20 :toFloat;
+        %tmp.22 = invoke %tmp.20 %tmp.21();
+        lputv %zf.5 %tmp.22;
+        symbol [ zf %zf.5 248 16 18 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 250 12 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_245_36_256_8_start" "F__Github_Hockey_source_ShiftDetector_mc_245_36_256_8_stop" ]
+        %mag.6 = local;
+        symbol [ mag %mag.6 250 16 19 ];
+        symbol [ Math %tmp.23 250 22 26 ];
+        %tmp.23 = getm $.Toybox.Math;
+        symbol [ sqrt %tmp.24 250 27 31 ];
+        %tmp.24 = getv function %tmp.23 :sqrt;
+        %tmp.25 = lgetv %xf.3;
+        symbol [ xf %tmp.25 250 32 34 ];
+        %tmp.26 = lgetv %xf.3;
+        symbol [ xf %tmp.26 250 37 39 ];
+        %tmp.27 = mul %tmp.25 %tmp.26;
+        %tmp.28 = lgetv %yf.4;
+        symbol [ yf %tmp.28 250 42 44 ];
+        %tmp.29 = lgetv %yf.4;
+        symbol [ yf %tmp.29 250 47 49 ];
+        %tmp.30 = mul %tmp.28 %tmp.29;
+        %tmp.31 = add %tmp.27 %tmp.30;
+        %tmp.32 = lgetv %zf.5;
+        symbol [ zf %tmp.32 250 52 54 ];
+        %tmp.33 = lgetv %zf.5;
+        symbol [ zf %tmp.33 250 57 59 ];
+        %tmp.34 = mul %tmp.32 %tmp.33;
+        %tmp.35 = add %tmp.31 %tmp.34;
+        %tmp.36 = invoke %tmp.23 %tmp.24(%tmp.35);
+        symbol [ toNumber %tmp.37 250 61 69 ];
+        %tmp.37 = getv function %tmp.36 :toNumber;
+        %tmp.38 = invoke %tmp.36 %tmp.37();
+        lputv %mag.6 %tmp.38;
+        symbol [ mag %mag.6 250 16 19 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 253 12 ]
+        [ "F__Github_Hockey_source_ShiftDetector_mc_245_36_256_8_start" "F__Github_Hockey_source_ShiftDetector_mc_245_36_256_8_stop" ]
+        %dev.7 = local;
+        symbol [ dev %dev.7 253 16 19 ];
+        %tmp.39 = lgetv %mag.6;
+        symbol [ mag %tmp.39 253 22 25 ];
+        %tmp.40 = 1000;
+        %tmp.41 = sub %tmp.39 %tmp.40;
+        lputv %dev.7 %tmp.41;
+        symbol [ dev %dev.7 253 16 19 ];
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 254 12 ]
+F__Github_Hockey_source_ShiftDetector_mc_254_12_254_39_if_stmt:
+        %tmp.42 = lgetv %dev.7;
+        symbol [ dev %tmp.42 254 16 19 ];
+        %tmp.43 = 0;
+        %tmp.44 = lt %tmp.42 %tmp.43;
+        bf %tmp.44 @F__Github_Hockey_source_ShiftDetector_mc_254_12_254_39_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_254_12_254_39_if_true:
+F__Github_Hockey_source_ShiftDetector_mc_254_25_254_39_start:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 254 27 ]
+        %tmp.45 = lgetv %dev.7;
+        symbol [ dev %tmp.45 254 34 37 ];
+        %tmp.46 = sub 0 %tmp.45;
+        lputv %dev.7 %tmp.46;
+        symbol [ dev %dev.7 254 27 30 ];
+F__Github_Hockey_source_ShiftDetector_mc_254_25_254_39_stop:
+        goto @F__Github_Hockey_source_ShiftDetector_mc_254_12_254_39_if_end;
+F__Github_Hockey_source_ShiftDetector_mc_254_12_254_39_if_end:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 255 12 ]
+        symbol [ _accelBuf %tmp.48 255 12 21 ];
+        %tmp.48 = getv ? :_accelBuf;
+        symbol [ push %tmp.49 255 22 26 ];
+        %tmp.49 = getv function %tmp.48 :push;
+        %tmp.50 = lgetv %dev.7;
+        symbol [ dev %tmp.50 255 27 30 ];
+        invoke %tmp.48 %tmp.49(%tmp.50);
+F__Github_Hockey_source_ShiftDetector_mc_245_36_256_8_stop:
+F__Github_Hockey_source_ShiftDetector_mc_245_8_256_8_for_incr:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 245 ]
+        %tmp.53 = lgetv %i.2;
+        symbol [ i %tmp.53 245 31 32 ];
+        %tmp.54 = add %tmp.53 1;
+        lputv %i.2 %tmp.54;
+        symbol [ i %i.2 245 31 32 ];
+        goto @F__Github_Hockey_source_ShiftDetector_mc_245_8_256_8_for_test;
+F__Github_Hockey_source_ShiftDetector_mc_245_8_256_8_for_end:
+[ "F:\Github\Hockey\source\ShiftDetector.mc" 257 8 ]
+        symbol [ _data %tmp.55 257 8 13 ];
+        %tmp.55 = getv self :_data;
+        symbol [ _accelBuf %tmp.57 257 29 38 ];
+        %tmp.57 = getv ? :_accelBuf;
+        symbol [ average %tmp.58 257 39 46 ];
+        %tmp.58 = getv function %tmp.57 :average;
+        %tmp.59 = invoke %tmp.57 %tmp.58();
+        symbol [ currentAccel ? 257 14 26 ];
+        putv %tmp.55 :currentAccel %tmp.59;
+F__Github_Hockey_source_ShiftDetector_mc_243_73_258_4_stop:
+    }
+}
+[ @file = "F:\Github\Hockey\source\ShiftDetector.mc"; @line = 35; ]
+<init> {
+}

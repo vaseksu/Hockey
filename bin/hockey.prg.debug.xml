@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="F:\Github\Hockey\manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="1" lineNum="124" parent="globals" pc="268435460" symbol="getApp"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="1" lineNum="125" parent="globals" pc="268435470" symbol="getApp"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="2" lineNum="32" parent="globals/HockeyView" pc="268435481" symbol="&lt;init&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\bin\\gen\\006-B4536-00\\source\\Rez.mcgen" id="3" lineNum="7" parent="globals/Rez" pc="268435493" symbol="&lt;init&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="4" lineNum="59" parent="globals/HockeyMenuDelegate" pc="268435513" symbol="&lt;init&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="5" lineNum="13" parent="globals/HockeyDelegate" pc="268435525" symbol="&lt;init&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="6" lineNum="22" parent="globals/HockeyApp" pc="268435537" symbol="&lt;init&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="7" lineNum="147" parent="globals/ShiftData" pc="268435549" symbol="getAvgShiftMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="7" lineNum="148" parent="globals/ShiftData" pc="268435552" symbol="getAvgShiftMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="7" lineNum="148" parent="globals/ShiftData" pc="268435568" symbol="getAvgShiftMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="7" lineNum="149" parent="globals/ShiftData" pc="268435573" symbol="getAvgShiftMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="7" lineNum="150" parent="globals/ShiftData" pc="268435576" symbol="getAvgShiftMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="7" lineNum="151" parent="globals/ShiftData" pc="268435596" symbol="getAvgShiftMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="7" lineNum="153" parent="globals/ShiftData" pc="268435624" symbol="getAvgShiftMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="8" lineNum="131" parent="globals/ShiftData" pc="268435639" symbol="addBreak"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="8" lineNum="132" parent="globals/ShiftData" pc="268435641" symbol="addBreak"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="8" lineNum="133" parent="globals/ShiftData" pc="268435658" symbol="addBreak"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="8" lineNum="135" parent="globals/ShiftData" pc="268435684" symbol="addBreak"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="9" lineNum="176" parent="globals/ShiftData" pc="268435701" symbol="msToStr"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="9" lineNum="177" parent="globals/ShiftData" pc="268435704" symbol="msToStr"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="9" lineNum="178" parent="globals/ShiftData" pc="268435712" symbol="msToStr"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="9" lineNum="179" parent="globals/ShiftData" pc="268435719" symbol="msToStr"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="9" lineNum="180" parent="globals/ShiftData" pc="268435726" symbol="msToStr"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="10" lineNum="123" parent="globals/ShiftData" pc="268435755" symbol="addShift"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="10" lineNum="124" parent="globals/ShiftData" pc="268435757" symbol="addShift"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="10" lineNum="125" parent="globals/ShiftData" pc="268435774" symbol="addShift"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="10" lineNum="127" parent="globals/ShiftData" pc="268435800" symbol="addShift"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="10" lineNum="128" parent="globals/ShiftData" pc="268435836" symbol="addShift"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="11" lineNum="156" parent="globals/ShiftData" pc="268435852" symbol="getAvgBreakMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="11" lineNum="157" parent="globals/ShiftData" pc="268435855" symbol="getAvgBreakMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="11" lineNum="157" parent="globals/ShiftData" pc="268435871" symbol="getAvgBreakMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="11" lineNum="158" parent="globals/ShiftData" pc="268435876" symbol="getAvgBreakMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="11" lineNum="159" parent="globals/ShiftData" pc="268435879" symbol="getAvgBreakMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="11" lineNum="160" parent="globals/ShiftData" pc="268435899" symbol="getAvgBreakMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="11" lineNum="162" parent="globals/ShiftData" pc="268435922" symbol="getAvgBreakMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="12" lineNum="165" parent="globals/ShiftData" pc="268435937" symbol="reset"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="12" lineNum="166" parent="globals/ShiftData" pc="268435939" symbol="reset"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="12" lineNum="167" parent="globals/ShiftData" pc="268435948" symbol="reset"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="12" lineNum="168" parent="globals/ShiftData" pc="268435957" symbol="reset"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="12" lineNum="169" parent="globals/ShiftData" pc="268435965" symbol="reset"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="12" lineNum="170" parent="globals/ShiftData" pc="268435973" symbol="reset"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="12" lineNum="171" parent="globals/ShiftData" pc="268435981" symbol="reset"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="12" lineNum="172" parent="globals/ShiftData" pc="268435989" symbol="reset"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="13" lineNum="138" parent="globals/ShiftData" pc="268435998" symbol="getShiftCount"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="13" lineNum="139" parent="globals/ShiftData" pc="268436000" symbol="getShiftCount"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="14" lineNum="109" parent="globals/ShiftData" pc="268436012" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="14" lineNum="110" parent="globals/ShiftData" pc="268436014" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="14" lineNum="111" parent="globals/ShiftData" pc="268436023" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="14" lineNum="112" parent="globals/ShiftData" pc="268436032" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="14" lineNum="113" parent="globals/ShiftData" pc="268436040" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="14" lineNum="114" parent="globals/ShiftData" pc="268436048" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="14" lineNum="115" parent="globals/ShiftData" pc="268436056" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="14" lineNum="116" parent="globals/ShiftData" pc="268436064" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="14" lineNum="117" parent="globals/ShiftData" pc="268436072" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="14" lineNum="118" parent="globals/ShiftData" pc="268436080" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="14" lineNum="119" parent="globals/ShiftData" pc="268436088" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="14" lineNum="120" parent="globals/ShiftData" pc="268436096" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="15" lineNum="142" parent="globals/ShiftData" pc="268436105" symbol="getLastShiftMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="15" lineNum="143" parent="globals/ShiftData" pc="268436107" symbol="getLastShiftMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="15" lineNum="143" parent="globals/ShiftData" pc="268436123" symbol="getLastShiftMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="15" lineNum="144" parent="globals/ShiftData" pc="268436128" symbol="getLastShiftMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="16" lineNum="51" parent="globals/HockeyView" pc="268436154" symbol="onLayout"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="17" lineNum="164" parent="globals/HockeyView" pc="268436157" symbol="&lt;globals/HockeyView/&lt;&gt;_stateColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="17" lineNum="165" parent="globals/HockeyView" pc="268436159" symbol="&lt;globals/HockeyView/&lt;&gt;_stateColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="17" lineNum="165" parent="globals/HockeyView" pc="268436167" symbol="&lt;globals/HockeyView/&lt;&gt;_stateColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="17" lineNum="166" parent="globals/HockeyView" pc="268436175" symbol="&lt;globals/HockeyView/&lt;&gt;_stateColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="17" lineNum="166" parent="globals/HockeyView" pc="268436183" symbol="&lt;globals/HockeyView/&lt;&gt;_stateColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="17" lineNum="167" parent="globals/HockeyView" pc="268436192" symbol="&lt;globals/HockeyView/&lt;&gt;_stateColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="17" lineNum="167" parent="globals/HockeyView" pc="268436200" symbol="&lt;globals/HockeyView/&lt;&gt;_stateColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="17" lineNum="168" parent="globals/HockeyView" pc="268436209" symbol="&lt;globals/HockeyView/&lt;&gt;_stateColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="18" lineNum="45" parent="globals/HockeyView" pc="268436215" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="18" lineNum="46" parent="globals/HockeyView" pc="268436217" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="18" lineNum="47" parent="globals/HockeyView" pc="268436229" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="18" lineNum="48" parent="globals/HockeyView" pc="268436238" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="19" lineNum="171" parent="globals/HockeyView" pc="268436248" symbol="&lt;globals/HockeyView/&lt;&gt;_stateLabel&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="19" lineNum="172" parent="globals/HockeyView" pc="268436250" symbol="&lt;globals/HockeyView/&lt;&gt;_stateLabel&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="19" lineNum="172" parent="globals/HockeyView" pc="268436258" symbol="&lt;globals/HockeyView/&lt;&gt;_stateLabel&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="19" lineNum="173" parent="globals/HockeyView" pc="268436267" symbol="&lt;globals/HockeyView/&lt;&gt;_stateLabel&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="19" lineNum="173" parent="globals/HockeyView" pc="268436275" symbol="&lt;globals/HockeyView/&lt;&gt;_stateLabel&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="19" lineNum="174" parent="globals/HockeyView" pc="268436284" symbol="&lt;globals/HockeyView/&lt;&gt;_stateLabel&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="19" lineNum="174" parent="globals/HockeyView" pc="268436292" symbol="&lt;globals/HockeyView/&lt;&gt;_stateLabel&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="19" lineNum="175" parent="globals/HockeyView" pc="268436301" symbol="&lt;globals/HockeyView/&lt;&gt;_stateLabel&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="55" parent="globals/HockeyView" pc="268436307" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="56" parent="globals/HockeyView" pc="268436310" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="57" parent="globals/HockeyView" pc="268436319" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="58" parent="globals/HockeyView" pc="268436328" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="61" parent="globals/HockeyView" pc="268436335" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="62" parent="globals/HockeyView" pc="268436347" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="64" parent="globals/HockeyView" pc="268436363" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="67" parent="globals/HockeyView" pc="268436367" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="68" parent="globals/HockeyView" pc="268436380" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="69" parent="globals/HockeyView" pc="268436392" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="70" parent="globals/HockeyView" pc="268436404" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="71" parent="globals/HockeyView" pc="268436418" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="74" parent="globals/HockeyView" pc="268436444" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="77" parent="globals/HockeyView" pc="268436456" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="78" parent="globals/HockeyView" pc="268436469" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="79" parent="globals/HockeyView" pc="268436510" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="81" parent="globals/HockeyView" pc="268436554" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="84" parent="globals/HockeyView" pc="268436594" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="89" parent="globals/HockeyView" pc="268436634" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="90" parent="globals/HockeyView" pc="268436644" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="93" parent="globals/HockeyView" pc="268436654" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="94" parent="globals/HockeyView" pc="268436670" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="95" parent="globals/HockeyView" pc="268436698" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="96" parent="globals/HockeyView" pc="268436726" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="97" parent="globals/HockeyView" pc="268436743" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="98" parent="globals/HockeyView" pc="268436769" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="100" parent="globals/HockeyView" pc="268436795" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="101" parent="globals/HockeyView" pc="268436821" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="104" parent="globals/HockeyView" pc="268436847" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="105" parent="globals/HockeyView" pc="268436859" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="106" parent="globals/HockeyView" pc="268436883" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="107" parent="globals/HockeyView" pc="268436899" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="108" parent="globals/HockeyView" pc="268436927" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="109" parent="globals/HockeyView" pc="268436955" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="110" parent="globals/HockeyView" pc="268436977" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="111" parent="globals/HockeyView" pc="268437003" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="112" parent="globals/HockeyView" pc="268437020" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="113" parent="globals/HockeyView" pc="268437060" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="114" parent="globals/HockeyView" pc="268437100" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="115" parent="globals/HockeyView" pc="268437116" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="118" parent="globals/HockeyView" pc="268437144" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="119" parent="globals/HockeyView" pc="268437160" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="122" parent="globals/HockeyView" pc="268437202" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="123" parent="globals/HockeyView" pc="268437212" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="125" parent="globals/HockeyView" pc="268437222" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="126" parent="globals/HockeyView" pc="268437238" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="127" parent="globals/HockeyView" pc="268437267" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="128" parent="globals/HockeyView" pc="268437296" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="129" parent="globals/HockeyView" pc="268437313" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="130" parent="globals/HockeyView" pc="268437354" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="132" parent="globals/HockeyView" pc="268437401" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="133" parent="globals/HockeyView" pc="268437417" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="134" parent="globals/HockeyView" pc="268437446" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="135" parent="globals/HockeyView" pc="268437475" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="136" parent="globals/HockeyView" pc="268437492" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="137" parent="globals/HockeyView" pc="268437540" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="138" parent="globals/HockeyView" pc="268437556" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="142" parent="globals/HockeyView" pc="268437607" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="143" parent="globals/HockeyView" pc="268437620" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="20" lineNum="144" parent="globals/HockeyView" pc="268437637" symbol="onUpdate"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="21" lineNum="156" parent="globals/HockeyView" pc="268437675" symbol="&lt;globals/HockeyView/&lt;&gt;_hrColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="21" lineNum="157" parent="globals/HockeyView" pc="268437677" symbol="&lt;globals/HockeyView/&lt;&gt;_hrColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="21" lineNum="157" parent="globals/HockeyView" pc="268437684" symbol="&lt;globals/HockeyView/&lt;&gt;_hrColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="21" lineNum="158" parent="globals/HockeyView" pc="268437692" symbol="&lt;globals/HockeyView/&lt;&gt;_hrColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="21" lineNum="158" parent="globals/HockeyView" pc="268437700" symbol="&lt;globals/HockeyView/&lt;&gt;_hrColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="21" lineNum="159" parent="globals/HockeyView" pc="268437709" symbol="&lt;globals/HockeyView/&lt;&gt;_hrColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="21" lineNum="159" parent="globals/HockeyView" pc="268437717" symbol="&lt;globals/HockeyView/&lt;&gt;_hrColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="21" lineNum="160" parent="globals/HockeyView" pc="268437726" symbol="&lt;globals/HockeyView/&lt;&gt;_hrColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="21" lineNum="160" parent="globals/HockeyView" pc="268437735" symbol="&lt;globals/HockeyView/&lt;&gt;_hrColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyView.mc" id="21" lineNum="161" parent="globals/HockeyView" pc="268437744" symbol="&lt;globals/HockeyView/&lt;&gt;_hrColor&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="89" parent="globals/ShiftDetector" pc="268437749" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="90" parent="globals/ShiftDetector" pc="268437752" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="91" parent="globals/ShiftDetector" pc="268437764" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="96" parent="globals/ShiftDetector" pc="268437777" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="97" parent="globals/ShiftDetector" pc="268437791" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="98" parent="globals/ShiftDetector" pc="268437794" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="99" parent="globals/ShiftDetector" pc="268437806" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="100" parent="globals/ShiftDetector" pc="268437823" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="101" parent="globals/ShiftDetector" pc="268437832" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="102" parent="globals/ShiftDetector" pc="268437848" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="103" parent="globals/ShiftDetector" pc="268437861" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="105" parent="globals/ShiftDetector" pc="268437867" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="106" parent="globals/ShiftDetector" pc="268437873" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="107" parent="globals/ShiftDetector" pc="268437885" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="108" parent="globals/ShiftDetector" pc="268437902" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="109" parent="globals/ShiftDetector" pc="268437911" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="110" parent="globals/ShiftDetector" pc="268437927" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="116" parent="globals/ShiftDetector" pc="268437949" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="117" parent="globals/ShiftDetector" pc="268437974" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="118" parent="globals/ShiftDetector" pc="268438004" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="120" parent="globals/ShiftDetector" pc="268438029" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="122" parent="globals/ShiftDetector" pc="268438046" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="123" parent="globals/ShiftDetector" pc="268438056" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="124" parent="globals/ShiftDetector" pc="268438065" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="125" parent="globals/ShiftDetector" pc="268438074" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="128" parent="globals/ShiftDetector" pc="268438093" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="129" parent="globals/ShiftDetector" pc="268438104" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="132" parent="globals/ShiftDetector" pc="268438113" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="133" parent="globals/ShiftDetector" pc="268438128" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="134" parent="globals/ShiftDetector" pc="268438144" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="136" parent="globals/ShiftDetector" pc="268438158" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="137" parent="globals/ShiftDetector" pc="268438180" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="138" parent="globals/ShiftDetector" pc="268438189" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="142" parent="globals/ShiftDetector" pc="268438208" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="145" parent="globals/ShiftDetector" pc="268438223" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="146" parent="globals/ShiftDetector" pc="268438234" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="147" parent="globals/ShiftDetector" pc="268438242" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="148" parent="globals/ShiftDetector" pc="268438251" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="151" parent="globals/ShiftDetector" pc="268438270" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="152" parent="globals/ShiftDetector" pc="268438281" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="153" parent="globals/ShiftDetector" pc="268438289" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="155" parent="globals/ShiftDetector" pc="268438304" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="156" parent="globals/ShiftDetector" pc="268438331" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="157" parent="globals/ShiftDetector" pc="268438340" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="22" lineNum="161" parent="globals/ShiftDetector" pc="268438358" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="23" lineNum="168" parent="globals/ShiftDetector" pc="268438375" symbol="processSensorData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="23" lineNum="171" parent="globals/ShiftDetector" pc="268438378" symbol="processSensorData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="23" lineNum="172" parent="globals/ShiftDetector" pc="268438390" symbol="processSensorData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="23" lineNum="173" parent="globals/ShiftDetector" pc="268438407" symbol="processSensorData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="23" lineNum="174" parent="globals/ShiftDetector" pc="268438416" symbol="processSensorData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="23" lineNum="175" parent="globals/ShiftDetector" pc="268438432" symbol="processSensorData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="23" lineNum="179" parent="globals/ShiftDetector" pc="268438448" symbol="processSensorData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="23" lineNum="180" parent="globals/ShiftDetector" pc="268438456" symbol="processSensorData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="23" lineNum="181" parent="globals/ShiftDetector" pc="268438462" symbol="processSensorData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="23" lineNum="182" parent="globals/ShiftDetector" pc="268438471" symbol="processSensorData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="23" lineNum="183" parent="globals/ShiftDetector" pc="268438480" symbol="processSensorData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="23" lineNum="184" parent="globals/ShiftDetector" pc="268438489" symbol="processSensorData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="23" lineNum="185" parent="globals/ShiftDetector" pc="268438508" symbol="processSensorData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="24" lineNum="208" parent="globals/ShiftDetector" pc="268438530" symbol="manualToggle"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="24" lineNum="209" parent="globals/ShiftDetector" pc="268438533" symbol="manualToggle"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="24" lineNum="210" parent="globals/ShiftDetector" pc="268438545" symbol="manualToggle"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="24" lineNum="211" parent="globals/ShiftDetector" pc="268438567" symbol="manualToggle"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="24" lineNum="212" parent="globals/ShiftDetector" pc="268438578" symbol="manualToggle"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="24" lineNum="214" parent="globals/ShiftDetector" pc="268438608" symbol="manualToggle"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="24" lineNum="215" parent="globals/ShiftDetector" pc="268438617" symbol="manualToggle"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="24" lineNum="217" parent="globals/ShiftDetector" pc="268438632" symbol="manualToggle"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="24" lineNum="218" parent="globals/ShiftDetector" pc="268438654" symbol="manualToggle"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="24" lineNum="219" parent="globals/ShiftDetector" pc="268438663" symbol="manualToggle"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="25" lineNum="194" parent="globals/ShiftDetector" pc="268438677" symbol="processLegacySensor"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="25" lineNum="195" parent="globals/ShiftDetector" pc="268438680" symbol="processLegacySensor"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="25" lineNum="196" parent="globals/ShiftDetector" pc="268438690" symbol="processLegacySensor"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="25" lineNum="197" parent="globals/ShiftDetector" pc="268438698" symbol="processLegacySensor"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="25" lineNum="198" parent="globals/ShiftDetector" pc="268438714" symbol="processLegacySensor"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="26" lineNum="226" parent="globals/ShiftDetector" pc="268438731" symbol="injectData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="26" lineNum="227" parent="globals/ShiftDetector" pc="268438733" symbol="injectData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="26" lineNum="228" parent="globals/ShiftDetector" pc="268438749" symbol="injectData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="26" lineNum="229" parent="globals/ShiftDetector" pc="268438765" symbol="injectData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="26" lineNum="230" parent="globals/ShiftDetector" pc="268438778" symbol="injectData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="27" lineNum="80" parent="globals/ShiftDetector" pc="268438792" symbol="getState"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="27" lineNum="80" parent="globals/ShiftDetector" pc="268438794" symbol="getState"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="28" lineNum="83" parent="globals/ShiftDetector" pc="268438800" symbol="getCurrentDurationMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="28" lineNum="84" parent="globals/ShiftDetector" pc="268438802" symbol="getCurrentDurationMs"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="29" lineNum="236" parent="globals/ShiftDetector" pc="268438819" symbol="&lt;globals/ShiftDetector/&lt;&gt;_enterState&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="29" lineNum="237" parent="globals/ShiftDetector" pc="268438821" symbol="&lt;globals/ShiftDetector/&lt;&gt;_enterState&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="29" lineNum="238" parent="globals/ShiftDetector" pc="268438830" symbol="&lt;globals/ShiftDetector/&lt;&gt;_enterState&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="30" lineNum="241" parent="globals/ShiftDetector" pc="268438840" symbol="&lt;globals/ShiftDetector/&lt;&gt;_computeAccelActivity&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="30" lineNum="244" parent="globals/ShiftDetector" pc="268438843" symbol="&lt;globals/ShiftDetector/&lt;&gt;_computeAccelActivity&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="30" lineNum="245" parent="globals/ShiftDetector" pc="268438852" symbol="&lt;globals/ShiftDetector/&lt;&gt;_computeAccelActivity&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="30" lineNum="246" parent="globals/ShiftDetector" pc="268438863" symbol="&lt;globals/ShiftDetector/&lt;&gt;_computeAccelActivity&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="30" lineNum="247" parent="globals/ShiftDetector" pc="268438876" symbol="&lt;globals/ShiftDetector/&lt;&gt;_computeAccelActivity&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="30" lineNum="248" parent="globals/ShiftDetector" pc="268438889" symbol="&lt;globals/ShiftDetector/&lt;&gt;_computeAccelActivity&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="30" lineNum="250" parent="globals/ShiftDetector" pc="268438902" symbol="&lt;globals/ShiftDetector/&lt;&gt;_computeAccelActivity&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="30" lineNum="253" parent="globals/ShiftDetector" pc="268438939" symbol="&lt;globals/ShiftDetector/&lt;&gt;_computeAccelActivity&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="30" lineNum="254" parent="globals/ShiftDetector" pc="268438947" symbol="&lt;globals/ShiftDetector/&lt;&gt;_computeAccelActivity&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="30" lineNum="254" parent="globals/ShiftDetector" pc="268438954" symbol="&lt;globals/ShiftDetector/&lt;&gt;_computeAccelActivity&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="30" lineNum="255" parent="globals/ShiftDetector" pc="268438963" symbol="&lt;globals/ShiftDetector/&lt;&gt;_computeAccelActivity&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="30" lineNum="257" parent="globals/ShiftDetector" pc="268438989" symbol="&lt;globals/ShiftDetector/&lt;&gt;_computeAccelActivity&gt;"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="31" lineNum="62" parent="globals/ShiftDetector" pc="268439012" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="31" lineNum="63" parent="globals/ShiftDetector" pc="268439015" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="31" lineNum="65" parent="globals/ShiftDetector" pc="268439024" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="31" lineNum="66" parent="globals/ShiftDetector" pc="268439036" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="31" lineNum="67" parent="globals/ShiftDetector" pc="268439044" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="31" lineNum="68" parent="globals/ShiftDetector" pc="268439053" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="31" lineNum="69" parent="globals/ShiftDetector" pc="268439062" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="31" lineNum="70" parent="globals/ShiftDetector" pc="268439071" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="31" lineNum="72" parent="globals/ShiftDetector" pc="268439080" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="31" lineNum="73" parent="globals/ShiftDetector" pc="268439107" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="31" lineNum="74" parent="globals/ShiftDetector" pc="268439134" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftDetector.mc" id="31" lineNum="75" parent="globals/ShiftDetector" pc="268439161" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="32" lineNum="66" parent="globals/RingBuffer" pc="268439170" symbol="average"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="32" lineNum="67" parent="globals/RingBuffer" pc="268439173" symbol="average"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="32" lineNum="67" parent="globals/RingBuffer" pc="268439183" symbol="average"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="32" lineNum="68" parent="globals/RingBuffer" pc="268439188" symbol="average"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="32" lineNum="69" parent="globals/RingBuffer" pc="268439191" symbol="average"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="32" lineNum="69" parent="globals/RingBuffer" pc="268439205" symbol="average"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="32" lineNum="70" parent="globals/RingBuffer" pc="268439228" symbol="average"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="33" lineNum="73" parent="globals/RingBuffer" pc="268439237" symbol="count"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="33" lineNum="73" parent="globals/RingBuffer" pc="268439239" symbol="count"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="34" lineNum="75" parent="globals/RingBuffer" pc="268439245" symbol="reset"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="34" lineNum="76" parent="globals/RingBuffer" pc="268439248" symbol="reset"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="34" lineNum="77" parent="globals/RingBuffer" pc="268439256" symbol="reset"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="34" lineNum="78" parent="globals/RingBuffer" pc="268439264" symbol="reset"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="34" lineNum="78" parent="globals/RingBuffer" pc="268439278" symbol="reset"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="35" lineNum="52" parent="globals/RingBuffer" pc="268439298" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="35" lineNum="53" parent="globals/RingBuffer" pc="268439301" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="35" lineNum="54" parent="globals/RingBuffer" pc="268439310" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="35" lineNum="55" parent="globals/RingBuffer" pc="268439318" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="35" lineNum="56" parent="globals/RingBuffer" pc="268439326" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="35" lineNum="57" parent="globals/RingBuffer" pc="268439339" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="35" lineNum="57" parent="globals/RingBuffer" pc="268439353" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="36" lineNum="60" parent="globals/RingBuffer" pc="268439373" symbol="push"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="36" lineNum="61" parent="globals/RingBuffer" pc="268439375" symbol="push"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="36" lineNum="62" parent="globals/RingBuffer" pc="268439388" symbol="push"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="36" lineNum="63" parent="globals/RingBuffer" pc="268439409" symbol="push"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="36" lineNum="63" parent="globals/RingBuffer" pc="268439423" symbol="push"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="37" lineNum="93" parent="globals/HockeyMenuDelegate" pc="268439442" symbol="onBack"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="37" lineNum="94" parent="globals/HockeyMenuDelegate" pc="268439444" symbol="onBack"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="38" lineNum="64" parent="globals/HockeyMenuDelegate" pc="268439460" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="38" lineNum="67" parent="globals/HockeyMenuDelegate" pc="268439462" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="38" lineNum="68" parent="globals/HockeyMenuDelegate" pc="268439474" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="38" lineNum="69" parent="globals/HockeyMenuDelegate" pc="268439483" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="38" lineNum="70" parent="globals/HockeyMenuDelegate" pc="268439492" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="39" lineNum="73" parent="globals/HockeyMenuDelegate" pc="268439502" symbol="onSelect"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="39" lineNum="74" parent="globals/HockeyMenuDelegate" pc="268439505" symbol="onSelect"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="39" lineNum="76" parent="globals/HockeyMenuDelegate" pc="268439514" symbol="onSelect"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="39" lineNum="77" parent="globals/HockeyMenuDelegate" pc="268439525" symbol="onSelect"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="39" lineNum="79" parent="globals/HockeyMenuDelegate" pc="268439540" symbol="onSelect"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="39" lineNum="80" parent="globals/HockeyMenuDelegate" pc="268439551" symbol="onSelect"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="39" lineNum="82" parent="globals/HockeyMenuDelegate" pc="268439566" symbol="onSelect"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="39" lineNum="83" parent="globals/HockeyMenuDelegate" pc="268439577" symbol="onSelect"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="39" lineNum="85" parent="globals/HockeyMenuDelegate" pc="268439592" symbol="onSelect"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="39" lineNum="86" parent="globals/HockeyMenuDelegate" pc="268439603" symbol="onSelect"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="39" lineNum="87" parent="globals/HockeyMenuDelegate" pc="268439615" symbol="onSelect"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="39" lineNum="90" parent="globals/HockeyMenuDelegate" pc="268439630" symbol="onSelect"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="98" parent="globals/SimulationHelper" pc="268439646" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="99" parent="globals/SimulationHelper" pc="268439649" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="99" parent="globals/SimulationHelper" pc="268439658" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="101" parent="globals/SimulationHelper" pc="268439662" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="104" parent="globals/SimulationHelper" pc="268439674" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="106" parent="globals/SimulationHelper" pc="268439723" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="107" parent="globals/SimulationHelper" pc="268439743" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="108" parent="globals/SimulationHelper" pc="268439770" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="111" parent="globals/SimulationHelper" pc="268439788" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="113" parent="globals/SimulationHelper" pc="268439808" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="114" parent="globals/SimulationHelper" pc="268439816" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="115" parent="globals/SimulationHelper" pc="268439828" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="118" parent="globals/SimulationHelper" pc="268439832" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="119" parent="globals/SimulationHelper" pc="268439845" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="120" parent="globals/SimulationHelper" pc="268439851" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="121" parent="globals/SimulationHelper" pc="268439858" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="122" parent="globals/SimulationHelper" pc="268439865" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="126" parent="globals/SimulationHelper" pc="268439875" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="127" parent="globals/SimulationHelper" pc="268439892" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="127" parent="globals/SimulationHelper" pc="268439903" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="128" parent="globals/SimulationHelper" pc="268439913" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="131" parent="globals/SimulationHelper" pc="268439950" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="132" parent="globals/SimulationHelper" pc="268439962" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="133" parent="globals/SimulationHelper" pc="268439972" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="134" parent="globals/SimulationHelper" pc="268439985" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="135" parent="globals/SimulationHelper" pc="268439992" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="137" parent="globals/SimulationHelper" pc="268439999" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="137" parent="globals/SimulationHelper" pc="268440007" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="138" parent="globals/SimulationHelper" pc="268440014" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="138" parent="globals/SimulationHelper" pc="268440023" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="139" parent="globals/SimulationHelper" pc="268440031" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="139" parent="globals/SimulationHelper" pc="268440038" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="141" parent="globals/SimulationHelper" pc="268440044" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="144" parent="globals/SimulationHelper" pc="268440062" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="145" parent="globals/SimulationHelper" pc="268440077" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="146" parent="globals/SimulationHelper" pc="268440092" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="147" parent="globals/SimulationHelper" pc="268440107" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="40" lineNum="148" parent="globals/SimulationHelper" pc="268440129" symbol="onTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="41" lineNum="78" parent="globals/SimulationHelper" pc="268440152" symbol="start"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="41" lineNum="79" parent="globals/SimulationHelper" pc="268440154" symbol="start"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="41" lineNum="80" parent="globals/SimulationHelper" pc="268440162" symbol="start"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="41" lineNum="81" parent="globals/SimulationHelper" pc="268440170" symbol="start"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="41" lineNum="82" parent="globals/SimulationHelper" pc="268440187" symbol="start"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="41" lineNum="83" parent="globals/SimulationHelper" pc="268440196" symbol="start"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="41" lineNum="84" parent="globals/SimulationHelper" pc="268440204" symbol="start"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="41" lineNum="85" parent="globals/SimulationHelper" pc="268440212" symbol="start"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="41" lineNum="86" parent="globals/SimulationHelper" pc="268440220" symbol="start"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="41" lineNum="87" parent="globals/SimulationHelper" pc="268440232" symbol="start"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="41" lineNum="88" parent="globals/SimulationHelper" pc="268440245" symbol="start"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="41" lineNum="89" parent="globals/SimulationHelper" pc="268440258" symbol="start"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="41" lineNum="90" parent="globals/SimulationHelper" pc="268440270" symbol="start"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="42" lineNum="93" parent="globals/SimulationHelper" pc="268440283" symbol="isActive"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="42" lineNum="93" parent="globals/SimulationHelper" pc="268440285" symbol="isActive"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="43" lineNum="52" parent="globals/SimulationHelper" pc="268440291" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="43" lineNum="53" parent="globals/SimulationHelper" pc="268440293" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="43" lineNum="54" parent="globals/SimulationHelper" pc="268440302" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="43" lineNum="55" parent="globals/SimulationHelper" pc="268440311" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="43" lineNum="56" parent="globals/SimulationHelper" pc="268440319" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="43" lineNum="57" parent="globals/SimulationHelper" pc="268440327" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="43" lineNum="58" parent="globals/SimulationHelper" pc="268440335" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="43" lineNum="59" parent="globals/SimulationHelper" pc="268440344" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="43" lineNum="60" parent="globals/SimulationHelper" pc="268440352" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="43" lineNum="61" parent="globals/SimulationHelper" pc="268440360" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\SimulationHelper.mc" id="43" lineNum="64" parent="globals/SimulationHelper" pc="268440368" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="44" lineNum="88" parent="globals/ShiftRecord" pc="268440460" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="44" lineNum="89" parent="globals/ShiftRecord" pc="268440462" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\ShiftData.mc" id="44" lineNum="90" parent="globals/ShiftRecord" pc="268440471" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="45" lineNum="50" parent="globals/HockeyDelegate" pc="268440481" symbol="onBack"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="45" lineNum="51" parent="globals/HockeyDelegate" pc="268440483" symbol="onBack"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="45" lineNum="52" parent="globals/HockeyDelegate" pc="268440502" symbol="onBack"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="45" lineNum="53" parent="globals/HockeyDelegate" pc="268440513" symbol="onBack"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="46" lineNum="35" parent="globals/HockeyDelegate" pc="268440515" symbol="onMenu"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="46" lineNum="36" parent="globals/HockeyDelegate" pc="268440518" symbol="onMenu"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="46" lineNum="37" parent="globals/HockeyDelegate" pc="268440558" symbol="onMenu"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="46" lineNum="38" parent="globals/HockeyDelegate" pc="268440603" symbol="onMenu"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="46" lineNum="39" parent="globals/HockeyDelegate" pc="268440648" symbol="onMenu"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="46" lineNum="40" parent="globals/HockeyDelegate" pc="268440693" symbol="onMenu"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="46" lineNum="41" parent="globals/HockeyDelegate" pc="268440738" symbol="onMenu"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="46" lineNum="44" parent="globals/HockeyDelegate" pc="268440788" symbol="onMenu"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="47" lineNum="18" parent="globals/HockeyDelegate" pc="268440790" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="47" lineNum="21" parent="globals/HockeyDelegate" pc="268440792" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="47" lineNum="22" parent="globals/HockeyDelegate" pc="268440804" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="47" lineNum="23" parent="globals/HockeyDelegate" pc="268440813" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="47" lineNum="24" parent="globals/HockeyDelegate" pc="268440822" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="48" lineNum="28" parent="globals/HockeyDelegate" pc="268440832" symbol="onSelect"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="48" lineNum="29" parent="globals/HockeyDelegate" pc="268440834" symbol="onSelect"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="48" lineNum="30" parent="globals/HockeyDelegate" pc="268440853" symbol="onSelect"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyDelegate.mc" id="48" lineNum="31" parent="globals/HockeyDelegate" pc="268440864" symbol="onSelect"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="49" lineNum="36" parent="globals/HockeyApp" pc="268440866" symbol="onStart"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="49" lineNum="40" parent="globals/HockeyApp" pc="268440869" symbol="onStart"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="49" lineNum="45" parent="globals/HockeyApp" pc="268440903" symbol="onStart"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="49" lineNum="46" parent="globals/HockeyApp" pc="268440924" symbol="onStart"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="49" lineNum="47" parent="globals/HockeyApp" pc="268440942" symbol="onStart"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="49" lineNum="49" parent="globals/HockeyApp" pc="268440961" symbol="onStart"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="49" lineNum="53" parent="globals/HockeyApp" pc="268440981" symbol="onStart"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="49" lineNum="61" parent="globals/HockeyApp" pc="268441022" symbol="onStart"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="49" lineNum="62" parent="globals/HockeyApp" pc="268441056" symbol="onStart"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="49" lineNum="64" parent="globals/HockeyApp" pc="268441075" symbol="onStart"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="49" lineNum="65" parent="globals/HockeyApp" pc="268441093" symbol="onStart"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="49" lineNum="69" parent="globals/HockeyApp" pc="268441131" symbol="onStart"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="49" lineNum="70" parent="globals/HockeyApp" pc="268441160" symbol="onStart"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="50" lineNum="114" parent="globals/HockeyApp" pc="268441192" symbol="onTimerTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="50" lineNum="115" parent="globals/HockeyApp" pc="268441194" symbol="onTimerTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="50" lineNum="116" parent="globals/HockeyApp" pc="268441208" symbol="onTimerTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="50" lineNum="118" parent="globals/HockeyApp" pc="268441223" symbol="onTimerTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="50" lineNum="119" parent="globals/HockeyApp" pc="268441235" symbol="onTimerTick"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="51" lineNum="106" parent="globals/HockeyApp" pc="268441247" symbol="onLegacySensor"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="51" lineNum="107" parent="globals/HockeyApp" pc="268441249" symbol="onLegacySensor"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="51" lineNum="108" parent="globals/HockeyApp" pc="268441264" symbol="onLegacySensor"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="52" lineNum="91" parent="globals/HockeyApp" pc="268441284" symbol="getInitialView"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="52" lineNum="92" parent="globals/HockeyApp" pc="268441287" symbol="getInitialView"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="52" lineNum="93" parent="globals/HockeyApp" pc="268441317" symbol="getInitialView"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="52" lineNum="94" parent="globals/HockeyApp" pc="268441352" symbol="getInitialView"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="53" lineNum="99" parent="globals/HockeyApp" pc="268441367" symbol="onSensorData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="53" lineNum="100" parent="globals/HockeyApp" pc="268441369" symbol="onSensorData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="53" lineNum="102" parent="globals/HockeyApp" pc="268441384" symbol="onSensorData"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="54" lineNum="29" parent="globals/HockeyApp" pc="268441404" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="54" lineNum="30" parent="globals/HockeyApp" pc="268441406" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="54" lineNum="31" parent="globals/HockeyApp" pc="268441418" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="54" lineNum="32" parent="globals/HockeyApp" pc="268441443" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="54" lineNum="33" parent="globals/HockeyApp" pc="268441473" symbol="initialize"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="55" lineNum="73" parent="globals/HockeyApp" pc="268441509" symbol="onStop"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="55" lineNum="74" parent="globals/HockeyApp" pc="268441512" symbol="onStop"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="55" lineNum="75" parent="globals/HockeyApp" pc="268441521" symbol="onStop"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="55" lineNum="81" parent="globals/HockeyApp" pc="268441536" symbol="onStop"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="55" lineNum="82" parent="globals/HockeyApp" pc="268441553" symbol="onStop"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="55" lineNum="85" parent="globals/HockeyApp" pc="268441584" symbol="onStop"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="55" lineNum="86" parent="globals/HockeyApp" pc="268441607" symbol="onStop"/>
+        <entry filename="F:\\Github\\Hockey\\source\\HockeyApp.mc" id="55" lineNum="87" parent="globals/HockeyApp" pc="268441619" symbol="onStop"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="14" method="true" symbol="addBreak"/>
+        <entry field="true" id="81" symbol="&lt;globals/HockeyApp/&lt;&gt;_session&gt;"/>
+        <entry field="true" id="17" symbol="breaks"/>
+        <entry field="true" id="69" symbol="&lt;globals/SimulationHelper/&lt;&gt;_prevHR&gt;"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry field="true" id="19" symbol="currentHR"/>
+        <entry field="true" id="58" symbol="&lt;globals/RingBuffer/&lt;&gt;_size&gt;"/>
+        <entry field="true" id="79" symbol="&lt;globals/HockeyApp/&lt;&gt;_data&gt;"/>
+        <entry field="true" id="82" symbol="&lt;globals/HockeyApp/&lt;&gt;_sim&gt;"/>
+        <entry field="true" id="57" symbol="&lt;globals/RingBuffer/&lt;&gt;_head&gt;"/>
+        <entry id="8388638" module="true" symbol="ActivityRecording"/>
+        <entry field="true" id="66" symbol="&lt;globals/SimulationHelper/&lt;&gt;_detector&gt;"/>
+        <entry id="86" method="true" symbol="onTimerTick"/>
+        <entry id="5" object="true" symbol="HockeyApp"/>
+        <entry id="23" method="true" symbol="getShiftCount"/>
+        <entry field="true" id="8388890" symbol="sport"/>
+        <entry field="true" id="31" symbol="totalToiMs"/>
+        <entry id="20" method="true" symbol="getAvgBreakMs"/>
+        <entry id="15" method="true" symbol="addShift"/>
+        <entry field="true" id="46" symbol="&lt;globals/ShiftDetector/&lt;&gt;_state&gt;"/>
+        <entry id="11" object="true" symbol="ShiftDetector"/>
+        <entry field="true" id="40" symbol="&lt;globals/ShiftDetector/&lt;&gt;_data&gt;"/>
+        <entry field="true" id="83" symbol="&lt;globals/HockeyApp/&lt;&gt;_timer&gt;"/>
+        <entry id="39" method="true" symbol="&lt;globals/ShiftDetector/&lt;&gt;_computeAccelActivity&gt;"/>
+        <entry field="true" id="61" symbol="&lt;globals/HockeyMenuDelegate/&lt;&gt;_data&gt;"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry id="85" method="true" symbol="onSensorData"/>
+        <entry field="true" id="30" symbol="simCals"/>
+        <entry field="true" id="24" symbol="goals"/>
+        <entry id="8392382" method="true" symbol="reset"/>
+        <entry field="true" id="25" symbol="hrDelta"/>
+        <entry id="59" method="true" symbol="average"/>
+        <entry id="49" method="true" symbol="getCurrentDurationMs"/>
+        <entry field="true" id="88" symbol="AppName"/>
+        <entry field="true" id="71" symbol="&lt;globals/SimulationHelper/&lt;&gt;_stepIdx&gt;"/>
+        <entry field="true" id="74" symbol="durationMs"/>
+        <entry id="4" module="true" symbol="globals/Rez/Strings"/>
+        <entry field="true" id="70" symbol="&lt;globals/SimulationHelper/&lt;&gt;_seq&gt;"/>
+        <entry field="true" id="72" symbol="&lt;globals/SimulationHelper/&lt;&gt;_stepStartMs&gt;"/>
+        <entry id="8389080" method="true" symbol="onMenu"/>
+        <entry id="7" object="true" symbol="HockeyMenuDelegate"/>
+        <entry id="53" method="true" symbol="processLegacySensor"/>
+        <entry id="8388631" module="true" symbol="Activity"/>
+        <entry id="54" method="true" symbol="processSensorData"/>
+        <entry id="89" symbol="toggle"/>
+        <entry id="21" method="true" symbol="getAvgShiftMs"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="8389081" method="true" symbol="onBack"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry id="27" method="true" symbol="msToStr"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry field="true" id="48" symbol="&lt;globals/ShiftDetector/&lt;&gt;_transitionStartMs&gt;"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="6" object="true" symbol="HockeyDelegate"/>
+        <entry id="8389275" method="true" symbol="getApp"/>
+        <entry id="8" object="true" symbol="HockeyView"/>
+        <entry id="8389850" method="true" symbol="count"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry field="true" id="8390134" symbol="sampleRate"/>
+        <entry field="true" id="78" symbol="&lt;globals/HockeyDelegate/&lt;&gt;_sim&gt;"/>
+        <entry id="13" object="true" symbol="SimulationHelper"/>
+        <entry id="8390648" symbol="accelerometer"/>
+        <entry field="true" id="67" symbol="&lt;globals/SimulationHelper/&lt;&gt;_hrCount&gt;"/>
+        <entry field="true" id="28" symbol="shifts"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="51" method="true" symbol="manualToggle"/>
+        <entry id="8392250" method="true" symbol="isActive"/>
+        <entry field="true" id="26" symbol="isSimulation"/>
+        <entry field="true" id="45" symbol="&lt;globals/ShiftDetector/&lt;&gt;_shiftStartMs&gt;"/>
+        <entry id="90" symbol="simulate"/>
+        <entry field="true" id="8390438" symbol="enabled"/>
+        <entry id="8388644" module="true" symbol="System"/>
+        <entry field="true" id="43" symbol="&lt;globals/ShiftDetector/&lt;&gt;_hrDeltaBuf&gt;"/>
+        <entry id="8389619" method="true" symbol="onSelect"/>
+        <entry field="true" id="16" symbol="assists"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry field="true" id="63" symbol="&lt;globals/HockeyMenuDelegate/&lt;&gt;_sim&gt;"/>
+        <entry field="true" id="44" symbol="&lt;globals/ShiftDetector/&lt;&gt;_prevHR&gt;"/>
+        <entry field="true" id="38" symbol="&lt;globals/ShiftDetector/&lt;&gt;_benchStartMs&gt;"/>
+        <entry id="34" method="true" symbol="&lt;globals/HockeyView/&lt;&gt;_hrColor&gt;"/>
+        <entry field="true" id="55" symbol="&lt;globals/RingBuffer/&lt;&gt;_buf&gt;"/>
+        <entry id="36" method="true" symbol="&lt;globals/HockeyView/&lt;&gt;_stateLabel&gt;"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry field="true" id="80" symbol="&lt;globals/HockeyApp/&lt;&gt;_detector&gt;"/>
+        <entry field="true" id="87" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="8388643" module="true" symbol="Sensor"/>
+        <entry id="84" method="true" symbol="onLegacySensor"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry field="true" id="77" symbol="&lt;globals/HockeyDelegate/&lt;&gt;_detector&gt;"/>
+        <entry id="52" method="true" symbol="onTick"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="9" object="true" symbol="RingBuffer"/>
+        <entry id="22" method="true" symbol="getLastShiftMs"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry field="true" id="8388891" symbol="subSport"/>
+        <entry field="true" id="37" symbol="&lt;globals/ShiftDetector/&lt;&gt;_accelBuf&gt;"/>
+        <entry field="true" id="73" symbol="&lt;globals/SimulationHelper/&lt;&gt;_ticks&gt;"/>
+        <entry id="41" method="true" symbol="&lt;globals/ShiftDetector/&lt;&gt;_enterState&gt;"/>
+        <entry field="true" id="75" symbol="startMs"/>
+        <entry id="8389902" method="true" symbol="getState"/>
+        <entry field="true" id="8388892" symbol="name"/>
+        <entry id="8389808" symbol="period"/>
+        <entry id="8388641" module="true" symbol="Math"/>
+        <entry field="true" id="32" symbol="&lt;globals/HockeyView/&lt;&gt;_data&gt;"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="10" object="true" symbol="ShiftData"/>
+        <entry field="true" id="62" symbol="&lt;globals/HockeyMenuDelegate/&lt;&gt;_detector&gt;"/>
+        <entry field="true" id="18" symbol="currentAccel"/>
+        <entry field="true" id="64" symbol="&lt;globals/SimulationHelper/&lt;&gt;_active&gt;"/>
+        <entry id="8388646" module="true" object="true" symbol="Timer"/>
+        <entry field="true" id="33" symbol="&lt;globals/HockeyView/&lt;&gt;_detector&gt;"/>
+        <entry field="true" id="56" symbol="&lt;globals/RingBuffer/&lt;&gt;_cap&gt;"/>
+        <entry field="true" id="29" symbol="simAvgHR"/>
+        <entry id="8388698" method="true" symbol="start"/>
+        <entry id="35" method="true" symbol="&lt;globals/HockeyView/&lt;&gt;_stateColor&gt;"/>
+        <entry id="60" method="true" symbol="push"/>
+        <entry field="true" id="76" symbol="&lt;globals/HockeyDelegate/&lt;&gt;_data&gt;"/>
+        <entry field="true" id="42" symbol="&lt;globals/ShiftDetector/&lt;&gt;_hrBuf&gt;"/>
+        <entry id="12" object="true" symbol="ShiftRecord"/>
+        <entry field="true" id="47" symbol="&lt;globals/ShiftDetector/&lt;&gt;_stateEnteredMs&gt;"/>
+        <entry id="91" symbol="clearGA"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+        <entry field="true" id="8389642" symbol="title"/>
+        <entry id="50" method="true" symbol="injectData"/>
+        <entry field="true" id="65" symbol="&lt;globals/SimulationHelper/&lt;&gt;_data&gt;"/>
+        <entry field="true" id="68" symbol="&lt;globals/SimulationHelper/&lt;&gt;_hrSum&gt;"/>
+    </symbolTable>
+    <localVars>
+        <entry endPc="268435638" name="total" stackId="1" startPc="268435552"/>
+        <entry endPc="268435623" name="i" stackId="2" startPc="268435596"/>
+        <entry arg="true" endPc="268435700" name="durationMs" stackId="1" startPc="268435639"/>
+        <entry arg="true" endPc="268435754" name="ms" stackId="1" startPc="268435701"/>
+        <entry endPc="268435754" name="sec" stackId="2" startPc="268435704"/>
+        <entry endPc="268435754" name="min" stackId="3" startPc="268435704"/>
+        <entry arg="true" endPc="268435851" name="startMs" stackId="1" startPc="268435755"/>
+        <entry arg="true" endPc="268435851" name="durationMs" stackId="2" startPc="268435755"/>
+        <entry endPc="268435936" name="total" stackId="1" startPc="268435855"/>
+        <entry endPc="268435921" name="i" stackId="2" startPc="268435899"/>
+        <entry arg="true" endPc="268436214" name="state" stackId="1" startPc="268436157"/>
+        <entry arg="true" endPc="268436247" name="data" stackId="1" startPc="268436215"/>
+        <entry arg="true" endPc="268436247" name="detector" stackId="2" startPc="268436215"/>
+        <entry arg="true" endPc="268436306" name="state" stackId="1" startPc="268436248"/>
+        <entry arg="true" endPc="268437674" name="dc" stackId="1" startPc="268436307"/>
+        <entry endPc="268437673" name="w" stackId="2" startPc="268436310"/>
+        <entry endPc="268437673" name="h" stackId="3" startPc="268436310"/>
+        <entry endPc="268437673" name="cx" stackId="4" startPc="268436310"/>
+        <entry endPc="268437673" name="J" stackId="5" startPc="268436310"/>
+        <entry endPc="268437673" name="state" stackId="6" startPc="268436310"/>
+        <entry endPc="268437673" name="stateColor" stackId="7" startPc="268436310"/>
+        <entry endPc="268437673" name="stateLabel" stackId="8" startPc="268436310"/>
+        <entry endPc="268437673" name="actInfo" stackId="9" startPc="268436310"/>
+        <entry endPc="268437673" name="avgHR" stackId="10" startPc="268436310"/>
+        <entry endPc="268437673" name="cals" stackId="11" startPc="268436310"/>
+        <entry endPc="268437673" name="sideX1" stackId="12" startPc="268436310"/>
+        <entry endPc="268437673" name="sideX2" stackId="13" startPc="268436310"/>
+        <entry endPc="268437673" name="timerStr" stackId="14" startPc="268436310"/>
+        <entry endPc="268437673" name="hrVal" stackId="15" startPc="268436310"/>
+        <entry endPc="268437673" name="hrStr" stackId="16" startPc="268436310"/>
+        <entry endPc="268437673" name="col1" stackId="17" startPc="268436310"/>
+        <entry endPc="268437673" name="col2" stackId="18" startPc="268436310"/>
+        <entry arg="true" endPc="268437748" name="hr" stackId="1" startPc="268437675"/>
+        <entry endPc="268438373" name="now" stackId="1" startPc="268437752"/>
+        <entry endPc="268438373" name="accel" stackId="2" startPc="268437752"/>
+        <entry endPc="268437945" name="gotHR" stackId="3" startPc="268437791"/>
+        <entry endPc="268437945" name="actInfo" stackId="4" startPc="268437791"/>
+        <entry endPc="268437863" name="hr" stackId="5" startPc="268437823"/>
+        <entry endPc="268437942" name="sInfo" stackId="6" startPc="268437873"/>
+        <entry endPc="268437939" name="hr" stackId="7" startPc="268437902"/>
+        <entry endPc="268438204" name="hrRising" stackId="8" startPc="268438113"/>
+        <entry endPc="268438204" name="requiredMs" stackId="9" startPc="268438113"/>
+        <entry arg="true" endPc="268438529" name="sensorData" stackId="1" startPc="268438375"/>
+        <entry endPc="268438528" name="actInfo" stackId="2" startPc="268438378"/>
+        <entry endPc="268438444" name="hr" stackId="3" startPc="268438407"/>
+        <entry endPc="268438528" name="ad" stackId="4" startPc="268438378"/>
+        <entry endPc="268438525" name="xs" stackId="5" startPc="268438462"/>
+        <entry endPc="268438525" name="ys" stackId="6" startPc="268438462"/>
+        <entry endPc="268438525" name="zs" stackId="7" startPc="268438462"/>
+        <entry endPc="268438675" name="now" stackId="1" startPc="268438533"/>
+        <entry arg="true" endPc="268438730" name="info" stackId="1" startPc="268438677"/>
+        <entry endPc="268438726" name="hr" stackId="2" startPc="268438690"/>
+        <entry arg="true" endPc="268438791" name="hr" stackId="1" startPc="268438731"/>
+        <entry arg="true" endPc="268438791" name="accel" stackId="2" startPc="268438731"/>
+        <entry arg="true" endPc="268438839" name="newState" stackId="1" startPc="268438819"/>
+        <entry arg="true" endPc="268438839" name="now" stackId="2" startPc="268438819"/>
+        <entry arg="true" endPc="268439011" name="xs" stackId="1" startPc="268438840"/>
+        <entry arg="true" endPc="268439011" name="ys" stackId="2" startPc="268438840"/>
+        <entry arg="true" endPc="268439011" name="zs" stackId="3" startPc="268438840"/>
+        <entry endPc="268439010" name="n" stackId="4" startPc="268438843"/>
+        <entry endPc="268438988" name="i" stackId="5" startPc="268438863"/>
+        <entry endPc="268438978" name="xf" stackId="6" startPc="268438863"/>
+        <entry endPc="268438978" name="yf" stackId="7" startPc="268438863"/>
+        <entry endPc="268438978" name="zf" stackId="8" startPc="268438863"/>
+        <entry endPc="268438978" name="mag" stackId="9" startPc="268438863"/>
+        <entry endPc="268438978" name="dev" stackId="10" startPc="268438863"/>
+        <entry arg="true" endPc="268439169" name="data" stackId="1" startPc="268439012"/>
+        <entry endPc="268439168" name="now" stackId="2" startPc="268439015"/>
+        <entry endPc="268439236" name="sum" stackId="1" startPc="268439173"/>
+        <entry endPc="268439227" name="i" stackId="2" startPc="268439205"/>
+        <entry endPc="268439296" name="i" stackId="1" startPc="268439278"/>
+        <entry arg="true" endPc="268439372" name="capacity" stackId="1" startPc="268439298"/>
+        <entry endPc="268439371" name="i" stackId="2" startPc="268439353"/>
+        <entry arg="true" endPc="268439441" name="value" stackId="1" startPc="268439373"/>
+        <entry arg="true" endPc="268439501" name="detector" stackId="1" startPc="268439460"/>
+        <entry arg="true" endPc="268439501" name="data" stackId="2" startPc="268439460"/>
+        <entry arg="true" endPc="268439501" name="sim" stackId="3" startPc="268439460"/>
+        <entry arg="true" endPc="268439645" name="item" stackId="1" startPc="268439502"/>
+        <entry endPc="268439644" name="id" stackId="2" startPc="268439505"/>
+        <entry endPc="268440150" name="now" stackId="1" startPc="268439649"/>
+        <entry endPc="268440150" name="step" stackId="2" startPc="268439649"/>
+        <entry endPc="268440150" name="targetHR" stackId="3" startPc="268439649"/>
+        <entry endPc="268440150" name="targetAccel" stackId="4" startPc="268439649"/>
+        <entry endPc="268440150" name="durationMs" stackId="5" startPc="268439649"/>
+        <entry endPc="268440150" name="elapsed" stackId="6" startPc="268439649"/>
+        <entry endPc="268440150" name="ratio" stackId="7" startPc="268439649"/>
+        <entry endPc="268440150" name="hr" stackId="8" startPc="268439649"/>
+        <entry endPc="268440150" name="seed" stackId="9" startPc="268439649"/>
+        <entry endPc="268440150" name="hrNoise" stackId="10" startPc="268439649"/>
+        <entry endPc="268440150" name="acNoise" stackId="11" startPc="268439649"/>
+        <entry endPc="268440150" name="accel" stackId="12" startPc="268439649"/>
+        <entry arg="true" endPc="268440459" name="detector" stackId="1" startPc="268440291"/>
+        <entry arg="true" endPc="268440459" name="data" stackId="2" startPc="268440291"/>
+        <entry arg="true" endPc="268440480" name="start" stackId="1" startPc="268440460"/>
+        <entry arg="true" endPc="268440480" name="dur" stackId="2" startPc="268440460"/>
+        <entry endPc="268440789" name="menu" stackId="1" startPc="268440518"/>
+        <entry arg="true" endPc="268440831" name="detector" stackId="1" startPc="268440790"/>
+        <entry arg="true" endPc="268440831" name="data" stackId="2" startPc="268440790"/>
+        <entry arg="true" endPc="268440831" name="sim" stackId="3" startPc="268440790"/>
+        <entry arg="true" endPc="268441191" name="state" stackId="1" startPc="268440866"/>
+        <entry endPc="268440935" name="sessionOptions" stackId="2" startPc="268440869"/>
+        <entry endPc="268440975" name="ex" stackId="3" startPc="268440942"/>
+        <entry endPc="268441190" name="sensorOptions" stackId="4" startPc="268440869"/>
+        <entry endPc="268441125" name="ex" stackId="5" startPc="268441056"/>
+        <entry arg="true" endPc="268441283" name="sensorInfo" stackId="1" startPc="268441247"/>
+        <entry endPc="268441366" name="view" stackId="1" startPc="268441287"/>
+        <entry endPc="268441366" name="delegate" stackId="2" startPc="268441287"/>
+        <entry arg="true" endPc="268441403" name="sensorData" stackId="1" startPc="268441367"/>
+        <entry arg="true" endPc="268441634" name="state" stackId="1" startPc="268441509"/>
+        <entry endPc="268441578" name="ex" stackId="2" startPc="268441553"/>
+    </localVars>
+    <deviceInfo deviceVersion="45fe3cbb0de8ea0a70e12628d2697915f1272301" partNumber="006-B4536-00"/>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="49" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/ShiftData" offset="179" parentId="globals" symbolId="ShiftData" type="class"/>
+        <dataEntry label="globals/HockeyView" offset="394" parentId="globals" symbolId="HockeyView" type="class"/>
+        <dataEntry label="globals/ShiftDetector" offset="501" parentId="globals" symbolId="ShiftDetector" type="class"/>
+        <dataEntry label="globals/Rez" offset="716" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/RingBuffer" offset="760" parentId="globals" symbolId="RingBuffer" type="class"/>
+        <dataEntry label="globals/HockeyMenuDelegate" offset="876" parentId="globals" symbolId="HockeyMenuDelegate" type="class"/>
+        <dataEntry label="globals/SimulationHelper" offset="965" parentId="globals" symbolId="SimulationHelper" type="class"/>
+        <dataEntry label="globals/ShiftRecord" offset="1126" parentId="globals" symbolId="ShiftRecord" type="class"/>
+        <dataEntry label="globals/HockeyDelegate" offset="1188" parentId="globals" symbolId="HockeyDelegate" type="class"/>
+        <dataEntry label="globals/HockeyApp" offset="1286" parentId="globals" symbolId="HockeyApp" type="class"/>
+        <dataEntry label="globals/Rez/Drawables" offset="1429" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="1464" parentId="Rez" symbolId="Strings" type="module"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435480" name="getApp" startPc="268435460">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="ShiftData">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435492" name="&lt;init&gt;" parent="HockeyView" startPc="268435481">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="ShiftDetector">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435512" name="&lt;init&gt;" parent="Rez" startPc="268435493">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="RingBuffer">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435524" name="&lt;init&gt;" parent="HockeyMenuDelegate" startPc="268435513">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="SimulationHelper">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="ShiftRecord">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435536" name="&lt;init&gt;" parent="HockeyDelegate" startPc="268435525">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435548" name="&lt;init&gt;" parent="HockeyApp" startPc="268435537">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435638" name="getAvgShiftMs" parent="ShiftData" startPc="268435549">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435700" name="addBreak" parent="ShiftData" startPc="268435639">
+            <param id="durationMs"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435754" name="msToStr" parent="ShiftData" startPc="268435701">
+            <param id="ms"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435851" name="addShift" parent="ShiftData" startPc="268435755">
+            <param id="startMs"/>
+            <param id="durationMs"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435936" name="getAvgBreakMs" parent="ShiftData" startPc="268435852">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435997" name="reset" parent="ShiftData" startPc="268435937">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436011" name="getShiftCount" parent="ShiftData" startPc="268435998">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436104" name="initialize" parent="ShiftData" startPc="268436012">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436153" name="getLastShiftMs" parent="ShiftData" startPc="268436105">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436156" name="onLayout" parent="HockeyView" startPc="268436154">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268436214" name="&lt;globals/HockeyView/&lt;&gt;_stateColor&gt;" parent="HockeyView" startPc="268436157">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436247" name="initialize" parent="HockeyView" startPc="268436215">
+            <param id="data"/>
+            <param id="detector"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268436306" name="&lt;globals/HockeyView/&lt;&gt;_stateLabel&gt;" parent="HockeyView" startPc="268436248">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437674" name="onUpdate" parent="HockeyView" startPc="268436307">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268437748" name="&lt;globals/HockeyView/&lt;&gt;_hrColor&gt;" parent="HockeyView" startPc="268437675">
+            <param id="hr"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438374" name="onTick" parent="ShiftDetector" startPc="268437749">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438529" name="processSensorData" parent="ShiftDetector" startPc="268438375">
+            <param id="sensorData"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438676" name="manualToggle" parent="ShiftDetector" startPc="268438530">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438730" name="processLegacySensor" parent="ShiftDetector" startPc="268438677">
+            <param id="info"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438791" name="injectData" parent="ShiftDetector" startPc="268438731">
+            <param id="hr"/>
+            <param id="accel"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438799" name="getState" parent="ShiftDetector" startPc="268438792">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438818" name="getCurrentDurationMs" parent="ShiftDetector" startPc="268438800">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268438839" name="&lt;globals/ShiftDetector/&lt;&gt;_enterState&gt;" parent="ShiftDetector" startPc="268438819">
+            <param id="newState"/>
+            <param id="now"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268439011" name="&lt;globals/ShiftDetector/&lt;&gt;_computeAccelActivity&gt;" parent="ShiftDetector" startPc="268438840">
+            <param id="xs"/>
+            <param id="ys"/>
+            <param id="zs"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439169" name="initialize" parent="ShiftDetector" startPc="268439012">
+            <param id="data"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439236" name="average" parent="RingBuffer" startPc="268439170">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439244" name="count" parent="RingBuffer" startPc="268439237">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439297" name="reset" parent="RingBuffer" startPc="268439245">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439372" name="initialize" parent="RingBuffer" startPc="268439298">
+            <param id="capacity"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439441" name="push" parent="RingBuffer" startPc="268439373">
+            <param id="value"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439459" name="onBack" parent="HockeyMenuDelegate" startPc="268439442">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439501" name="initialize" parent="HockeyMenuDelegate" startPc="268439460">
+            <param id="detector"/>
+            <param id="data"/>
+            <param id="sim"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439645" name="onSelect" parent="HockeyMenuDelegate" startPc="268439502">
+            <param id="item"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440151" name="onTick" parent="SimulationHelper" startPc="268439646">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440282" name="start" parent="SimulationHelper" startPc="268440152">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440290" name="isActive" parent="SimulationHelper" startPc="268440283">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440459" name="initialize" parent="SimulationHelper" startPc="268440291">
+            <param id="detector"/>
+            <param id="data"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440480" name="initialize" parent="ShiftRecord" startPc="268440460">
+            <param id="start"/>
+            <param id="dur"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440514" name="onBack" parent="HockeyDelegate" startPc="268440481">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440789" name="onMenu" parent="HockeyDelegate" startPc="268440515">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440831" name="initialize" parent="HockeyDelegate" startPc="268440790">
+            <param id="detector"/>
+            <param id="data"/>
+            <param id="sim"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268440865" name="onSelect" parent="HockeyDelegate" startPc="268440832">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441191" name="onStart" parent="HockeyApp" startPc="268440866">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441246" name="onTimerTick" parent="HockeyApp" startPc="268441192">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441283" name="onLegacySensor" parent="HockeyApp" startPc="268441247">
+            <param id="sensorInfo"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441366" name="getInitialView" parent="HockeyApp" startPc="268441284">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441403" name="onSensorData" parent="HockeyApp" startPc="268441367">
+            <param id="sensorData"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441508" name="initialize" parent="HockeyApp" startPc="268441404">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268441634" name="onStop" parent="HockeyApp" startPc="268441509">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

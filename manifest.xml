@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="3">
+    <iq:application
+        entry="HockeyApp"
+        id="a3b2c1d04e5f4a7b8c9de1f2a3b4c5d6"
+        launcherIcon="@Drawables.LauncherIcon"
+        minSdkVersion="4.2.0"
+        name="@Strings.AppName"
+        type="watch-app">
+
+        <iq:products>
+            <!-- fenix847mm covers fenix 8 47mm AND 51mm AMOLED (same binary) -->
+            <iq:product id="fenix847mm"/>
+            <!-- fenix843mm = fenix 8 43mm AMOLED -->
+            <iq:product id="fenix843mm"/>
+            <iq:product id="fenix8solar47mm"/>
+            <iq:product id="fenix8solar51mm"/>
+        </iq:products>
+
+        <iq:permissions>
+            <iq:uses-permission id="Sensor"/>
+            <iq:uses-permission id="Fit"/>
+        </iq:permissions>
+
+        <iq:languages>
+            <iq:language>eng</iq:language>
+        </iq:languages>
+
+    </iq:application>
+</iq:manifest>
