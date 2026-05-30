@@ -13,6 +13,7 @@
 // ──────────────────────────────────────────────────────────────────────────────
 
 import Toybox.Application;
+import Toybox.FitContributor;
 import Toybox.Lang;
 import Toybox.WatchUi;
 import Toybox.Sensor;
@@ -20,11 +21,15 @@ import Toybox.Timer;
 import Toybox.ActivityRecording;
 
 class HockeyApp extends Application.AppBase {
-    private var _data     as ShiftData;
-    private var _detector as ShiftDetector;
-    private var _sim      as SimulationHelper;
-    private var _timer    as Timer.Timer or Null;
-    private var _session  as ActivityRecording.Session or Null;
+    private var _data         as ShiftData;
+    private var _detector     as ShiftDetector;
+    private var _sim          as SimulationHelper;
+    private var _timer        as Timer.Timer or Null;
+    private var _session      as ActivityRecording.Session or Null;
+    private var _goalsField   as FitContributor.Field or Null;
+    private var _assistsField as FitContributor.Field or Null;
+    private var _feelField    as FitContributor.Field or Null;
+    private var _effortField  as FitContributor.Field or Null;
 
     function initialize() {
         AppBase.initialize();
@@ -44,6 +49,11 @@ class HockeyApp extends Application.AppBase {
             };
             _session = ActivityRecording.createSession(sessionOptions);
             _session.start();
+            // Custom developer fields – visible in Garmin Connect activity detail
+            _goalsField   = _session.createField("Goals",   0, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => "goals"});
+            _assistsField = _session.createField("Assists", 1, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => "assists"});
+            _feelField    = _session.createField("Feel",    2, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => "stars"});
+            _effortField  = _session.createField("Effort",  3, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => "RPE"});
         } catch (ex instanceof Lang.Exception) {
             // FIT recording unavailable – continue without it
             _session = null;
@@ -80,6 +90,12 @@ class HockeyApp extends Application.AppBase {
         try {
             Sensor.unregisterSensorDataListener();
         } catch (ex instanceof Lang.Exception) { }
+
+        // Write summary stats into the FIT file before saving
+        if (_goalsField   != null) { _goalsField.setData(_data.goals); }
+        if (_assistsField != null) { _assistsField.setData(_data.assists); }
+        if (_feelField    != null) { _feelField.setData(_data.feelRating); }
+        if (_effortField  != null) { _effortField.setData(_data.effortRating); }
 
         // Save the FIT session
         if (_session != null && _session.isRecording()) {

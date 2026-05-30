@@ -100,11 +100,13 @@ class ShiftData {
     var currentHR     as Number;             // latest HR reading (bpm)
     var currentAccel  as Number;             // latest activity level (mg deviation)
     var hrDelta       as Number;             // HR change per second (bpm/s, signed)
-    var isSimulation  as Boolean;            // true when simulation is running
-    var goals         as Number;              // goals scored this session
-    var assists       as Number;              // assists this session
-    var simAvgHR      as Number;              // simulated avg HR (populated by SimulationHelper)
-    var simCals       as Number;              // simulated calories
+    var isSimulation  as Boolean;
+    var goals         as Number;
+    var assists       as Number;
+    var simAvgHR      as Number;
+    var simCals       as Number;
+    var feelRating    as Number;   // 1-5: how did you play
+    var effortRating  as Number;   // 1-5: perceived exertion
 
     function initialize() {
         shifts       = [] as Array<ShiftRecord>;
@@ -118,6 +120,8 @@ class ShiftData {
         assists      = 0;
         simAvgHR     = 0;
         simCals      = 0;
+        feelRating   = 0;
+        effortRating = 0;
     }
 
     function addShift(startMs as Number, durationMs as Number) as Void {
