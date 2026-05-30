@@ -831,7 +831,7 @@ F__Github_Hockey_source_HockeyView_mc_105_20_105_53_end:
         symbol [ col1 %col1.16 122 12 16 ];
         %tmp.355 = lgetv %w.1;
         symbol [ w %tmp.355 122 19 20 ];
-        %tmp.356 = 32;
+        %tmp.356 = 38;
         %tmp.357 = mul %tmp.355 %tmp.356;
         %tmp.358 = 100;
         %tmp.359 = div %tmp.357 %tmp.358;
@@ -843,7 +843,7 @@ F__Github_Hockey_source_HockeyView_mc_105_20_105_53_end:
         symbol [ col2 %col2.17 123 12 16 ];
         %tmp.360 = lgetv %w.1;
         symbol [ w %tmp.360 123 19 20 ];
-        %tmp.361 = 68;
+        %tmp.361 = 62;
         %tmp.362 = mul %tmp.360 %tmp.361;
         %tmp.363 = 100;
         %tmp.364 = div %tmp.362 %tmp.363;

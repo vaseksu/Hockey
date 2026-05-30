@@ -119,8 +119,8 @@ class HockeyView extends WatchUi.View {
         dc.drawLine(w * 15 / 100, h * 58 / 100, w * 85 / 100, h * 58 / 100);
 
         // ── Statistics grid ───────────────────────────────────────────────────
-        var col1 = w * 32 / 100;
-        var col2 = w * 68 / 100;
+        var col1 = w * 38 / 100;
+        var col2 = w * 62 / 100;
 
         dc.setColor(C_DIM, Graphics.COLOR_TRANSPARENT);
         dc.drawText(col1, h * 63 / 100, Graphics.FONT_TINY, "SHIFTS", J);
