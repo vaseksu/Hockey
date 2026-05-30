@@ -94,8 +94,8 @@ class HockeyView extends WatchUi.View {
         dc.drawText(sideX1, h * 20 / 100, Graphics.FONT_XTINY, "AHR", J);
         dc.drawText(sideX2, h * 20 / 100, Graphics.FONT_XTINY, "CAL", J);
         dc.setColor(C_TEXT, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(sideX1, h * 30 / 100, Graphics.FONT_TINY, avgHR, J);
-        dc.drawText(sideX2, h * 30 / 100, Graphics.FONT_TINY, cals,  J);
+        dc.drawText(sideX1, h * 28 / 100, Graphics.FONT_TINY, avgHR, J);
+        dc.drawText(sideX2, h * 28 / 100, Graphics.FONT_TINY, cals,  J);
 
         var timerStr = _data.msToStr(_detector.getCurrentDurationMs());
         dc.drawText(cx, h * 23 / 100, Graphics.FONT_NUMBER_MILD, timerStr, J);
@@ -126,16 +126,16 @@ class HockeyView extends WatchUi.View {
         dc.drawText(col1, h * 63 / 100, Graphics.FONT_TINY, "SHIFTS", J);
         dc.drawText(col2, h * 63 / 100, Graphics.FONT_TINY, "TOI",    J);
         dc.setColor(C_TEXT, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(col1, h * 71 / 100, Graphics.FONT_SMALL, _data.getShiftCount().toString(), J);
-        dc.drawText(col2, h * 71 / 100, Graphics.FONT_SMALL, _data.msToStr(_data.totalToiMs),  J);
+        dc.drawText(col1, h * 72 / 100, Graphics.FONT_SMALL, _data.getShiftCount().toString(), J);
+        dc.drawText(col2, h * 72 / 100, Graphics.FONT_SMALL, _data.msToStr(_data.totalToiMs),  J);
 
         dc.setColor(C_DIM, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(col1, h * 75 / 100, Graphics.FONT_TINY, "AVG",  J);
-        dc.drawText(col2, h * 75 / 100, Graphics.FONT_TINY, "LAST", J);
+        dc.drawText(col1, h * 82 / 100, Graphics.FONT_TINY, "AVG",  J);
+        dc.drawText(col2, h * 82 / 100, Graphics.FONT_TINY, "LAST", J);
         dc.setColor(C_TEXT, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(col1, h * 83 / 100, Graphics.FONT_SMALL, _data.msToStr(_data.getAvgShiftMs()), J);
+        dc.drawText(col1, h * 91 / 100, Graphics.FONT_SMALL, _data.msToStr(_data.getAvgShiftMs()), J);
         if (_data.getShiftCount() > 0) {
-            dc.drawText(col2, h * 83 / 100, Graphics.FONT_SMALL, _data.msToStr(_data.getLastShiftMs()), J);
+            dc.drawText(col2, h * 91 / 100, Graphics.FONT_SMALL, _data.msToStr(_data.getLastShiftMs()), J);
         }
 
         // ── Simulation badge – top-right corner ──────────────────────────────

@@ -484,7 +484,7 @@ F__Github_Hockey_source_HockeyView_mc_77_8_87_8_if_end:
         symbol [ sideX1 %tmp.168 97 20 26 ];
         %tmp.169 = lgetv %h.2;
         symbol [ h %tmp.169 97 28 29 ];
-        %tmp.170 = 30;
+        %tmp.170 = 28;
         %tmp.171 = mul %tmp.169 %tmp.170;
         %tmp.172 = 100;
         %tmp.173 = div %tmp.171 %tmp.172;
@@ -506,7 +506,7 @@ F__Github_Hockey_source_HockeyView_mc_77_8_87_8_if_end:
         symbol [ sideX2 %tmp.180 98 20 26 ];
         %tmp.181 = lgetv %h.2;
         symbol [ h %tmp.181 98 28 29 ];
-        %tmp.182 = 30;
+        %tmp.182 = 28;
         %tmp.183 = mul %tmp.181 %tmp.182;
         %tmp.184 = 100;
         %tmp.185 = div %tmp.183 %tmp.184;
@@ -924,7 +924,7 @@ F__Github_Hockey_source_HockeyView_mc_105_20_105_53_end:
         symbol [ col1 %tmp.403 129 20 24 ];
         %tmp.404 = lgetv %h.2;
         symbol [ h %tmp.404 129 26 27 ];
-        %tmp.405 = 71;
+        %tmp.405 = 72;
         %tmp.406 = mul %tmp.404 %tmp.405;
         %tmp.407 = 100;
         %tmp.408 = div %tmp.406 %tmp.407;
@@ -952,7 +952,7 @@ F__Github_Hockey_source_HockeyView_mc_105_20_105_53_end:
         symbol [ col2 %tmp.420 130 20 24 ];
         %tmp.421 = lgetv %h.2;
         symbol [ h %tmp.421 130 26 27 ];
-        %tmp.422 = 71;
+        %tmp.422 = 72;
         %tmp.423 = mul %tmp.421 %tmp.422;
         %tmp.424 = 100;
         %tmp.425 = div %tmp.423 %tmp.424;
@@ -993,7 +993,7 @@ F__Github_Hockey_source_HockeyView_mc_105_20_105_53_end:
         symbol [ col1 %tmp.444 133 20 24 ];
         %tmp.445 = lgetv %h.2;
         symbol [ h %tmp.445 133 26 27 ];
-        %tmp.446 = 75;
+        %tmp.446 = 79;
         %tmp.447 = mul %tmp.445 %tmp.446;
         %tmp.448 = 100;
         %tmp.449 = div %tmp.447 %tmp.448;
@@ -1014,7 +1014,7 @@ F__Github_Hockey_source_HockeyView_mc_105_20_105_53_end:
         symbol [ col2 %tmp.456 134 20 24 ];
         %tmp.457 = lgetv %h.2;
         symbol [ h %tmp.457 134 26 27 ];
-        %tmp.458 = 75;
+        %tmp.458 = 79;
         %tmp.459 = mul %tmp.457 %tmp.458;
         %tmp.460 = 100;
         %tmp.461 = div %tmp.459 %tmp.460;
@@ -1047,7 +1047,7 @@ F__Github_Hockey_source_HockeyView_mc_105_20_105_53_end:
         symbol [ col1 %tmp.474 136 20 24 ];
         %tmp.475 = lgetv %h.2;
         symbol [ h %tmp.475 136 26 27 ];
-        %tmp.476 = 83;
+        %tmp.476 = 88;
         %tmp.477 = mul %tmp.475 %tmp.476;
         %tmp.478 = 100;
         %tmp.479 = div %tmp.477 %tmp.478;
@@ -1089,7 +1089,7 @@ F__Github_Hockey_source_HockeyView_mc_137_39_139_8_start:
         symbol [ col2 %tmp.499 138 24 28 ];
         %tmp.500 = lgetv %h.2;
         symbol [ h %tmp.500 138 30 31 ];
-        %tmp.501 = 83;
+        %tmp.501 = 88;
         %tmp.502 = mul %tmp.500 %tmp.501;
         %tmp.503 = 100;
         %tmp.504 = div %tmp.502 %tmp.503;
