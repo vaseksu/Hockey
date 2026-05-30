@@ -4,8 +4,8 @@
 // Button mapping (Fenix 8 activity app):
 //   DOWN   (bottom-left, short press) → add goal
 //   BACK   (bottom-right, short press) → add assist
-//   SELECT (top-right, short press)   → standard Garmin pause/resume
-//   MENU   (up button, long press)    → opens settings menu
+//   SELECT (top-right, short press)   → opens hockey menu
+//   MENU   (up button, long press)    → opens hockey menu
 // ──────────────────────────────────────────────────────────────────────────────
 
 import Toybox.WatchUi;
@@ -33,23 +33,29 @@ class HockeyDelegate extends WatchUi.BehaviorDelegate {
         return true;
     }
 
-    // Short-press SELECT (top-right) → let Garmin handle it (standard pause/resume)
+    // Short-press SELECT (top-right) → open hockey menu
     function onSelect() as Boolean {
-        return false;
+        _openMenu();
+        return true;
     }
 
-    // MENU long-press → settings / simulation menu
+    // MENU long-press → open hockey menu
     function onMenu() as Boolean {
+        _openMenu();
+        return true;
+    }
+
+    private function _openMenu() as Void {
         var menu = new WatchUi.Menu2({:title => "Hockey Shifts"});
-        menu.addItem(new WatchUi.MenuItem("Toggle shift",   null, :toggle,   {}));
-        menu.addItem(new WatchUi.MenuItem("Run simulation",  null, :simulate, {}));
-        menu.addItem(new WatchUi.MenuItem("Reset stats",     null, :reset,    {}));
-        menu.addItem(new WatchUi.MenuItem("Clear G/A",       null, :clearGA,  {}));
-        menu.addItem(new WatchUi.MenuItem("Stop & Save",     null, :stopSave, {}));
+        menu.addItem(new WatchUi.MenuItem("Toggle shift",  null, :toggle,   {}));
+        menu.addItem(new WatchUi.MenuItem("Run simulation", null, :simulate, {}));
+        menu.addItem(new WatchUi.MenuItem("Reset stats",    null, :reset,    {}));
+        menu.addItem(new WatchUi.MenuItem("Clear G/A",      null, :clearGA,  {}));
+        menu.addItem(new WatchUi.MenuItem("Stop & Save",    null, :stopSave, {}));
+        menu.addItem(new WatchUi.MenuItem("Discard",        null, :discard,  {}));
         WatchUi.pushView(menu,
                          new HockeyMenuDelegate(_detector, _data, _sim),
                          WatchUi.SLIDE_UP);
-        return true;
     }
 
     // Short-press BACK (bottom-right) → add an assist.
@@ -95,7 +101,6 @@ class HockeyMenuDelegate extends WatchUi.Menu2InputDelegate {
             _data.assists = 0;
 
         } else if (id == :stopSave) {
-            // Show self-evaluation before saving
             var menu = new WatchUi.Menu2({:title => "How did you play?"});
             menu.addItem(new WatchUi.MenuItem("★★★★★  Great",   null, :feel5, {}));
             menu.addItem(new WatchUi.MenuItem("★★★★   Good",    null, :feel4, {}));
@@ -105,6 +110,11 @@ class HockeyMenuDelegate extends WatchUi.Menu2InputDelegate {
             WatchUi.pushView(menu,
                 new EvalFeelDelegate(_data),
                 WatchUi.SLIDE_UP);
+            return; // do NOT pop — eval delegate takes over
+
+        } else if (id == :discard) {
+            discardAndExit();
+            return;
         }
 
         WatchUi.popView(WatchUi.SLIDE_DOWN);
@@ -162,7 +172,7 @@ class EvalEffortDelegate extends WatchUi.Menu2InputDelegate {
         else if (id == :effort2) { _data.effortRating = 2; }
         else                     { _data.effortRating = 1; }
         // Done — save and exit
-        System.exit();
+        saveAndExit();
     }
     function onBack() as Void {
         WatchUi.popView(WatchUi.SLIDE_DOWN);

@@ -15,6 +15,7 @@
 import Toybox.Application;
 import Toybox.FitContributor;
 import Toybox.Lang;
+import Toybox.System;
 import Toybox.WatchUi;
 import Toybox.Sensor;
 import Toybox.Timer;
@@ -28,14 +29,18 @@ class HockeyApp extends Application.AppBase {
     private var _session      as ActivityRecording.Session or Null;
     private var _goalsField   as FitContributor.Field or Null;
     private var _assistsField as FitContributor.Field or Null;
+    private var _shiftsField  as FitContributor.Field or Null;
+    private var _toiField     as FitContributor.Field or Null;
     private var _feelField    as FitContributor.Field or Null;
     private var _effortField  as FitContributor.Field or Null;
+    private var _shouldSave   as Boolean;
 
     function initialize() {
         AppBase.initialize();
-        _data     = new ShiftData();
-        _detector = new ShiftDetector(_data);
-        _sim      = new SimulationHelper(_detector, _data);
+        _data       = new ShiftData();
+        _detector   = new ShiftDetector(_data);
+        _sim        = new SimulationHelper(_detector, _data);
+        _shouldSave = true;
     }
 
     function onStart(state as Dictionary?) as Void {
@@ -52,20 +57,23 @@ class HockeyApp extends Application.AppBase {
             // Custom developer fields – visible in Garmin Connect activity detail
             _goalsField   = _session.createField("Goals",   0, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => "goals"});
             _assistsField = _session.createField("Assists", 1, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => "assists"});
-            _feelField    = _session.createField("Feel",    2, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => "stars"});
-            _effortField  = _session.createField("Effort",  3, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => "RPE"});
+            _shiftsField  = _session.createField("Shifts",  2, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => "shifts"});
+            _toiField     = _session.createField("TOI",     3, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => "min"});
+            _feelField    = _session.createField("Feel",    4, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => "stars"});
+            _effortField  = _session.createField("Effort",  5, FitContributor.DATA_TYPE_UINT8, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => "RPE"});
         } catch (ex instanceof Lang.Exception) {
             // FIT recording unavailable – continue without it
             _session = null;
         }
 
-        // ── Register sensor listener with 25 Hz accelerometer ─────────────────
+        // ── Register sensor listener with 25 Hz accelerometer + HR ──────────
         var sensorOptions = {
-            :period       => 1,
+            :period        => 1,
             :accelerometer => {
                 :enabled    => true,
                 :sampleRate => 25
-            }
+            },
+            :heartRate     => { :enabled => true }
         };
         try {
             Sensor.registerSensorDataListener(method(:onSensorData), sensorOptions);
@@ -94,13 +102,19 @@ class HockeyApp extends Application.AppBase {
         // Write summary stats into the FIT file before saving
         if (_goalsField   != null) { _goalsField.setData(_data.goals); }
         if (_assistsField != null) { _assistsField.setData(_data.assists); }
+        if (_shiftsField  != null) { _shiftsField.setData(_data.shifts.size()); }
+        if (_toiField     != null) { _toiField.setData(_data.totalToiMs / 60000); }
         if (_feelField    != null) { _feelField.setData(_data.feelRating); }
         if (_effortField  != null) { _effortField.setData(_data.effortRating); }
 
         // Save the FIT session
         if (_session != null && _session.isRecording()) {
             _session.stop();
-            _session.save();
+            if (_shouldSave) {
+                _session.save();
+            } else {
+                _session.discard();
+            }
         }
     }
 
@@ -128,15 +142,29 @@ class HockeyApp extends Application.AppBase {
     // ── 1-second tick ─────────────────────────────────────────────────────────
 
     function onTimerTick() as Void {
-        if (_sim.isActive()) {
-            _sim.onTick();
-        }
-        _detector.onTick();
+        try {
+            if (_sim.isActive()) {
+                _sim.onTick();
+            }
+            _detector.onTick();
+        } catch (ex instanceof Lang.Exception) { }
         WatchUi.requestUpdate();
     }
+
+    function setShouldSave(v as Boolean) as Void { _shouldSave = v; }
 }
 
 // Convenience accessor used by other modules if needed
 function getApp() as HockeyApp {
     return Application.getApp() as HockeyApp;
+}
+
+function saveAndExit() as Void {
+    (Application.getApp() as HockeyApp).setShouldSave(true);
+    System.exit();
+}
+
+function discardAndExit() as Void {
+    (Application.getApp() as HockeyApp).setShouldSave(false);
+    System.exit();
 }
